@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에떼르넬 헤어살롱 합정점, 유행보다 오래 가는 머리</title>
+<meta name="description" content="합정 골목 안 단독 건물에서 1:1 상담으로 한 사람에게 맞춘 머리를 만드는 에떼르넬 헤어살롱 합정점입니다. 네이버로 예약하세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* Hallmark · shape: Campaign Catalogue (custom, from the locked DESIGN.md) · genre: editorial · theme: custom, locked ./DESIGN.md (Nike system, rebranded) · job: book · idea: "a hair salon sold like a campaign: giant Korean lines burned into the salon's own photographs, its work racked like product, the price as the product card" · vibe: "campaign bold, monochrome, one cobalt signal"
+ * paper: oklch(98.4% 0.005 264) · accent: oklch(47% 0.22 264) · display: Anton for Latin and figures, Pretendard 800 for Hangul · body: Pretendard Variable · hero: Poster, two campaign photographs edge to edge, the line burned in low left · nav: utility bar over a sticky primary bar that retracts on scroll (DESIGN.md utility-bar and primary-nav) · footer: mast, ÉTERNEL across the width over four link columns (DESIGN.md footer) · imagery: photographs, the salon's own 31 from the manifest, one grade on all (saturate 0.86, contrast 1.05) · signature: 유행보다 오래, set 11rem across the two campaign photographs
+ * axes: light/display-condensed/chromatic-blue · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R3 V5 · weakest: R, the user called round one too plain so the page spends motion on purpose; every move is transform, opacity or clip-path, set only inside gsap.matchMedia under no-preference, and nothing hides without script */
+/* Hallmark · waive 11 · designer portraits scale 1.05 inside the card link and the lookbook swaps to the side angle on hover · BRIEF-v2 asks for designer photo zoom and lookbook angle swap on hover after the user called round one too plain */
+/* Hallmark · dismissed 42 · the footer is DESIGN.md's own footer, four link columns under a hairline, with ÉTERNEL set as a mast across the width above them, named in the stamp */
+/* Hallmark · dismissed 59 · ten sections with hero and footer, because BRIEF-v2 asks for nine to eleven so the salon's lookbook, process, prices and designers each get a screen */
+/* Hallmark · reviews: hero-review: in-thread, ship (custom composition, the control pair is DESIGN.md's on-image pair; open note: a neighbour's LUXURY sign shows in the terrace photographs) · finish-review: in-thread, ship · fixed in sweep: crowded heads in the ash tile and price names, five weights cut to three, the build perm name breaking mid word at 375, the footer mast overlapping its links mid motion, the first process caption painting over the second frame */
+@import url("./tokens.css");
+@import url("./base.css");
+
+body { word-break: keep-all; overflow-wrap: break-word; line-height: 1.55; }
+h1, h2, h3 { line-height: 1.04; letter-spacing: var(--tracking-display); font-weight: 800; }
+h2 { font-size: var(--text-section); max-width: 18ch; }
+.figure, .num { font-variant-numeric: tabular-nums; }
+img { background: var(--color-paper-2); }
+.photo-grade { filter: saturate(0.86) contrast(1.05); }
+
+.skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); background: var(--color-ink); color: var(--color-paper); }
+.skip:focus-visible { top: var(--space-md); }
+
+/* dark bands swap ink, rules and the focus ring together */
+.band-ink { background: var(--color-ink); color: var(--color-paper); --color-focus: var(--color-focus-dark); }
+.band-cloud { background: var(--color-paper-2); }
+
+/* controls: DESIGN.md pills, squared to 2px by the user's rule */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-ink); border-radius: var(--radius-pill); background: transparent; color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); font-weight: 600; line-height: 1; white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { background: var(--color-paper-3); }
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn[aria-busy="true"] { cursor: progress; }
+.btn--primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+.btn--primary:hover { background: var(--color-accent-2); border-color: var(--color-accent-2); }
+.btn--image { background: var(--color-paper); border-color: var(--color-paper); color: var(--color-ink); }
+.btn--image:hover { background: var(--color-paper-3); border-color: var(--color-paper-3); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: background-color var(--dur-short) linear; } .btn:active { transform: none; } }
+
+/* utility bar (DESIGN.md utility-bar, soft-cloud, 36px) */
+.util { background: var(--color-paper-2); font-size: var(--text-xs); }
+.util__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); min-height: var(--util-h); }
+.util__note { color: var(--color-ink-2); }
+.util__links { display: flex; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
+.util__links a { display: inline-flex; align-items: center; min-height: var(--util-h); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.util__links a:hover { text-decoration: underline; }
+
+/* primary nav (DESIGN.md primary-nav), retracts on scroll down */
+.nav { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: var(--color-paper); box-shadow: inset 0 -1px 0 var(--color-paper-3); transition: transform var(--dur-long) var(--ease-out); }
+.nav.is-up { transform: translateY(-100%); }
+.nav__bar { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: var(--space-lg); min-height: var(--nav-h); }
+.wordmark { justify-self: start; display: inline-flex; align-items: baseline; gap: var(--space-xs); color: var(--color-ink); text-decoration: none; font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1; letter-spacing: 0.02em; }
+.wordmark__place { font-family: var(--font-body); font-size: var(--text-sm); font-weight: 600; letter-spacing: 0; color: var(--color-muted); }
+.nav__links { display: flex; gap: var(--space-xl); margin: 0; padding: 0; list-style: none; }
+.nav__links a { display: inline-flex; align-items: center; min-height: var(--nav-h); font-weight: 600; text-decoration: none; white-space: nowrap; box-shadow: inset 0 -2px 0 transparent; transition: box-shadow var(--dur-short) var(--ease-out); }
+.nav__links a:hover, .nav__links a[aria-current="true"] { box-shadow: inset 0 -2px 0 var(--color-ink); }
+.nav__end { justify-self: end; display: flex; align-items: center; gap: var(--space-sm); }
+.menu { position: relative; display: none; }
+.menu > summary { display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--space-md); border: 1px solid var(--color-rule); border-radius: var(--radius-pill); font-weight: 600; cursor: pointer; list-style: none; white-space: nowrap; }
+.menu > summary::-webkit-details-marker { display: none; }
+.menu > summary:hover { background: var(--color-paper-2); }
+.menu > summary:active { background: var(--color-paper-3); }
+.menu[open] > summary { background: var(--color-ink); color: var(--color-paper); border-color: var(--color-ink); }
+.menu ul { position: absolute; right: 0; top: calc(100% + var(--space-xs)); z-index: var(--z-dropdown); display: grid; min-width: 12rem; margin: 0; padding: var(--space-xs) 0; list-style: none; background: var(--color-paper); border: 1px solid var(--color-rule); }
+.menu ul a { display: flex; align-items: center; min-height: 48px; padding: 0 var(--space-lg); font-weight: 600; text-decoration: none; }
+.menu ul a:hover { background: var(--color-paper-2); }
+@media (prefers-reduced-motion: reduce) { .nav, .nav__links a { transition: none; } }
+
+/* 1 · hero: Poster, two campaign frames edge to edge, the line burned in */
+.hero { position: relative; display: grid; min-height: calc(100svh - var(--nav-h) - var(--util-h)); background: var(--color-ink); color: var(--color-paper); isolation: isolate; overflow: clip; --color-focus: var(--color-focus-dark); }
+.hero__media { position: absolute; inset: 0; z-index: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3xs); }
+.hero__frame { position: relative; margin: 0; overflow: hidden; clip-path: inset(0% 0% 0% 0%); }
+.hero__frame img { width: 100%; height: 100%; object-fit: cover; }
+.hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--color-scrim) 0%, var(--color-scrim) 12%, transparent 64%); }
+.hero__copy { position: relative; z-index: 2; align-self: end; display: grid; gap: var(--space-lg); padding-block: var(--space-2xl) var(--space-xl); }
+.hero__title { font-size: var(--text-display); line-height: 1; letter-spacing: -0.035em; max-width: none; overflow: clip; padding-block-end: var(--space-3xs); }
+.hero__title span { display: block; }
+.hero__foot { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--space-lg) var(--space-xl); }
+.hero__lede { max-width: 30ch; font-size: var(--text-lead); font-weight: 400; line-height: 1.45; }
+.acts { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+
+/* 2 · what guests picked: figures, then the words run sideways with the scroll */
+.words { padding-block: var(--section-gap-s) var(--section-gap); overflow: clip; }
+.words__head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: end; }
+.words__head h2 { grid-column: 1 / span 7; }
+.words__src { grid-column: 9 / -1; justify-self: end; color: var(--color-stone); font-size: var(--text-sm); text-align: right; }
+.figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: var(--space-2xl) 0 0; padding: 0; list-style: none; }
+.figures li { padding-inline: var(--space-lg); border-left: 1px solid var(--color-rule-dark); }
+.figures li:first-child { padding-left: 0; border-left: 0; }
+.figures .figure { display: block; font-family: var(--font-display); font-size: var(--text-figure); line-height: 1; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+.figures .unit { font-variant-numeric: tabular-nums; font-family: var(--font-body); font-size: var(--text-xl); font-weight: 600; margin-left: var(--space-2xs); }
+.figures p { margin-top: var(--space-sm); color: var(--color-stone); font-size: var(--text-md); font-weight: 600; }
+.ticker { display: grid; gap: var(--space-md); margin-top: var(--space-3xl); padding-inline: var(--gutter); }
+.ticker__row { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-2xl); margin: 0; padding: 0; list-style: none; }
+.ticker__row li { font-size: var(--text-campaign); font-weight: 800; line-height: 1.04; letter-spacing: -0.035em; min-width: 0; overflow-wrap: break-word; }
+.ticker__row--soft li { color: var(--color-stone); }
+.ticker__row b { margin-left: var(--space-xs); font-family: var(--font-display); font-size: 0.42em; font-weight: 400; letter-spacing: 0; vertical-align: 0.95em; color: var(--color-stone); }
+.ticker.is-moving { padding-inline: 0; }
+.ticker.is-moving .ticker__row { flex-wrap: nowrap; width: max-content; }
+.ticker.is-moving .ticker__row li { white-space: nowrap; }
+
+/* 3 · signature: campaign tiles with the review count burned in */
+.sig { padding-block: var(--section-gap-s); }
+.sig__head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: end; margin-bottom: var(--space-2xl); }
+.sig__head h2 { grid-column: 1 / span 7; }
+.sig__head p { grid-column: 9 / -1; color: var(--color-muted); text-align: right; }
+.sig__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(2, clamp(18rem, 30vw, 27rem)); gap: var(--gap-product); margin: 0; padding: 0; list-style: none; }
+.tile { position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: var(--color-ink); color: var(--color-paper); isolation: isolate; }
+.tile--a { grid-column: 1 / span 6; grid-row: 1 / span 2; }
+.tile--b { grid-column: 7 / -1; grid-row: 1; }
+.tile--c { grid-column: 7 / span 3; grid-row: 2; }
+.tile--d { grid-column: 10 / -1; grid-row: 2; }
+.tile__media { position: absolute; inset: 0; z-index: 0; margin: 0; overflow: hidden; }
+.tile__media img { width: 100%; height: 100%; object-fit: cover; }
+.tile__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--color-scrim) 0%, transparent 62%); }
+.tile__body { position: relative; z-index: 2; display: flex; flex-direction: column; gap: var(--space-xs); padding: var(--space-lg); }
+.tile__body h3 { font-size: var(--text-2xl); }
+.tile--a .tile__body h3 { font-size: var(--text-3xl); }
+.tile__body p { max-width: 30ch; font-weight: 400; }
+.tile__count { order: -1; font-family: var(--font-display); font-size: clamp(3.5rem, 5vw + 1rem, 6.5rem); line-height: 0.95; letter-spacing: 0; }
+.tile--a .tile__count { font-size: clamp(5rem, 9vw + 1rem, 11rem); }
+.tile__count small { margin-left: var(--space-xs); font-family: var(--font-body); font-size: var(--text-md); font-weight: 600; letter-spacing: 0; vertical-align: 0.3em; color: var(--color-stone); }
+.tile--b { justify-content: space-between; --color-focus: var(--color-focus-dark); }
+.tile--b .tile__body { flex: 1; justify-content: flex-end; padding: var(--space-xl); }
+.tile--b .tile__count { margin-bottom: auto; font-size: clamp(5rem, 8vw + 1rem, 10rem); }
+
+/* 4 · the 1:1 process, pinned on wide screens */
+.flow { padding-block: var(--section-gap-s); }
+.flow__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: center; }
+.flow__text { grid-column: 1 / span 6; }
+.flow__text h2 { margin-bottom: var(--space-xl); }
+.flow__steps { display: grid; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.flow__steps li { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-lg); align-items: baseline; counter-increment: step; }
+.flow__steps li::before { content: counter(step); font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1; color: var(--color-stone); }
+.flow__steps h3 { font-size: clamp(2.25rem, 3vw + 1rem, 4.25rem); }
+.flow__steps p { grid-column: 2; margin-top: var(--space-xs); color: var(--color-stone); font-weight: 400; }
+.flow__media { grid-column: 7 / -1; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--gap-product); align-items: start; }
+.flow__shot--2 { z-index: 1; margin-top: var(--space-3xl); }
+.flow__shot { position: relative; isolation: isolate; margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: var(--color-ink-2); }
+.flow__shot img { width: 100%; height: 100%; object-fit: cover; }
+.flow__shot figcaption { position: absolute; left: 0; bottom: 0; z-index: 2; padding: var(--space-xs) var(--space-sm); background: var(--color-ink); color: var(--color-paper); font-size: var(--text-sm); font-weight: 600; }
+.flow.is-pinned { padding-block: 0; }
+.flow.is-pinned .flow__pin { display: grid; align-items: center; min-height: 100svh; padding-block: var(--space-3xl) var(--space-xl); }
+.flow.is-pinned .flow__media { grid-template-columns: minmax(0, 1fr); }
+.flow.is-pinned .flow__shot { grid-area: 1 / 1; height: min(68svh, 40rem); aspect-ratio: auto; margin-top: 0; }
+
+/* 5 · lookbook: a product grid, the side angle on hover or on the toggle */
+.looks { padding-block: var(--section-gap); }
+.looks__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--space-lg); margin-bottom: var(--space-xl); }
+.chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+html:not(.js) .chips { display: none; }
+.chip { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; padding: 0 var(--space-md); border: 1px solid var(--color-rule); border-radius: var(--radius-pill); background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); font-weight: 600; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.chip span { color: var(--color-muted); font-weight: 400; }
+.chip:hover { border-color: var(--color-ink); }
+.chip:active { transform: scale(0.97); }
+.chip:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.chip:disabled { opacity: 0.55; cursor: not-allowed; }
+.chip[aria-pressed="true"] { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-paper); }
+.chip[aria-pressed="true"] span { color: var(--color-stone); }
+@media (prefers-reduced-motion: reduce) { .chip { transition: none; } .chip:active { transform: none; } }
+.looks__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xl) var(--gap-product); margin: 0; padding: 0; list-style: none; }
+.look { display: grid; gap: var(--space-sm); align-content: start; }
+.look__media { position: relative; margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: var(--color-paper-2); }
+.look__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.look__alt { opacity: 0; transition: opacity var(--dur-long) var(--ease-out); }
+.look:has(input[value="side"]:checked) .look__alt { opacity: 1; }
+@media (hover: hover) { .look__media:hover .look__alt { opacity: 1; } }
+.look__info { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-md); row-gap: var(--space-3xs); align-items: start; }
+.look__name { font-family: var(--font-body); font-size: var(--text-lg); font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+.look__meta { grid-column: 1; color: var(--color-muted); font-size: var(--text-sm); font-weight: 400; }
+.angle { position: relative; grid-column: 2; grid-row: 1 / span 2; display: flex; gap: var(--space-2xs); margin: 0; padding: 0; border: 0; min-inline-size: 0; }
+.angle input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.angle label { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-pill); font-size: var(--text-sm); font-weight: 600; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
+.angle label:hover { border-color: var(--color-ink); }
+.angle input:checked + label { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-paper); }
+.angle input:focus-visible + label { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.angle input:disabled + label { opacity: 0.55; cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .look__alt, .angle label { transition: none; } }
+
+/* 6 · price as the product card */
+.price { padding-block: var(--section-gap-s); }
+.price__head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: end; margin-bottom: var(--space-2xl); }
+.price__head h2 { grid-column: 1 / span 7; }
+.price__head p { grid-column: 8 / -1; max-width: 34ch; justify-self: end; color: var(--color-ink-2); font-weight: 400; }
+.price__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-xl) var(--gap-product); margin: 0; padding: 0; list-style: none; }
+.pcard { display: grid; gap: var(--space-sm); align-content: start; }
+.pcard__stage { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md); aspect-ratio: 5 / 4; padding: var(--space-lg); background: var(--color-paper); container-type: inline-size; }
+.pcard__name { font-size: var(--text-xl); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.pcard__top { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-xs); }
+.pcard__cat { color: var(--color-muted); font-size: var(--text-sm); }
+.pcard__tag { padding: var(--space-3xs) var(--space-xs); border: 1px solid var(--color-accent); border-radius: var(--radius-pill); color: var(--color-accent); font-weight: 600; white-space: nowrap; }
+.pcard__price { text-align: right; font-family: var(--font-display); font-size: 21cqi; line-height: 1; letter-spacing: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pcard__price .won { margin-left: var(--space-2xs); font-family: var(--font-body); font-size: 0.3em; font-weight: 600; }
+.pcard--pick .pcard__price { color: var(--color-accent); }
+.pcard--book .pcard__stage { background: var(--color-ink); color: var(--color-paper); --color-focus: var(--color-focus-dark); }
+.pcard__lead { margin-top: auto; font-weight: 600; line-height: 1.45; }
+.pcard--book .btn { align-self: stretch; }
+
+/* 7 · designers: portraits on the studio grey, each card books that designer */
+.team { padding-block: var(--section-gap); }
+.team__head { margin-bottom: var(--space-2xl); }
+.team__grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--gap-product); margin: 0; padding: 0; list-style: none; }
+.person { display: flex; flex-direction: column; }
+.person__link { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xs); color: var(--color-ink); text-decoration: none; }
+.person__link:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.person__media { position: relative; align-self: stretch; margin: 0 0 var(--space-xs); aspect-ratio: 4 / 5; overflow: hidden; background: var(--color-paper-2); }
+.person__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-long) var(--ease-out); }
+.person__name { font-size: var(--text-2xl); }
+.person__name span { margin-left: var(--space-xs); font-family: var(--font-body); font-size: var(--text-md); font-weight: 600; letter-spacing: 0; color: var(--color-muted); }
+.person__spec { font-weight: 600; }
+.person__note { color: var(--color-muted); font-size: var(--text-sm); }
+.person__cta { margin-top: auto; }
+.person__note + .person__cta, .person__spec + .person__cta { margin-top: auto; }
+.person__link:hover .person__media img { transform: scale(1.05); }
+.person__link:hover .person__cta { background: var(--color-ink); color: var(--color-paper); }
+.person__link:active .person__cta { transform: scale(0.97); }
+@media (prefers-reduced-motion: reduce) { .person__media img { transition: none; } .person__link:hover .person__media img { transform: none; } }
+
+/* 8 · visit: the week as a strip, the facts as disclosure rows */
+.visit { padding-block: var(--section-gap-s); }
+.visit__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-2xl); align-items: start; }
+.visit__lead { grid-column: 1 / span 5; display: grid; gap: var(--space-lg); }
+.visit__addr { font-size: var(--text-3xl); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+.visit__addr span { display: block; color: var(--color-muted); font-size: var(--text-md); font-weight: 600; letter-spacing: 0; margin-top: var(--space-xs); }
+.visit__info { grid-column: 7 / -1; }
+.week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--space-2xs); margin: 0 0 var(--space-xl); padding: 0; list-style: none; }
+.week li { display: grid; gap: var(--space-2xs); justify-items: center; padding: var(--space-sm) var(--space-2xs); background: var(--color-paper); font-size: var(--text-lg); font-weight: 800; text-align: center; }
+.week li small { font-size: var(--text-xs); font-weight: 600; color: var(--color-muted); }
+.week li.is-off { background: var(--color-ink); color: var(--color-paper); }
+.week li.is-off small { color: var(--color-stone); }
+.week li[aria-current="date"] { box-shadow: inset 0 -3px 0 var(--color-accent); }
+.rows { margin: 0; }
+.rows > div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--space-md); padding-block: var(--space-md); border-top: 1px solid var(--color-rule); }
+.rows > div:last-child { border-bottom: 1px solid var(--color-rule); }
+.rows dt { font-weight: 600; }
+.rows dd { margin: 0; color: var(--color-ink-2); }
+
+/* 9 · the close: the building itself, then the booking */
+.close { padding-block: 0 var(--section-gap-s); }
+.close__stage { position: relative; display: grid; min-height: min(86svh, 54rem); isolation: isolate; }
+.close__photo { position: absolute; inset: 0; z-index: 0; margin: 0; overflow: hidden; clip-path: inset(0% 0% 0% 0%); }
+.close__photo img { width: 100%; height: 100%; object-fit: cover; }
+.close__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--color-scrim) 0%, transparent 60%); }
+.close__copy { position: relative; z-index: 2; align-self: end; display: grid; gap: var(--space-lg); padding-block: var(--space-3xl) var(--space-2xl); }
+.close__copy h2 { font-size: var(--text-campaign); max-width: none; }
+.close__copy p { max-width: 34ch; font-size: var(--text-lead); font-weight: 400; }
+.close__more { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-xl); align-items: end; margin-top: var(--space-2xl); }
+.close__sm { margin: 0; grid-column: span 4; }
+.close__sm .frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--color-ink-2); }
+.close__sm img { width: 100%; height: 100%; object-fit: cover; }
+.close__sm figcaption { margin-top: var(--space-sm); color: var(--color-stone); font-size: var(--text-sm); font-weight: 600; }
+.close__list { grid-column: span 4; align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; }
+.close__list h3 { font-size: var(--text-2xl); margin-bottom: var(--space-md); }
+.close__list ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-rule-dark); }
+.close__list li { padding-block: var(--space-sm); border-bottom: 1px solid var(--color-rule-dark); font-size: var(--text-lg); font-weight: 600; }
+
+/* 10 · footer: the mast */
+.foot { padding-block: var(--space-3xl) var(--space-xl); }
+.foot__inner { container-type: inline-size; }
+.foot__mast { overflow: clip; font-family: var(--font-display); font-size: 31.5cqi; line-height: 1.16; letter-spacing: 0; color: var(--color-ink); min-width: 0; overflow-wrap: break-word; }
+.foot__mast span { display: block; }
+.foot__cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap-columns); margin-top: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-rule); }
+.foot__h { font-weight: 600; margin-bottom: var(--space-sm); }
+.foot__cols ul { display: grid; gap: var(--space-2xs); margin: 0; padding: 0; list-style: none; color: var(--color-muted); }
+.foot__cols a { display: inline-flex; align-items: center; min-height: 32px; text-decoration: none; color: var(--color-ink-2); }
+.foot__cols a:hover { color: var(--color-ink); text-decoration: underline; }
+.foot__fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm) var(--space-xl); margin-top: var(--space-2xl); padding-top: var(--space-md); border-top: 1px solid var(--color-rule); color: var(--color-muted); font-size: var(--text-sm); }
+
+/* under 60rem every composition stacks in reading order */
+@media (max-width: 60rem) {
+  .nav__links { display: none; }
+  .menu { display: block; }
+  .nav__bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .util__note { display: none; }
+  .util__bar { justify-content: flex-start; }
+  .util__links { gap: var(--space-md); overflow-x: auto; }
+  .words__head, .sig__head, .price__head { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-md); }
+  .words__head h2, .words__src, .sig__head h2, .sig__head p, .price__head h2, .price__head p { grid-column: 1; justify-self: start; text-align: left; }
+  .figures { grid-template-columns: minmax(0, 1fr); }
+  .figures li { padding: var(--space-md) 0; border-left: 0; border-top: 1px solid var(--color-rule-dark); }
+  .figures li:first-child { border-top: 0; }
+  .sig__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(20rem, auto); }
+  .tile--a, .tile--b { grid-column: 1 / -1; grid-row: auto; }
+  .tile--a { min-height: 32rem; }
+  .tile--c, .tile--d { grid-column: span 1; grid-row: auto; }
+  .tile--c .tile__body, .tile--d .tile__body { padding: var(--space-sm); }
+  .tile--c .tile__body h3, .tile--d .tile__body h3 { font-size: var(--text-xl); }
+  .flow__grid { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-2xl); }
+  .flow__text, .flow__media { grid-column: 1; }
+  .looks__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .looks__grid > .look:first-child { grid-column: 1 / -1; }
+  .price__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team__grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
+  .team__grid > li { flex: 0 0 62%; scroll-snap-align: start; }
+  .visit__lead, .visit__info { grid-column: 1 / -1; }
+  .close__sm { grid-column: span 6; }
+  .close__list { grid-column: 1 / -1; }
+  .foot__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+  .look__info { grid-template-columns: minmax(0, 1fr); }
+  .angle { grid-column: 1; grid-row: auto; margin-top: var(--space-2xs); }
+  .look__name { font-size: var(--text-md); }
+  .pcard__stage { padding: var(--space-sm); }
+  .pcard__name { font-size: var(--text-md); }
+  .pcard__stage { aspect-ratio: 4 / 5; gap: var(--space-xs); }
+  .pcard__lead { font-size: var(--text-sm); }
+  .rows > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); }
+  .close__sm { grid-column: 1 / -1; }
+  .hero__acts .btn, .close .acts .btn { flex: 1 1 auto; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<div class="util">
+  <div class="container util__bar">
+    <p class="util__note">100% 예약제, 매주 화요일 정기휴무</p>
+    <ul class="util__links">
+      <li><a href="https://map.naver.com/p/entry/place/36912626" target="_blank" rel="noopener">길 찾기</a></li>
+      <li><a href="http://talk.naver.com/wm25hbs" target="_blank" rel="noopener">톡톡 문의</a></li>
+      <li><a href="https://www.instagram.com/eternelhair/" target="_blank" rel="noopener">인스타그램</a></li>
+      <li><a href="tel:02-323-8978">02-323-8978</a></li>
+    </ul>
+  </div>
+</div>
+
+<nav class="nav" aria-label="주 메뉴">
+  <div class="container nav__bar">
+    <a class="wordmark" href="#top" aria-label="에떼르넬 헤어살롱 합정점, 맨 위로">ÉTERNEL<span class="wordmark__place">합정</span></a>
+    <ul class="nav__links">
+      <li><a href="#signature">시술</a></li>
+      <li><a href="#lookbook">룩북</a></li>
+      <li><a href="#price">가격</a></li>
+      <li><a href="#designers">디자이너</a></li>
+      <li><a href="#visit">오시는 길</a></li>
+    </ul>
+    <div class="nav__end">
+      <details class="menu">
+        <summary>메뉴</summary>
+        <ul>
+          <li><a href="#signature">시술</a></li>
+          <li><a href="#lookbook">룩북</a></li>
+          <li><a href="#price">가격</a></li>
+          <li><a href="#designers">디자이너</a></li>
+          <li><a href="#visit">오시는 길</a></li>
+        </ul>
+      </details>
+      <a class="btn btn--primary" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">예약하기</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__media">
+    <figure class="hero__frame hero__frame--a"><img class="photo-grade" src="../assets/img/look-terrace-long-layered.jpg" width="1086" height="1448" alt="테라스에서 찍은 긴 레이어드컷" fetchpriority="high" style="object-position: 50% 30%"></figure>
+    <figure class="hero__frame hero__frame--b"><img class="photo-grade" src="../assets/img/look-terrace-men.jpg" width="1086" height="1448" alt="테라스에서 옆을 보는 남자 머리" style="object-position: 50% 30%"></figure>
+  </div>
+  <div class="container hero__copy">
+    <h1 class="hero__title" id="hero-title"><span>유행보다 오래.</span></h1>
+    <div class="hero__foot">
+      <p class="hero__lede">합정 골목 안 단독 건물, 1:1 상담으로 한&nbsp;사람에게 맞춘 머리를 만듭니다.</p>
+      <div class="acts hero__acts">
+        <a class="btn btn--primary" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버로 예약</a>
+        <a class="btn btn--image" href="#designers">디자이너 고르기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="words band-ink" id="reviews" aria-labelledby="words-title">
+  <div class="container words__head">
+    <h2 id="words-title">손님이 가장 많이 고른 말</h2>
+    <p class="words__src">네이버 플레이스 방문자 리뷰,<br>2026년 11월 15일 기준</p>
+  </div>
+  <div class="container">
+    <ul class="figures">
+      <li><span class="figure">4.93</span><p>방문자 리뷰 평점</p></li>
+      <li><span class="figure"><span>3,426</span><span class="unit">건</span></span><p>방문자 리뷰</p></li>
+      <li><span class="figure"><span>1,074</span><span class="unit">건</span></span><p>블로그와 카페 리뷰</p></li>
+    </ul>
+  </div>
+  <div class="ticker" aria-label="손님이 고른 말과 고른 횟수">
+    <ul class="ticker__row" data-dir="-1">
+      <li>원하는 스타일로 잘해줘요<b>1,362</b></li>
+      <li>친절해요<b>1,319</b></li>
+      <li>시술이 꼼꼼해요<b>1,082</b></li>
+      <li>스타일 추천을 잘해줘요<b>836</b></li>
+    </ul>
+    <ul class="ticker__row ticker__row--soft" data-dir="1">
+      <li>관리법을 잘 알려줘요<b>592</b></li>
+      <li>상담이 자세해요<b>450</b></li>
+      <li>트렌디해요<b>431</b></li>
+      <li>고급스러워요<b>195</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sig" id="signature" aria-labelledby="sig-title">
+  <div class="container">
+    <div class="sig__head">
+      <h2 id="sig-title">시그니처 시술 네 가지</h2>
+      <p>큰 숫자는 네이버 방문자 리뷰에 그 시술이 나온 횟수입니다.</p>
+    </div>
+    <ul class="sig__grid">
+      <li class="tile tile--a">
+        <figure class="tile__media"><img class="photo-grade" src="../assets/img/look-terrace-layered-pink.jpg" width="1206" height="1593" alt="테라스에서 찍은 레이어드컷 C컬펌" loading="lazy" style="object-position: 50% 30%"></figure>
+        <div class="tile__body">
+          <h3>레이어드컷</h3>
+          <p>얼굴형을 부드럽게 감싸는 결과 볼륨.</p>
+          <p class="tile__count"><span>456</span><small>번</small></p>
+        </div>
+      </li>
+      <li class="tile tile--b">
+        <div class="tile__body">
+          <h3>애쉬 계열 염색</h3>
+          <p>튀지 않는 은은한 톤 변화. 리뷰에는 애쉬그레이로 나옵니다.</p>
+          <p class="tile__count"><span>434</span><small>번</small></p>
+        </div>
+      </li>
+      <li class="tile tile--c">
+        <figure class="tile__media"><img class="photo-grade" src="../assets/img/lb-build-perm-back.jpg" width="966" height="1288" alt="긴 머리 레이어드컷에 빌드펌을 한 뒷모습" loading="lazy" style="object-position: 50% 40%"></figure>
+        <div class="tile__body">
+          <h3>빌드펌 (CS컬펌)</h3>
+          <p class="tile__count"><span>342</span><small>번</small></p>
+        </div>
+      </li>
+      <li class="tile tile--d">
+        <figure class="tile__media"><img class="photo-grade" src="../assets/img/lb-volume-magic-eyes.jpg" width="966" height="1288" alt="뿌리볼륨매직을 한 긴 머리, 눈을 감은 정면" loading="lazy" style="object-position: 50% 28%"></figure>
+        <div class="tile__body">
+          <h3>볼륨매직</h3>
+          <p class="tile__count"><span>31</span><small>번</small></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="flow band-ink" id="process" aria-labelledby="flow-title">
+  <div class="flow__pin">
+    <div class="container flow__grid">
+      <div class="flow__text">
+        <h2 id="flow-title">1:1 상담에서 집 관리까지</h2>
+        <ol class="flow__steps">
+          <li><h3>상담</h3><p>한 사람에게 맞춘 디자인을 1:1로 정합니다.</p></li>
+          <li><h3>모발 상태 확인</h3><p>시술 전에 모발 상태부터 보고 손상을 줄입니다.</p></li>
+          <li><h3>시술</h3><p>화려함보다 자연스러움을 고릅니다.</p></li>
+          <li><h3>관리법 안내</h3><p>집에서 유지하는 방법까지 알려 드립니다.</p></li>
+        </ol>
+      </div>
+      <div class="flow__media">
+        <figure class="flow__shot flow__shot--1"><img class="photo-grade" src="../assets/img/space-interior-chairs.jpg" width="966" height="1288" alt="원목 벽과 거울, 의자가 있는 실내 시술 공간" loading="lazy" style="object-position: 50% 45%"><figcaption>실내 시술 공간</figcaption></figure>
+        <figure class="flow__shot flow__shot--2"><img class="photo-grade" src="../assets/img/craft-perm-rods.jpg" width="966" height="1288" alt="펌 롯드와 호일을 감은 머리" loading="lazy" style="object-position: 50% 40%"><figcaption>펌 롯드와 호일</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="looks" id="lookbook" aria-labelledby="looks-title">
+  <div class="container">
+    <div class="looks__head">
+      <h2 id="looks-title">매장에서 완성한 머리</h2>
+      <div class="chips" role="group" aria-label="길이로 거르기">
+        <button class="chip" type="button" aria-pressed="true" data-filter="all">전체 <span>9</span></button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="short">짧은 머리 <span>2</span></button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="medium">중단발 <span>3</span></button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="long">긴 머리 <span>3</span></button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="men">남자 <span>1</span></button>
+      </div>
+    </div>
+    <ul class="looks__grid">
+      <li class="look" data-cat="medium">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/lb-hush-front.jpg" width="966" height="1288" alt="허쉬컷 레이어드 중단발 정면" loading="lazy" style="object-position: 50% 30%"><img class="look__alt photo-grade" src="../assets/img/lb-hush-side.jpg" width="966" height="1288" alt="같은 허쉬컷의 옆모습" loading="lazy" style="object-position: 50% 30%"></div>
+        <div class="look__info"><h3 class="look__name">허쉬컷 레이어드 중단발</h3><p class="look__meta">테라스</p>
+          <fieldset class="angle"><legend class="visually-hidden">각도</legend><input type="radio" name="ang-1" id="ang-1f" value="front" checked><label for="ang-1f">정면</label><input type="radio" name="ang-1" id="ang-1s" value="side"><label for="ang-1s">옆</label></fieldset></div>
+      </li>
+      <li class="look" data-cat="men">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/lb-men-semileaf-front.jpg" width="966" height="1288" alt="남자 세미리프컷 정면" loading="lazy" style="object-position: 50% 30%"><img class="look__alt photo-grade" src="../assets/img/lb-men-semileaf-side.jpg" width="966" height="1288" alt="같은 세미리프컷의 옆모습" loading="lazy" style="object-position: 50% 30%"></div>
+        <div class="look__info"><h3 class="look__name">남자 세미리프컷</h3><p class="look__meta">테라스</p>
+          <fieldset class="angle"><legend class="visually-hidden">각도</legend><input type="radio" name="ang-2" id="ang-2f" value="front" checked><label for="ang-2f">정면</label><input type="radio" name="ang-2" id="ang-2s" value="side"><label for="ang-2s">옆</label></fieldset></div>
+      </li>
+      <li class="look" data-cat="long">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/lb-sleek-long-front.jpg" width="966" height="1421" alt="긴머리 슬릭컷 정면" loading="lazy" style="object-position: 50% 28%"><img class="look__alt photo-grade" src="../assets/img/lb-sleek-long-side.jpg" width="966" height="1420" alt="같은 슬릭컷의 옆모습" loading="lazy" style="object-position: 50% 28%"></div>
+        <div class="look__info"><h3 class="look__name">긴머리 슬릭컷</h3><p class="look__meta">테라스</p>
+          <fieldset class="angle"><legend class="visually-hidden">각도</legend><input type="radio" name="ang-3" id="ang-3f" value="front" checked><label for="ang-3f">정면</label><input type="radio" name="ang-3" id="ang-3s" value="side"><label for="ang-3s">옆</label></fieldset></div>
+      </li>
+      <li class="look" data-cat="short">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/lb-vintage-bob-front.jpg" width="966" height="1670" alt="숏보브 빈티지펌 정면" loading="lazy" style="object-position: 50% 32%"><img class="look__alt photo-grade" src="../assets/img/lb-vintage-bob-side.jpg" width="966" height="1667" alt="같은 빈티지펌의 옆모습" loading="lazy" style="object-position: 50% 32%"></div>
+        <div class="look__info"><h3 class="look__name">숏보브 빈티지펌</h3><p class="look__meta">창가</p>
+          <fieldset class="angle"><legend class="visually-hidden">각도</legend><input type="radio" name="ang-4" id="ang-4f" value="front" checked><label for="ang-4f">정면</label><input type="radio" name="ang-4" id="ang-4s" value="side"><label for="ang-4s">옆</label></fieldset></div>
+      </li>
+      <li class="look" data-cat="long">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/lb-volume-magic-front.jpg" width="966" height="1288" alt="뿌리볼륨매직과 앞머리 정면" loading="lazy" style="object-position: 50% 28%"><img class="look__alt photo-grade" src="../assets/img/lb-volume-magic-side.jpg" width="966" height="1288" alt="같은 볼륨매직의 옆모습" loading="lazy" style="object-position: 50% 28%"></div>
+        <div class="look__info"><h3 class="look__name">뿌리볼륨매직과 앞머리</h3><p class="look__meta">테라스</p>
+          <fieldset class="angle"><legend class="visually-hidden">각도</legend><input type="radio" name="ang-5" id="ang-5f" value="front" checked><label for="ang-5f">정면</label><input type="radio" name="ang-5" id="ang-5s" value="side"><label for="ang-5s">옆</label></fieldset></div>
+      </li>
+      <li class="look" data-cat="medium">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/look-interior-medium-front.jpg" width="966" height="1288" alt="중단발 레이어드와 앞머리 정면" loading="lazy" style="object-position: 50% 30%"><img class="look__alt photo-grade" src="../assets/img/look-interior-medium-side.jpg" width="966" height="1288" alt="같은 중단발 레이어드의 옆모습" loading="lazy" style="object-position: 50% 30%"></div>
+        <div class="look__info"><h3 class="look__name">중단발 레이어드와 앞머리</h3><p class="look__meta">실내 창가</p>
+          <fieldset class="angle"><legend class="visually-hidden">각도</legend><input type="radio" name="ang-6" id="ang-6f" value="front" checked><label for="ang-6f">정면</label><input type="radio" name="ang-6" id="ang-6s" value="side"><label for="ang-6s">옆</label></fieldset></div>
+      </li>
+      <li class="look" data-cat="short">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/look-terrace-shortcut-front.jpg" width="966" height="1101" alt="레이어드 숏컷 정면, 눈을 내리깐 모습" loading="lazy" style="object-position: 50% 30%"><img class="look__alt photo-grade" src="../assets/img/look-terrace-shortcut-side.jpg" width="966" height="1207" alt="같은 레이어드 숏컷의 옆모습" loading="lazy" style="object-position: 50% 30%"></div>
+        <div class="look__info"><h3 class="look__name">레이어드 숏컷</h3><p class="look__meta">테라스</p>
+          <fieldset class="angle"><legend class="visually-hidden">각도</legend><input type="radio" name="ang-7" id="ang-7f" value="front" checked><label for="ang-7f">정면</label><input type="radio" name="ang-7" id="ang-7s" value="side"><label for="ang-7s">옆</label></fieldset></div>
+      </li>
+      <li class="look" data-cat="long">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/look-interior-ccurl.jpg" width="816" height="1450" alt="원목 벽 앞, 긴 레이어드 C컬펌 옆모습" loading="lazy" style="object-position: 50% 30%"></div>
+        <div class="look__info"><h3 class="look__name">긴 레이어드 C컬펌</h3><p class="look__meta">실내 원목 벽 앞</p></div>
+      </li>
+      <li class="look" data-cat="medium">
+        <div class="look__media"><img class="photo-grade" src="../assets/img/look-night-entrance.jpg" width="827" height="1470" alt="밤, 매장 간판 아래 중단발 레이어드" loading="lazy" style="object-position: 50% 35%"></div>
+        <div class="look__info"><h3 class="look__name">중단발 레이어드</h3><p class="look__meta">밤, 매장 입구</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="price band-cloud" id="price" aria-labelledby="price-title">
+  <div class="container">
+    <div class="price__head">
+      <h2 id="price-title">일곱 가지 메뉴와 가격</h2>
+      <p>모든 가격은 일반 디자이너 기준입니다. 원장, 부원장은 가격이 다를 수 있습니다.</p>
+    </div>
+    <ul class="price__grid">
+      <li class="pcard"><div class="pcard__stage"><p class="pcard__name">앞머리컷</p><p class="pcard__price"><span class="num">5,000</span><span class="won">원</span></p></div><p class="pcard__cat"><span>컷</span></p></li>
+      <li class="pcard"><div class="pcard__stage"><p class="pcard__name">컷트</p><p class="pcard__price"><span class="num">22,000</span><span class="won">원</span></p></div><p class="pcard__cat"><span>컷</span></p></li>
+      <li class="pcard"><div class="pcard__stage"><p class="pcard__name">일반펌</p><p class="pcard__price"><span class="num">79,000</span><span class="won">원</span></p></div><p class="pcard__cat"><span>펌</span></p></li>
+      <li class="pcard pcard--pick"><div class="pcard__stage"><div class="pcard__top"><p class="pcard__name">셋팅펌, 디지털펌</p><span class="pcard__tag">매장 추천</span></div><p class="pcard__price"><span class="num">99,000</span><span class="won">원</span></p></div><p class="pcard__cat"><span>펌</span></p></li>
+      <li class="pcard"><div class="pcard__stage"><p class="pcard__name">매직셋팅펌</p><p class="pcard__price"><span class="num">129,000</span><span class="won">원</span></p></div><p class="pcard__cat"><span>펌</span></p></li>
+      <li class="pcard pcard--pick"><div class="pcard__stage"><div class="pcard__top"><p class="pcard__name">브랜드염색</p><span class="pcard__tag">매장 추천</span></div><p class="pcard__price"><span class="num">89,000</span><span class="won">원</span></p></div><p class="pcard__cat"><span>컬러</span></p></li>
+      <li class="pcard"><div class="pcard__stage"><p class="pcard__name">트리시스 클리닉</p><p class="pcard__price"><span class="num">89,000</span><span class="won">원</span></p></div><p class="pcard__cat"><span>클리닉</span></p></li>
+      <li class="pcard pcard--book"><div class="pcard__stage"><p class="pcard__name">처음이라면</p><p class="pcard__lead">디자이너를 정하지 않은 첫 방문 메뉴가 있습니다.</p><a class="btn btn--image" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3352070" target="_blank" rel="noopener">첫 방문 예약</a></div><p class="pcard__cat"><span>네이버 예약</span></p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="team" id="designers" aria-labelledby="team-title">
+  <div class="container">
+    <div class="team__head"><h2 id="team-title">디자이너를 골라 예약</h2></div>
+    <ul class="team__grid">
+      <li class="person">
+        <a class="person__link" href="https://m.booking.naver.com/booking/13/bizes/55543/items/2026919" target="_blank" rel="noopener">
+          <span class="person__media"><img class="photo-grade" src="../assets/img/designer-seungbo.jpg" width="667" height="1000" alt="승보 원장" loading="lazy" style="object-position: 50% 30%"></span>
+          <h3 class="person__name">승보<span>원장</span></h3>
+          <span class="person__spec">숏컷, 디자인커트</span>
+          <span class="person__note">경력 17년 이상</span>
+          <span class="btn person__cta">승보 원장 예약</span>
+        </a>
+      </li>
+      <li class="person">
+        <a class="person__link" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3832033" target="_blank" rel="noopener">
+          <span class="person__media"><img class="photo-grade" src="../assets/img/designer-iseul.jpg" width="667" height="1000" alt="이슬 부원장" loading="lazy" style="object-position: 50% 30%"></span>
+          <h3 class="person__name">이슬<span>부원장</span></h3>
+          <span class="person__spec">레이어드컷, 열펌</span>
+          <span class="btn person__cta">이슬 부원장 예약</span>
+        </a>
+      </li>
+      <li class="person">
+        <a class="person__link" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3146048" target="_blank" rel="noopener">
+          <span class="person__media"><img class="photo-grade" src="../assets/img/designer-jongmin.jpg" width="1000" height="749" alt="종민 디자이너" loading="lazy" style="object-position: 50% 35%"></span>
+          <h3 class="person__name">종민<span>디자이너</span></h3>
+          <span class="person__spec">남자 머리, 리프컷</span>
+          <span class="btn person__cta">종민 디자이너 예약</span>
+        </a>
+      </li>
+      <li class="person">
+        <a class="person__link" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3770190" target="_blank" rel="noopener">
+          <span class="person__media"><img class="photo-grade" src="../assets/img/designer-boram.jpg" width="854" height="640" alt="보람 디자이너" loading="lazy" style="object-position: 55% 35%"></span>
+          <h3 class="person__name">보람<span>디자이너</span></h3>
+          <span class="person__spec">레이어드컷, 고데기펌</span>
+          <span class="btn person__cta">보람 디자이너 예약</span>
+        </a>
+      </li>
+      <li class="person">
+        <a class="person__link" href="https://m.booking.naver.com/booking/13/bizes/55543/items/2008519" target="_blank" rel="noopener">
+          <span class="person__media"><img class="photo-grade" src="../assets/img/designer-phil.jpg" width="854" height="640" alt="필 디자이너" loading="lazy" style="object-position: 45% 35%"></span>
+          <h3 class="person__name">필<span>디자이너</span></h3>
+          <span class="person__spec">토요일, 일요일 근무</span>
+          <span class="person__note">경력 10년 이상</span>
+          <span class="btn person__cta">필 디자이너 예약</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="visit band-cloud" id="visit" aria-labelledby="visit-title">
+  <div class="container visit__grid">
+    <div class="visit__lead">
+      <h2 id="visit-title">합정역 7번 출구, 걸어서 약 5분</h2>
+      <p class="visit__addr">서울 마포구 양화진2길 16<span>지번 합정동 380-20, 골목 안 단독 건물</span></p>
+      <div class="acts">
+        <a class="btn" href="https://map.naver.com/p/entry/place/36912626" target="_blank" rel="noopener">네이버 지도로 보기</a>
+        <a class="btn" href="tel:0507-1397-8979">0507-1397-8979</a>
+      </div>
+    </div>
+    <div class="visit__info">
+      <ol class="week" aria-label="요일별 영업">
+        <li data-day="3">수</li><li data-day="4">목</li><li data-day="5">금</li><li data-day="6">토</li><li data-day="0">일</li><li data-day="1">월</li><li class="is-off" data-day="2">화<small>휴무</small></li>
+      </ol>
+      <dl class="rows">
+        <div><dt>영업</dt><dd>수요일부터 월요일까지 11:00~20:30</dd></div>
+        <div><dt>마지막 접수</dt><dd>펌 18:30, 염색 19:00, 커트 19:30</dd></div>
+        <div><dt>걸어서</dt><dd>양화대교 방향으로 약 220m, 엠파이어리버 아파텔 옆 골목 안쪽 약 10m</dd></div>
+        <div><dt>버스</dt><dd>921, 2200, 2200-1, 3100, 3100N, 마포16 양화진성지공원입구 정류장</dd></div>
+        <div><dt>주차</dt><dd>매장 옆 무료 주차</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="close band-ink" id="space" aria-labelledby="close-title">
+  <div class="close__stage">
+    <figure class="close__photo"><img class="photo-grade" src="../assets/img/space-storefront.jpg" width="1800" height="1350" alt="HAIR SALON ÉTERNEL 간판과 아치형 입구가 있는 골목 안 단독 건물" loading="lazy" style="object-position: 50% 45%"></figure>
+    <div class="container close__copy">
+      <h2 id="close-title">골목 안, 단독 건물</h2>
+      <p>100% 예약제로 운영하고, 결제는 현장에서 합니다.</p>
+      <div class="acts">
+        <a class="btn btn--primary" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버로 예약</a>
+        <a class="btn btn--image" href="http://talk.naver.com/wm25hbs" target="_blank" rel="noopener">톡톡으로 문의</a>
+      </div>
+    </div>
+  </div>
+  <div class="container close__more">
+    <figure class="close__sm"><div class="frame"><img class="photo-grade" src="../assets/img/look-terrace-straight-back.jpg" width="966" height="1288" alt="테라스 식물 앞, 갈색 긴 생머리 뒷모습" loading="lazy" style="object-position: 50% 40%"></div><figcaption>시술 전후 바람 쐬는 테라스</figcaption></figure>
+    <figure class="close__sm"><div class="frame"><img class="photo-grade" src="../assets/img/craft-shampoo-foam.jpg" width="966" height="1288" alt="샴푸대에서 거품을 낸 머리" loading="lazy" style="object-position: 50% 50%"></div><figcaption>샴푸대</figcaption></figure>
+    <div class="close__list">
+      <h3>매장 안에서</h3>
+      <ul>
+        <li>헤어스파, 두피클리닉</li>
+        <li>대기 공간, 무선 인터넷</li>
+        <li>남녀 화장실 구분</li>
+        <li>유아의자</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="container foot__inner">
+    <p class="foot__mast" aria-hidden="true"><span>ÉTERNEL</span></p>
+    <div class="foot__cols">
+      <div><p class="foot__h">예약</p><ul><li><a href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버 예약</a></li><li><a href="https://m.booking.naver.com/booking/13/bizes/55543/items/3352070" target="_blank" rel="noopener">첫 방문 예약</a></li></ul></div>
+      <div><p class="foot__h">문의</p><ul><li><a href="tel:02-323-8978">02-323-8978</a></li><li><a href="http://talk.naver.com/wm25hbs" target="_blank" rel="noopener">네이버 톡톡</a></li></ul></div>
+      <div><p class="foot__h">소식</p><ul><li><a href="https://www.instagram.com/eternelhair/" target="_blank" rel="noopener">인스타그램</a></li><li><a href="https://www.instagram.com/eternel_sb/" target="_blank" rel="noopener">승보 원장 인스타그램</a></li><li><a href="https://blog.naver.com/eternelhair" target="_blank" rel="noopener">블로그</a></li></ul></div>
+      <div><p class="foot__h">찾아오기</p><ul><li><a href="https://map.naver.com/p/entry/place/36912626" target="_blank" rel="noopener">네이버 지도</a></li><li>서울 마포구 양화진2길 16</li></ul></div>
+    </div>
+    <div class="foot__fine">
+      <p>에떼르넬 헤어살롱 합정점, HAIR SALON ÉTERNEL</p>
+      <p data-credits>사진: 에떼르넬 헤어살롱 합정점 네이버 플레이스·블로그</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script>
+(() => {
+  // the nav retracts on the way down and returns on the way up
+  const nav = document.querySelector('.nav');
+  let lastY = scrollY, ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const y = scrollY;
+      const open = nav.querySelector('details[open]');
+      nav.classList.toggle('is-up', y > lastY && y > 400 && !open);
+      lastY = y; ticking = false;
+    });
+  }, { passive: true });
+  nav.querySelectorAll('.menu a').forEach((a) => a.addEventListener('click', () => a.closest('details').removeAttribute('open')));
+
+  // today in the week strip
+  const today = document.querySelector(`.week [data-day="${new Date().getDay()}"]`);
+  if (today) today.setAttribute('aria-current', 'date');
+
+  // lookbook filter chips
+  const chips = [...document.querySelectorAll('.chip')];
+  const looks = [...document.querySelectorAll('.look')];
+  chips.forEach((chip) => chip.addEventListener('click', () => {
+    chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+    const f = chip.dataset.filter;
+    const shown = looks.filter((l) => { const on = f === 'all' || l.dataset.cat === f; l.hidden = !on; return on; });
+    if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) gsap.fromTo(shown, { y: 24, opacity: 0.4 }, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out', stagger: 0.04, overwrite: true });
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  }));
+
+  if (!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const mm = gsap.matchMedia();
+  mm.add({ motion: '(prefers-reduced-motion: no-preference)', wide: '(min-width: 60rem)' }, (ctx) => {
+    const { motion, wide } = ctx.conditions;
+    if (!motion) return;
+
+    // hero: the frames open from below, the line rises out of its mask, then the layers part on scroll
+    gsap.from('.hero__frame', { clipPath: 'inset(100% 0% 0% 0%)', duration: 1.1, ease: 'expo.out', stagger: 0.12 });
+    gsap.from('.hero__title span', { yPercent: 105, duration: 1, ease: 'expo.out', delay: 0.25 });
+    gsap.from('.hero__foot > *', { y: 16, opacity: 0, duration: 0.6, ease: 'expo.out', stagger: 0.08, delay: 0.5 });
+    gsap.set('.hero__frame img', { scale: 1.14 });
+    gsap.to('.hero__frame--a img', { yPercent: 7, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.hero__frame--b img', { yPercent: -5, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.hero__copy', { yPercent: -22, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+    // figures count up once
+    const fmt = (v, dec) => (dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US'));
+    gsap.utils.toArray('[data-count]').forEach((el) => {
+      const end = parseFloat(el.dataset.count), dec = Number(el.dataset.dec || 0), o = { v: 0 };
+      el.textContent = fmt(0, dec);
+      ScrollTrigger.create({ trigger: el, start: 'top 88%', once: true, onEnter: () => gsap.to(o, { v: end, duration: 1.3, ease: 'expo.out', onUpdate: () => { el.textContent = fmt(o.v, dec); } }) });
+      ctx.add(() => () => { el.textContent = fmt(end, dec); });
+    });
+
+    // the words: two rows run sideways against each other as the band scrolls past
+    const ticker = document.querySelector('.ticker');
+    ticker.classList.add('is-moving');
+    gsap.utils.toArray('.ticker__row').forEach((row) => {
+      const dir = Number(row.dataset.dir);
+      const span = () => Math.max(0, row.scrollWidth - innerWidth + 64);
+      gsap.fromTo(row, { x: () => (dir < 0 ? 0 : -span()) }, { x: () => (dir < 0 ? -span() : 0), ease: 'none', scrollTrigger: { trigger: '.words', start: 'top bottom', end: 'bottom top', scrub: 0.4, invalidateOnRefresh: true } });
+    });
+
+    // signature tiles open from the bottom edge, the photograph settles inside
+    gsap.utils.toArray('.tile').forEach((tile, i) => {
+      gsap.set(tile, { clipPath: 'inset(18% 0% 0% 0%)' });
+      const img = tile.querySelector('img');
+      if (img) gsap.set(img, { scale: 1.18 });
+      ScrollTrigger.create({ trigger: tile, start: 'top 85%', once: true, onEnter: () => {
+        gsap.to(tile, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.1, ease: 'expo.out', delay: i * 0.06 });
+        if (img) gsap.to(img, { scale: 1, duration: 1.4, ease: 'expo.out', delay: i * 0.06 });
+      } });
+    });
+
+    // the process holds still on wide screens while the four steps take their turn
+    if (wide) {
+      const flow = document.querySelector('.flow');
+      flow.classList.add('is-pinned');
+      const steps = gsap.utils.toArray('.flow__steps li');
+      gsap.set(steps.slice(1), { opacity: 0.22 });
+      gsap.set('.flow__shot--2', { clipPath: 'inset(100% 0% 0% 0%)' });
+      const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '.flow__pin', start: 'top top', end: '+=150%', pin: true, scrub: 0.5, anticipatePin: 1 } });
+      tl.to(steps[0], { opacity: 0.22, duration: 0.4 }, 1).to(steps[1], { opacity: 1, duration: 0.4 }, 1)
+        .to(steps[1], { opacity: 0.22, duration: 0.4 }, 2).to(steps[2], { opacity: 1, duration: 0.4 }, 2)
+        .to('.flow__shot--2', { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.8 }, 1.8)
+        .to(steps[2], { opacity: 0.22, duration: 0.4 }, 3).to(steps[3], { opacity: 1, duration: 0.4 }, 3)
+        .to({}, { duration: 0.5 });
+      ctx.add(() => () => flow.classList.remove('is-pinned'));
+    }
+
+    // product rows arrive in a short stagger, once
+    ['.look', '.pcard', '.person'].forEach((sel) => {
+      gsap.set(sel, { y: 48, opacity: 0 });
+      ScrollTrigger.batch(sel, { start: 'top 90%', once: true, onEnter: (els) => gsap.to(els, { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', stagger: 0.07, overwrite: true }) });
+    });
+
+    // the building opens to full bleed as it comes up the screen
+    gsap.fromTo('.close__photo', { clipPath: 'inset(9% 7% 9% 7%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none', scrollTrigger: { trigger: '.close__stage', start: 'top 95%', end: 'top 15%', scrub: 0.4 } });
+    gsap.fromTo('.close__photo img', { scale: 1.2 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.close__stage', start: 'top 95%', end: 'bottom top', scrub: 0.4 } });
+    gsap.set('.foot__mast span', { yPercent: 100 });
+    ScrollTrigger.create({ trigger: '.foot__mast', start: 'top 92%', once: true, onEnter: () => gsap.to('.foot__mast span', { yPercent: 0, duration: 1.1, ease: 'expo.out' }) });
+  });
+  addEventListener('load', () => ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>

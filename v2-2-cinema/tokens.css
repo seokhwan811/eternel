@@ -1,0 +1,42 @@
+/* tokens: DESIGN.md(Runway)에서 옮김. 바꾼 점은 지시서 2절대로
+ * 색: Runway의 무채색 인터페이스(검정·흰색·차가운 회색)를 그대로, 순수 #000/#fff는 차가운 쪽으로 아주 살짝 물들임.
+ *     Runway는 상징색이 없으므로 에떼르넬의 포인트 색 하나(영사실 붉은 빛, 주홍)를 더함.
+ * 글꼴: abcNormal(독점) → DM Sans(DESIGN.md가 권한 무료 대체), 한글은 Pretendard. 한 글꼴 체계(제목·본문 같은 스택).
+ * 모서리: Runway 4~8px → 버튼 4px, 사진 0px(사용자 규칙 0~4px). 그림자 없음(Runway 그대로). */
+:root {
+  color-scheme: dark;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 48px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5rem; --text-2xl: 2rem; --text-3xl: 2.5rem;
+  --text-mark: clamp(4rem, 13vw, 12.5rem);
+  --text-display: clamp(2.25rem, 2.2vw + 1.2rem, 3.5rem);
+  --text-display-s: clamp(2.25rem, 3vw + 1rem, 4rem);
+  --text-section: clamp(2rem, 1.6vw + 1.3rem, 3rem);
+  --text-title: clamp(1.375rem, 0.6vw + 1rem, 1.625rem);
+  --text-lead: clamp(1.125rem, 0.3vw + 1rem, 1.25rem);
+  --text-numeral: clamp(7rem, 15vw, 14rem);
+  --text-count: clamp(2.75rem, 3.6vw + 0.5rem, 4.5rem);
+  --text-price: clamp(2rem, 1.6vw + 1rem, 2.75rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms; --dur-slow: 900ms;
+  --color-error: oklch(70% 0.16 27); --color-success: oklch(76% 0.13 150);
+  --container: 1600px; --gutter: 64px; --gap-columns: 24px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  /* 어두운 무대(Runway Black, Dark Surface, Border Dark) */
+  --color-paper: oklch(12% 0.008 260); --color-paper-2: oklch(17% 0.008 260); --color-paper-3: oklch(22% 0.008 260);
+  --color-ink: oklch(95.5% 0.006 260); --color-ink-2: oklch(83% 0.01 260); --color-muted: oklch(66% 0.016 258);
+  --color-rule: oklch(28% 0.008 260);
+  /* 종이처럼 흰 읽기 띠(Near White, Cool Cloud, Charcoal, Cool Slate, Cool Silver) */
+  --color-sheet: oklch(97% 0.005 260); --color-sheet-2: oklch(93.5% 0.009 260);
+  --color-sheet-ink: oklch(17% 0.008 260); --color-sheet-ink-2: oklch(38% 0.008 260); --color-sheet-muted: oklch(50% 0.016 258);
+  --color-sheet-rule: oklch(85% 0.008 260);
+  /* 애쉬 염색 견본 칸 */
+  --color-ash: oklch(62% 0.014 250);
+  /* 포인트 색 하나: 영사실 붉은 빛 */
+  --color-accent: oklch(64% 0.19 28); --color-accent-ink: oklch(12% 0.008 260); --color-focus: oklch(60% 0.2 28);
+  --font-display: "DM Sans", "Pretendard Variable", Pretendard, ui-sans-serif, system-ui, sans-serif;
+  --font-body: "DM Sans", "Pretendard Variable", Pretendard, ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: var(--font-body);
+  --radius-card: 0px; --radius-control: 4px; --radius-pill: 4px; --rule-hair: 1px; --shadow-card: none;
+  --tracking-display: -0.025em; --tracking-body: -0.01em; --display-weight: 400; --label-weight: 450; --control-weight: 600;
+  --photo-grade: saturate(0.8) contrast(1.06) brightness(0.97);
+}

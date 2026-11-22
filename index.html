@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>에떼르넬 헤어살롱 합정점 홈페이지 시안 비교</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+:root {
+  --paper: #f4f2ee; --card: #ffffff; --ink: #1d1b19; --muted: #6b665f; --rule: #d9d4cc; --accent: #8a5a2b;
+  --font: "Pretendard Variable", "Malgun Gothic", sans-serif;
+  --gap: 24px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.55; word-break: keep-all; overflow-wrap: break-word; }
+.wrap { max-width: 1480px; margin: 0 auto; padding: 40px 32px 72px; }
+header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--gap); align-items: end; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+h1 { margin: 0; font-size: 28px; line-height: 1.25; font-weight: 700; }
+.how { margin: 8px 0 0; color: var(--muted); max-width: 70ch; }
+.view { display: flex; border: 1px solid var(--ink); }
+.view button { font: inherit; font-size: 15px; padding: 10px 18px; min-height: 44px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+.view button + button { border-left: 1px solid var(--ink); }
+.view button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.view button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.round { margin-top: 36px; }
+.round__head { display: flex; align-items: baseline; gap: 16px; }
+.round__head h2 { margin: 0; font-size: 22px; }
+.round__head p { margin: 0; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin-top: 16px; }
+.sian { background: var(--card); border: 1px solid var(--rule); border-radius: 2px; display: grid; grid-template-rows: auto auto 1fr auto; }
+.sian__head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: baseline; padding: 18px 20px 12px; }
+.num { font-size: 44px; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; }
+.sian h3 { margin: 0; font-size: 20px; line-height: 1.3; }
+.sian h3 small { display: block; font-size: 14px; font-weight: 400; color: var(--muted); }
+.frame { position: relative; overflow: hidden; background: #ddd; border-block: 1px solid var(--rule); }
+.frame iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; background: #fff; }
+.frame--pc { aspect-ratio: 1440 / 900; }
+.frame--pc iframe { width: 1440px; height: 900px; transform: scale(var(--s, 0.31)); pointer-events: none; }
+.frame--phone { height: 640px; display: none; }
+.frame--phone iframe { width: 375px; height: 812px; left: 50%; transform: translateX(-50%) scale(var(--p, 0.78)); transform-origin: 50% 0; }
+body[data-view="phone"] .frame--pc { display: none; }
+body[data-view="phone"] .frame--phone { display: block; }
+.points { margin: 0; padding: 16px 20px 4px 38px; }
+.points li + li { margin-top: 6px; }
+.open { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 20px 18px; }
+.open a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; font-weight: 600; }
+.open a:hover { background: var(--ink); color: var(--card); }
+.open span { color: var(--muted); font-size: 14px; text-align: right; }
+.round--old .sian { opacity: 0.92; }
+footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; }
+footer p { margin: 0 0 4px; }
+@media (max-width: 1100px) { .grid { grid-template-columns: minmax(0, 1fr); } header { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body data-view="pc">
+<div class="wrap">
+  <header>
+    <div>
+      <h1>에떼르넬 헤어살롱 합정점 홈페이지 시안 비교</h1>
+      <p class="how">마음에 드는 번호를 알려 주세요. 섞어도 됩니다(예: 4번 구성에 5번 3D). 2차(4~6번)는 실제 사이트 디자인 체계를 바탕으로 연출을 풍성하게 했고, 스크롤해야 움직임이 보이니 '크게 보기'로 끝까지 내려 보세요.</p>
+    </div>
+    <div class="view" role="group" aria-label="미리보기 화면 고르기">
+      <button type="button" aria-pressed="true" data-v="pc">PC 첫 화면</button>
+      <button type="button" aria-pressed="false" data-v="phone">폰 화면</button>
+    </div>
+  </header>
+
+  <section class="round" aria-labelledby="r2">
+    <div class="round__head"><h2 id="r2">2차 시안</h2><p>Awesome Design MD의 디자인 체계 + 스크롤 연출</p></div>
+    <div class="grid">
+      <article class="sian" aria-labelledby="s4">
+        <div class="sian__head"><span class="num">4</span><h3 id="s4">갤러리<small>사진이 주인공인 미술관</small></h3></div>
+        <div class="frame frame--pc"><iframe src="v2-1-gallery/index.html" title="시안 4 PC 첫 화면" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="frame frame--phone"><iframe src="v2-1-gallery/index.html" title="시안 4 폰 화면" loading="lazy"></iframe></div>
+        <ul class="points" data-points="4">
+          <li>밝은 칸과 어두운 칸이 번갈아 나오는 전폭 사진 타일</li>
+          <li>스크롤에 맞춰 펼쳐지는 '한 사람의 머리가 완성되는 과정'</li>
+          <li>가로로 넘기는 룩북</li>
+        </ul>
+        <div class="open"><a href="v2-1-gallery/index.html" target="_blank" rel="noopener">크게 보기</a><span>애플 디자인 체계 참고</span></div>
+      </article>
+      <article class="sian" aria-labelledby="s5">
+        <div class="sian__head"><span class="num">5</span><h3 id="s5">시네마 3D<small>영화제 같은 편집과 3D 조형</small></h3></div>
+        <div class="frame frame--pc"><iframe src="v2-2-cinema/index.html" title="시안 5 PC 첫 화면" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="frame frame--phone"><iframe src="v2-2-cinema/index.html" title="시안 5 폰 화면" loading="lazy"></iframe></div>
+        <ul class="points" data-points="5">
+          <li>머리카락 ∞ 3D 조형으로 여는 타이틀 시퀀스</li>
+          <li>필름 릴처럼 흐르는 룩북, 전폭 공간 사진</li>
+          <li>어두운 무대와 흰 읽기 띠의 교차</li>
+        </ul>
+        <div class="open"><a href="v2-2-cinema/index.html" target="_blank" rel="noopener">크게 보기</a><span>런웨이 디자인 체계 참고</span></div>
+      </article>
+      <article class="sian" aria-labelledby="s6">
+        <div class="sian__head"><span class="num">6</span><h3 id="s6">캠페인<small>거대한 글자와 강한 대비</small></h3></div>
+        <div class="frame frame--pc"><iframe src="v2-3-campaign/index.html" title="시안 6 PC 첫 화면" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="frame frame--phone"><iframe src="v2-3-campaign/index.html" title="시안 6 폰 화면" loading="lazy"></iframe></div>
+        <ul class="points" data-points="6">
+          <li>캠페인 사진 위 거대한 한 줄</li>
+          <li>손님이 고른 말이 가로로 흐르는 큰 글자 띠</li>
+          <li>상품 진열처럼 정돈된 룩북과 시술 카드</li>
+        </ul>
+        <div class="open"><a href="v2-3-campaign/index.html" target="_blank" rel="noopener">크게 보기</a><span>나이키 디자인 체계 참고</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="round round--old" aria-labelledby="r1">
+    <div class="round__head"><h2 id="r1">1차 시안(참고)</h2><p>"너무 단순하다"는 의견을 받은 첫 묶음</p></div>
+    <div class="grid">
+      <article class="sian" aria-labelledby="s1">
+        <div class="sian__head"><span class="num">1</span><h3 id="s1">아틀리에<small>밝고 조용한 고급</small></h3></div>
+        <div class="frame frame--pc"><iframe src="sian-1-atelier/index.html" title="시안 1 PC 첫 화면" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="frame frame--phone"><iframe src="sian-1-atelier/index.html" title="시안 1 폰 화면" loading="lazy"></iframe></div>
+        <div class="open"><a href="sian-1-atelier/index.html" target="_blank" rel="noopener">크게 보기</a><span>테마 atelier</span></div>
+      </article>
+      <article class="sian" aria-labelledby="s2">
+        <div class="sian__head"><span class="num">2</span><h3 id="s2">다크룸 3D<small>3D 조형과 흑백 화보</small></h3></div>
+        <div class="frame frame--pc"><iframe src="sian-2-darkroom/index.html" title="시안 2 PC 첫 화면" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="frame frame--phone"><iframe src="sian-2-darkroom/index.html" title="시안 2 폰 화면" loading="lazy"></iframe></div>
+        <div class="open"><a href="sian-2-darkroom/index.html" target="_blank" rel="noopener">크게 보기</a><span>테마 darkroom</span></div>
+      </article>
+      <article class="sian" aria-labelledby="s3">
+        <div class="sian__head"><span class="num">3</span><h3 id="s3">헤지로우<small>짙은 초록의 개성</small></h3></div>
+        <div class="frame frame--pc"><iframe src="sian-3-hedgerow/index.html" title="시안 3 PC 첫 화면" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="frame frame--phone"><iframe src="sian-3-hedgerow/index.html" title="시안 3 폰 화면" loading="lazy"></iframe></div>
+        <div class="open"><a href="sian-3-hedgerow/index.html" target="_blank" rel="noopener">크게 보기</a><span>테마 hedgerow</span></div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p>자료: 네이버 플레이스와 매장 블로그(2026년 11월 15일 확인). 가격·영업시간·디자이너·리뷰 수는 그대로 옮겼고, 없는 내용은 넣지 않았습니다.</p>
+    <p>디자인 체계는 VoltAgent awesome-design-md(MIT)의 DESIGN.md를 참고했고, 브랜드 로고·이름·상징색은 쓰지 않았습니다.</p>
+    <p>사진은 매장이 네이버에 올린 것입니다. 실제로 공개하기 전에 원장님께 원본 사진과 사용 허락을 받아야 합니다.</p>
+  </footer>
+</div>
+<script>
+(() => {
+  const fit = () => {
+    for (const f of document.querySelectorAll('.frame--pc')) f.style.setProperty('--s', (f.clientWidth / 1440).toFixed(4));
+    for (const f of document.querySelectorAll('.frame--phone')) f.style.setProperty('--p', Math.min(1, f.clientWidth / 375, 640 / 812).toFixed(4));
+  };
+  addEventListener('resize', fit); fit();
+  for (const b of document.querySelectorAll('.view button')) b.addEventListener('click', () => {
+    document.body.dataset.view = b.dataset.v;
+    for (const o of document.querySelectorAll('.view button')) o.setAttribute('aria-pressed', String(o === b));
+    fit();
+  });
+})();
+</script>
+</body>
+</html>

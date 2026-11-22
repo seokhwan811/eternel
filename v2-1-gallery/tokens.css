@@ -1,0 +1,58 @@
+/* 2차-1 갤러리 · DESIGN.md(apple)에서 옮긴 토큰. 바꾼 점: Action Blue → 에떼르넬 코냑 한 색, SF Pro → Geist + Pretendard, 알약·18px 모서리 → 2·4px(사용자 규칙), 간격·글자 위계는 DESIGN.md 비율을 hallmark 척도에 맞춤 */
+:root {
+  color-scheme: light;
+  /* 간격: DESIGN.md 4·8·12·17·24·32·48·80 → hallmark 이름에 그대로 얹음 */
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 17px; --space-lg: 24px; --space-xl: 32px; --space-2xl: 48px; --space-3xl: 80px; --space-4xl: 120px;
+  /* 글자: DESIGN.md hero-display·display-lg·lead·tagline·body 17px 위계를 '거대한 헤드라인' 쪽으로 키움 */
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1.0625rem; --text-lg: 1.3125rem; --text-xl: 1.5625rem; --text-2xl: 2rem; --text-3xl: 2.5rem;
+  --text-hero: clamp(2.5rem, 7vw + 0.5rem, 7.5rem);
+  --text-display: clamp(2.5rem, 6vw + 0.5rem, 6.5rem);
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 4rem);
+  --text-tile: clamp(2.5rem, 4.4vw + 0.5rem, 5rem);
+  --text-section: clamp(2.25rem, 3.4vw + 0.4rem, 4.25rem);
+  --text-figure: clamp(4.5rem, 11vw, 11rem);
+  --text-title: clamp(1.25rem, 0.6vw + 1rem, 1.75rem);
+  --text-lead: clamp(1.1875rem, 0.9vw + 0.8rem, 1.75rem);
+  --w-light: 300; --w-reg: 400; --w-semi: 600;
+  --lh-display: 1.1; --lh-body: 1.6;
+  --tracking-display: -0.025em; --tracking-word: -0.045em; --tracking-wordmark: 0.16em;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --gnav-h: 44px; --snav-h: 60px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* 색: DESIGN.md의 무채색(살짝 차가운 #f5f5f7·#1d1d1f·#272729 계열)은 그대로, 포인트만 코냑 한 색 */
+  --color-paper: oklch(99.6% 0.001 286);          /* canvas */
+  --color-paper-2: oklch(97% 0.002 286);          /* canvas-parchment */
+  --color-paper-3: oklch(93.5% 0.003 286);
+  --color-ink: oklch(21.8% 0.004 286);            /* ink #1d1d1f */
+  --color-ink-2: oklch(33% 0.004 286);            /* ink-muted-80 */
+  --color-muted: oklch(49% 0.005 286);            /* ink-muted-48, 대비 맞춰 한 단계 어둡게 */
+  --color-rule: oklch(89.5% 0.003 286);           /* hairline */
+  --color-tile: oklch(26.9% 0.003 286);           /* surface-tile-1 */
+  --color-tile-2: oklch(28.4% 0.003 286);         /* surface-tile-2 */
+  --color-tile-3: oklch(25.6% 0.003 286);         /* surface-tile-3 */
+  --color-void: oklch(13.5% 0.002 286);           /* surface-black 대신 아주 깊은 먹색 */
+  --color-on-dark: oklch(98.6% 0.001 286);        /* body-on-dark */
+  --color-on-dark-2: oklch(84% 0.003 286);        /* body-muted #ccc */
+  --color-on-dark-rule: oklch(40% 0.004 286);
+  --color-accent: oklch(50% 0.105 62);            /* Action Blue 대신: 에떼르넬 코냑 */
+  --color-accent-2: oklch(44% 0.1 62);            /* 누름·올림 */
+  --color-accent-ink: oklch(99.2% 0.002 62);
+  --color-accent-dark: oklch(80% 0.095 66);       /* primary-on-dark 대신: 어두운 칸 위 링크 */
+  --color-focus: oklch(53% 0.15 62);
+  --color-focus-dark: oklch(82% 0.12 66);
+  --color-scrim: oklch(13.5% 0.002 286 / 0.78);
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+
+  /* 글꼴: SF Pro Display/Text → Geist(라틴) + Pretendard Variable(한글) */
+  --font-display: "Geist", "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  --font-body: "Geist", "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  --font-outlier: var(--font-body);
+
+  /* 모양: 사용자 규칙 0~4px */
+  --radius-card: 4px; --radius-pill: 2px; --radius-input: 2px; --rule-hair: 1px;
+  --shadow-card: none;
+  --shadow-photo: 3px 5px 30px 0 oklch(13.5% 0.002 286 / 0.22); /* DESIGN.md의 단 하나의 그림자, 사진에만 */
+}

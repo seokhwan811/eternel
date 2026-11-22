@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에떼르넬 헤어살롱 합정점 | 골목 안 단독 건물, 100% 예약제</title>
+<meta name="description" content="합정역 7번 출구 골목 안 단독 건물의 헤어살롱. 1:1 상담으로 한 사람에게 맞춘 머리를 네이버 예약으로 받습니다.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" rel="stylesheet">
+<style>
+/* Hallmark · shape: Marquee Hero · genre: editorial · theme: Atelier (by request) · job: book · draw: 0b3fa6
+ * hero: Stage · nav: banner over a retracting bar · footer: statement · imagery: photographs, the salon's own 8 (warm con=-6 vib=-10), no library · signature: the salon's own layered cut hung as a matted cotton print beside a poster-size head · review: hero in-thread, finish in-thread
+ * axes: light/roman-serif/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, the head could hang in another salon; tied it to the name in the footer statement and kept every line on this alley, these hours and these five people */
+@import url("./tokens.css");
+@import url("./base.css");
+
+:root {
+  --font-display: "Sentient", "MaruBuriLight", Georgia, serif;
+  --font-serif: "Sentient", "MaruBuri", Georgia, serif;
+  --font-body: "Hanken Grotesk", "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  --text-marquee: clamp(4rem, min(10vw, 22cqi), 9rem);
+  --banner-h: 40px;
+  --bar-h: 64px;
+  --print-h: min(66svh, 600px);
+  --shadow-stock: 0 0 0 1px oklch(30% 0.03 55 / 0.07), 0 1px 2px oklch(30% 0.03 55 / 0.08);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.32 0 0 0 0 0.26 0 0 0 0 0.2 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85 0.2' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.34 0 0 0 0 0.27 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+}
+
+body { word-break: keep-all; overflow-wrap: break-word; color: var(--color-ink-2); line-height: 1.6; }
+h1, h2 { color: var(--color-ink); font-weight: var(--display-weight); }
+h3 { color: var(--color-ink); font-family: var(--font-serif); font-weight: var(--serif-small); letter-spacing: 0; }
+.lead { color: var(--color-ink-2); }
+.num { font-variant-numeric: tabular-nums; }
+.keep { white-space: nowrap; }
+
+/* controls */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 52px; padding: 0 var(--space-lg); border: var(--rule-hair) solid var(--color-ink); border-radius: var(--radius-pill); background: transparent; color: var(--color-ink); font: 400 var(--text-md)/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { background: var(--color-ink); color: var(--color-paper); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn--s { min-height: 44px; padding: 0 var(--space-md); }
+.link { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 0.3em; white-space: nowrap; transition: color var(--dur-short) var(--ease-out); }
+.link:hover { color: var(--color-accent); }
+.link:active { color: var(--color-ink-2); }
+.link:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .btn, .link, .bar { transition: none; } .btn:active { transform: none; } }
+
+/* chrome: a banner over a bar that retracts */
+.skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); background: var(--color-ink); color: var(--color-paper); }
+.skip:focus-visible { top: var(--space-md); outline-color: var(--color-paper); }
+.banner { background: var(--color-ink); color: var(--color-paper); font-size: var(--text-sm); }
+.banner__in { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); min-height: var(--banner-h); }
+.banner a { color: var(--color-paper); text-decoration-color: var(--color-paper); white-space: nowrap; }
+.banner a:focus-visible { outline: 2px solid var(--color-paper); outline-offset: 2px; }
+.bar { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); transition: transform var(--dur-short) var(--ease-out); }
+.bar.is-tucked { transform: translateY(-100%); }
+.bar:focus-within { transform: none; }
+.bar__in { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); height: var(--bar-h); }
+.wordmark { font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-xl); letter-spacing: 0.08em; color: var(--color-ink); text-decoration: none; line-height: 1; }
+.wordmark:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
+.bar__links { display: flex; align-items: center; gap: var(--space-xl); margin: 0; padding: 0; list-style: none; }
+.bar__links a:not(.btn) { color: var(--color-ink); text-decoration: none; font-size: var(--text-sm); white-space: nowrap; }
+.bar__links a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--color-accent); }
+.bar__menu { display: none; position: relative; }
+.bar__menu summary { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-md); list-style: none; cursor: pointer; color: var(--color-ink); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-pill); }
+.bar__menu summary::-webkit-details-marker { display: none; }
+.bar__menu summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.bar__menu ul { position: absolute; right: 0; top: calc(100% + var(--space-xs)); z-index: var(--z-dropdown); margin: 0; padding: var(--space-xs) 0; list-style: none; min-width: 12rem; background: var(--color-card); border: var(--rule-hair) solid var(--color-card-edge); border-radius: 2px; box-shadow: var(--shadow-stock); }
+.bar__menu li a { display: block; padding: var(--space-sm) var(--space-md); color: var(--color-ink); text-decoration: none; }
+.bar__menu li a:hover { background: var(--color-paper-2); }
+.bar__menu li a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: -2px; }
+
+/* hero: Stage, the head on the wide track */
+.hero { position: relative; isolation: isolate; display: grid; align-items: center; min-height: calc(100svh - var(--banner-h) - var(--bar-h)); padding-block: var(--space-xl); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: var(--grain); background-size: 180px; opacity: 0.16; mix-blend-mode: multiply; pointer-events: none; }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-3xl); align-items: center; }
+.hero__text { display: grid; gap: var(--space-lg); min-width: 0; container-type: inline-size; }
+.hero h1 { font-size: var(--text-marquee); line-height: 1.06; letter-spacing: -0.02em; max-width: 9em; }
+.hero .lead { max-width: 30em; }
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg) var(--space-xl); margin-top: var(--space-md); }
+.print { position: relative; margin: 0; padding: var(--space-md) var(--space-md) var(--space-lg); border-radius: 2px; background: var(--fibre) 0 0 / 220px, linear-gradient(160deg, var(--card-lit), var(--color-card) 55%, var(--card-shade)); box-shadow: var(--shadow-stock), inset 1px 1px 0 var(--lit); }
+.print::before { content: ""; position: absolute; inset: 0.875rem; border: var(--rule-hair) solid var(--color-card-edge); pointer-events: none; }
+.print__frame { position: relative; height: var(--print-h); aspect-ratio: 4 / 5; }
+.print figcaption { display: flex; justify-content: space-between; gap: var(--space-md); padding-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-ink); text-shadow: 0 1px 0 var(--lit); }
+.print figcaption span + span { color: var(--color-muted); }
+[data-slot] > img { outline: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent); outline-offset: -1px; }
+
+/* the grid every section sits on */
+.cols { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); }
+.ruled { border-top: var(--rule-head) solid var(--color-ink); }
+
+/* hours and the address: a change of paper */
+.visit { background: var(--color-paper-2); padding-block: var(--section-gap-s); }
+.visit h2 { grid-column: 1 / span 7; margin-bottom: var(--space-2xl); }
+.hours { grid-column: 1 / span 6; width: 100%; border-collapse: collapse; }
+.hours th, .hours td { padding: var(--space-md) 0; border-bottom: var(--rule-hair) solid var(--color-rule); vertical-align: baseline; }
+.hours th { padding-right: var(--space-md); text-align: left; font-family: var(--font-serif); font-weight: var(--serif-small); font-size: var(--text-title); color: var(--color-ink); }
+.hours td { text-align: right; font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-2xl); color: var(--color-ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hours .is-closed th, .hours .is-closed td { color: var(--color-muted); }
+.hours .is-last th { font-family: var(--font-body); font-size: var(--text-md); color: var(--color-ink-2); }
+.where { grid-column: 8 / span 5; display: grid; gap: var(--space-lg); align-content: start; padding-top: var(--space-md); }
+.where h3 { font-size: var(--text-title); }
+.where__lot { color: var(--color-muted); margin-top: calc(-1 * var(--space-sm)); }
+.where dl { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: var(--space-sm) var(--space-md); margin: 0; }
+.where dt { color: var(--color-muted); font-size: var(--text-sm); padding-top: var(--space-3xs); }
+.where dd { margin: 0; }
+.where__links { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-xl); }
+
+/* the room, full-bleed, no head */
+.room { margin: 0; padding-top: var(--section-gap); }
+.room__frame { width: 100%; aspect-ratio: 21 / 9; max-height: 760px; }
+.room figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-xs) var(--space-xl); padding-top: var(--space-md); font-size: var(--text-sm); color: var(--color-ink); }
+.room figcaption span + span { color: var(--color-muted); max-width: 60ch; text-align: right; }
+
+/* the menu, with the booking beside it */
+.menu { padding-block: var(--section-gap-l) var(--section-gap); }
+.menu__head { align-items: end; margin-bottom: var(--space-2xl); }
+.menu__head h2 { grid-column: 1 / span 6; }
+.menu__head .lead { grid-column: 8 / span 5; }
+.prices { grid-column: 1 / span 7; margin: 0; }
+.prices__group { display: grid; grid-template-columns: 9rem minmax(0, 1fr); column-gap: var(--gap-columns); padding-block: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+.prices__group:first-child { border-top: var(--rule-head) solid var(--color-ink); }
+.prices__group h3 { font-size: var(--text-title); padding-top: var(--space-2xs); font-variant-numeric: tabular-nums; }
+.prices__group dl { margin: 0; }
+.prices__row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); padding-block: var(--space-xs); }
+.prices__row + .prices__row { border-top: var(--rule-hair) solid var(--color-rule); }
+.prices__row dt { color: var(--color-ink); min-width: 0; }
+.prices__row dd { margin: 0; flex-shrink: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-xl); color: var(--color-ink); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.pick { margin-left: var(--space-xs); font-size: var(--text-sm); color: var(--color-accent); white-space: nowrap; }
+.first { grid-column: 9 / span 4; align-self: start; position: relative; display: grid; gap: var(--space-md); justify-items: start; padding: var(--space-xl); border-radius: 2px; background: var(--fibre) 0 0 / 220px, linear-gradient(160deg, var(--card-lit), var(--color-card) 55%, var(--card-shade)); box-shadow: var(--shadow-stock), inset 1px 1px 0 var(--lit); text-shadow: 0 1px 0 var(--lit); }
+.first::before { content: ""; position: absolute; inset: 0.875rem; border: var(--rule-hair) solid var(--color-card-edge); pointer-events: none; }
+.first h3 { font-size: var(--text-title); }
+.first .btn { margin-top: var(--space-xs); text-shadow: none; }
+.first__pay { font-size: var(--text-sm); color: var(--color-muted); }
+
+/* what visitors picked */
+.reviews { padding-block: var(--section-gap-s) var(--section-gap); }
+.reviews__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-sm) var(--space-xl); margin-bottom: var(--space-2xl); }
+.reviews__head p { font-size: var(--text-sm); color: var(--color-muted); }
+.figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 0 var(--space-2xl); }
+.figures > div { display: flex; flex-direction: column-reverse; gap: var(--space-xs); padding-inline: var(--space-lg); border-left: var(--rule-hair) solid var(--color-rule); }
+.figures > div:first-child { padding-left: 0; border-left: 0; }
+.figures dt { font-size: var(--text-sm); color: var(--color-ink-2); white-space: nowrap; }
+.figures dd { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-display-s); line-height: 1; letter-spacing: var(--tracking-display); color: var(--color-ink); font-variant-numeric: tabular-nums; }
+.words { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); grid-auto-flow: column; column-gap: var(--space-3xl); margin: 0; padding: 0; list-style: none; }
+.words li { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.words li:nth-child(1), .words li:nth-child(5) { border-top: var(--rule-head) solid var(--color-ink); }
+.words span { color: var(--color-ink); }
+.words b { font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-xl); color: var(--color-ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* the five, each with a booking */
+.team { padding-block: var(--section-gap-s) var(--section-gap); }
+.team__head { grid-column: 1 / span 4; align-self: start; position: sticky; top: calc(var(--bar-h) + var(--space-xl)); display: grid; gap: var(--space-lg); }
+.team__list { grid-column: 5 / span 8; margin: 0; padding: 0; list-style: none; border-top: var(--rule-head) solid var(--color-ink); }
+.person { display: grid; grid-template-columns: 6rem minmax(0, 1fr) 13rem; align-items: center; column-gap: var(--space-lg); padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.person__photo { width: 6rem; aspect-ratio: 4 / 5; }
+.person__text { display: grid; gap: var(--space-2xs); min-width: 0; }
+.person__text p { color: var(--color-ink-2); }
+.person__note { font-size: var(--text-sm); color: var(--color-muted); }
+.person .btn { width: 100%; }
+
+/* the close: the booking beside one last photograph */
+.close { padding-block: var(--section-gap) var(--section-gap-l); }
+.close__grid { align-items: center; }
+.close__text { grid-column: 1 / span 6; display: grid; gap: var(--space-lg); justify-items: start; }
+.close__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg) var(--space-xl); margin-top: var(--space-md); }
+.close__fig { grid-column: 8 / span 5; margin: 0; }
+.close__frame { aspect-ratio: 4 / 5; }
+.close__fig figcaption { display: flex; justify-content: space-between; gap: var(--space-md); padding-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-ink); }
+.close__fig figcaption span + span { color: var(--color-muted); }
+
+/* footer: a statement */
+.foot { background: var(--color-paper-2); padding-block: var(--section-gap-s) var(--space-2xl); border-top: var(--rule-head) solid var(--color-ink); }
+.foot__statement { font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-display-s); line-height: 1.12; letter-spacing: var(--tracking-statement); color: var(--color-ink); max-width: 22em; text-wrap: balance; }
+.foot__links { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-xl); margin: var(--space-2xl) 0 var(--space-xl); padding: var(--space-lg) 0 0; list-style: none; border-top: var(--rule-hair) solid var(--color-rule); }
+.foot__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-xs) var(--space-xl); font-size: var(--text-sm); color: var(--color-muted); }
+
+@media (max-width: 60rem) {
+  .bar__links li:not(:last-child) { display: none; }
+  .bar__menu { display: block; }
+  .bar__right { display: flex; align-items: center; gap: var(--space-sm); }
+  .hero { min-height: 0; padding-block: var(--space-2xl) var(--space-3xl); }
+  .hero__grid { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-xl); }
+  .print { justify-self: stretch; }
+  .print__frame { height: auto; width: 100%; }
+  .cols { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-xl); }
+  .cols > *, .visit h2, .menu__head h2, .menu__head .lead { grid-column: 1 / -1; }
+  .visit h2 { margin-bottom: 0; }
+  .where { padding-top: 0; }
+  .menu__head { row-gap: var(--space-md); }
+  .team__head { position: static; }
+  .room figcaption span + span { text-align: left; }
+}
+@media (max-width: 40rem) {
+  .banner__in { padding-block: var(--space-xs); }
+  .banner a { display: none; }
+  .prices__group { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-xs); }
+  .figures { grid-template-columns: minmax(0, 1fr); }
+  .figures > div { padding: var(--space-md) 0; border-left: 0; border-top: var(--rule-hair) solid var(--color-rule); }
+  .figures > div:first-child { border-top: 0; }
+  .words { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
+  .words li:nth-child(5) { border-top: 0; }
+  .person { grid-template-columns: 5rem minmax(0, 1fr); row-gap: var(--space-sm); }
+  .person__photo { width: 5rem; grid-row: span 2; align-self: start; }
+  .person .btn { grid-column: 2; }
+  .where dl { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); }
+  .where dd + dt { margin-top: var(--space-sm); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header>
+  <div class="banner">
+    <div class="container banner__in">
+      <p>100% 예약제로 운영하며, 매주 화요일은 쉽니다.</p>
+      <a href="https://m.booking.naver.com/booking/13/bizes/55543/items/3352070" target="_blank" rel="noopener">첫 방문 예약</a>
+    </div>
+  </div>
+</header>
+<nav class="bar" aria-label="주요 메뉴">
+  <div class="container bar__in">
+    <a class="wordmark" href="#main" aria-label="에떼르넬 헤어살롱 합정점, 맨 위로">ÉTERNEL</a>
+    <div class="bar__right">
+      <details class="bar__menu">
+        <summary>메뉴</summary>
+        <ul>
+          <li><a href="#menu">가격</a></li>
+          <li><a href="#designers">디자이너</a></li>
+          <li><a href="#visit">오시는 길</a></li>
+        </ul>
+      </details>
+      <ul class="bar__links">
+        <li><a href="#menu">가격</a></li>
+        <li><a href="#designers">디자이너</a></li>
+        <li><a href="#visit">오시는 길</a></li>
+        <li><a class="btn btn--s" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">예약하기</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1 id="hero-h">유행보다 <span class="keep">오래 가는</span> 머리.</h1>
+        <p class="lead">합정 골목 안 단독 건물에서, 1:1 상담으로 한 사람에게 맞춥니다.</p>
+        <div class="hero__actions">
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버로 예약하기</a>
+          <a class="link" href="#menu">가격 먼저 보기</a>
+        </div>
+      </div>
+      <figure class="print">
+        <div class="print__frame" data-slot="hero" data-alt="매장에서 한 레이어드컷, 머리 결이 가까이 보이는 세로 사진">
+          <img src="../assets/img/look-interior-ccurl.jpg" width="816" height="1450" alt="실내 원목 벽 앞, 긴 레이어드컷에 C컬펌을 한 손님이 옆을 보는 모습" style="object-position: 50% 30%" fetchpriority="high">
+        </div>
+        <figcaption><span>레이어드컷, C컬펌</span><span>에떼르넬 합정점</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visit-h">
+    <div class="container cols">
+      <h2 id="visit-h">화요일만 쉽니다.</h2>
+      <table class="hours ruled">
+        <caption class="visually-hidden">영업시간과 시술별 마지막 접수 시간</caption>
+        <tbody>
+          <tr><th scope="row">수요일부터 월요일</th><td>11:00~20:30</td></tr>
+          <tr class="is-closed"><th scope="row">화요일</th><td>정기휴무</td></tr>
+          <tr class="is-last"><th scope="row">펌 마지막 접수</th><td>18:30</td></tr>
+          <tr class="is-last"><th scope="row">염색 마지막 접수</th><td>19:00</td></tr>
+          <tr class="is-last"><th scope="row">커트 마지막 접수</th><td>19:30</td></tr>
+        </tbody>
+      </table>
+      <div class="where ruled">
+        <h3>서울 마포구 양화진2길 16</h3>
+        <p class="where__lot">지번 합정동 380-20, 골목 안 단독 건물</p>
+        <dl>
+          <dt>지하철</dt>
+          <dd>합정역 7번 출구에서 걸어서 약 5분(약 220m). 양화대교 방향으로 걷다가 엠파이어리버 아파텔 옆 골목으로 약 10m 들어옵니다.</dd>
+          <dt>버스</dt>
+          <dd>921, 2200, 2200-1, 3100, 3100N, 마포16을 타고 양화진성지공원입구에서 내립니다.</dd>
+          <dt>주차</dt>
+          <dd>매장 옆에 무료로 세울 수 있습니다.</dd>
+        </dl>
+        <p class="where__links">
+          <a class="link" href="https://map.naver.com/p/entry/place/36912626" target="_blank" rel="noopener">네이버 지도에서 보기</a>
+          <a class="link num" href="tel:02-323-8978">02-323-8978</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <figure class="room" aria-label="매장 외관">
+    <div class="room__frame" data-slot="room" data-alt="골목 안 단독 건물의 외관, 간판과 아치 입구가 보이는 가로 사진">
+      <img src="../assets/img/space-storefront.jpg" width="1800" height="1350" alt="‘HAIR SALON ÉTERNEL’ 간판과 아치형 입구가 있는 골목 안 단독 건물" style="object-position: 50% 45%" loading="lazy">
+    </div>
+    <figcaption class="container">
+      <span>아치 입구로 들어오세요</span>
+      <span>테라스, 헤어스파, 두피클리닉, 대기 공간, 무선 인터넷, 남녀 화장실 구분, 유아의자</span>
+    </figcaption>
+  </figure>
+
+  <section class="menu" id="menu" aria-labelledby="menu-h">
+    <div class="container">
+      <div class="cols menu__head">
+        <h2 id="menu-h">가격은 미리 보고 오세요.</h2>
+        <p class="lead">모두 일반 디자이너 기준입니다. 원장·부원장 시술은 가격이 다를 수 있어요.</p>
+      </div>
+      <div class="cols">
+        <div class="prices">
+          <div class="prices__group">
+            <h3>컷</h3>
+            <dl>
+              <div class="prices__row"><dt>앞머리컷</dt><dd>5,000원</dd></div>
+              <div class="prices__row"><dt>컷트</dt><dd>22,000원</dd></div>
+            </dl>
+          </div>
+          <div class="prices__group">
+            <h3>펌</h3>
+            <dl>
+              <div class="prices__row"><dt>일반펌</dt><dd>79,000원</dd></div>
+              <div class="prices__row"><dt>셋팅펌·디지털펌<span class="pick">매장 추천</span></dt><dd>99,000원</dd></div>
+              <div class="prices__row"><dt>매직셋팅펌</dt><dd>129,000원</dd></div>
+            </dl>
+          </div>
+          <div class="prices__group">
+            <h3>컬러·클리닉</h3>
+            <dl>
+              <div class="prices__row"><dt>브랜드염색<span class="pick">매장 추천</span></dt><dd>89,000원</dd></div>
+              <div class="prices__row"><dt>트리시스 클리닉</dt><dd>89,000원</dd></div>
+            </dl>
+          </div>
+        </div>
+        <aside class="first" aria-labelledby="first-h">
+          <h3 id="first-h">처음 오시나요?</h3>
+          <p>디자이너를 아직 정하지 않았다면, 첫방문 메뉴로 예약하면 됩니다.</p>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3352070" target="_blank" rel="noopener">첫방문 메뉴 예약</a>
+          <p class="first__pay">결제는 매장에서 합니다.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews" aria-labelledby="reviews-h">
+    <div class="container">
+      <div class="reviews__head">
+        <h2 id="reviews-h">손님들이 가장 많이 고른 말</h2>
+        <p>네이버 플레이스 방문자 리뷰, 2026년 11월 15일 기준</p>
+      </div>
+      <dl class="figures">
+        <div><dt>평점</dt><dd>4.93</dd></div>
+        <div><dt>방문자 리뷰</dt><dd>3,426</dd></div>
+        <div><dt>블로그·카페 리뷰</dt><dd>1,074</dd></div>
+      </dl>
+      <ol class="words">
+        <li><span>원하는 스타일로 잘해줘요</span><b>1,362</b></li>
+        <li><span>친절해요</span><b>1,319</b></li>
+        <li><span>시술이 꼼꼼해요</span><b>1,082</b></li>
+        <li><span>스타일 추천을 잘해줘요</span><b>836</b></li>
+        <li><span>관리법을 잘 알려줘요</span><b>592</b></li>
+        <li><span>상담이 자세해요</span><b>450</b></li>
+        <li><span>트렌디해요</span><b>431</b></li>
+        <li><span>고급스러워요</span><b>195</b></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="team" id="designers" aria-labelledby="team-h">
+    <div class="container cols">
+      <div class="team__head">
+        <h2 id="team-h">누구에게 맡길지 고르세요.</h2>
+        <p class="lead">예약 버튼을 누르면 그 디자이너의 네이버 예약 화면이 열립니다.</p>
+      </div>
+      <ul class="team__list">
+        <li class="person">
+          <div class="person__photo" data-slot="designer-1" data-alt="승보 원장 프로필"><img src="../assets/img/designer-seungbo.jpg" width="667" height="1000" alt="승보 원장" style="object-position: 50% 30%" loading="lazy"></div>
+          <div class="person__text"><h3>승보 원장</h3><p>숏컷, 디자인커트</p><p class="person__note">경력 17년 이상</p></div>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/2026919" target="_blank" rel="noopener">승보 원장 예약</a>
+        </li>
+        <li class="person">
+          <div class="person__photo" data-slot="designer-2" data-alt="이슬 부원장 프로필"><img src="../assets/img/designer-iseul.jpg" width="667" height="1000" alt="이슬 부원장" style="object-position: 50% 30%" loading="lazy"></div>
+          <div class="person__text"><h3>이슬 부원장</h3><p>레이어드컷, 열펌</p></div>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3832033" target="_blank" rel="noopener">이슬 부원장 예약</a>
+        </li>
+        <li class="person">
+          <div class="person__photo" data-slot="designer-3" data-alt="종민 디자이너 프로필"><img src="../assets/img/designer-jongmin.jpg" width="1000" height="749" alt="종민 디자이너" style="object-position: 50% 35%" loading="lazy"></div>
+          <div class="person__text"><h3>종민 디자이너</h3><p>남자 머리, 리프컷</p></div>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3146048" target="_blank" rel="noopener">종민 디자이너 예약</a>
+        </li>
+        <li class="person">
+          <div class="person__photo" data-slot="designer-4" data-alt="보람 디자이너 프로필"><img src="../assets/img/designer-boram.jpg" width="854" height="640" alt="보람 디자이너" style="object-position: 55% 35%" loading="lazy"></div>
+          <div class="person__text"><h3>보람 디자이너</h3><p>레이어드컷, 고데기펌</p></div>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3770190" target="_blank" rel="noopener">보람 디자이너 예약</a>
+        </li>
+        <li class="person">
+          <div class="person__photo" data-slot="designer-5" data-alt="필 디자이너 프로필"><img src="../assets/img/designer-phil.jpg" width="854" height="640" alt="필 디자이너" style="object-position: 45% 35%" loading="lazy"></div>
+          <div class="person__text"><h3>필 디자이너</h3><p>주말(토·일) 근무</p><p class="person__note">경력 10년 이상</p></div>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/2008519" target="_blank" rel="noopener">필 디자이너 예약</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="close" id="book" aria-labelledby="book-h">
+    <div class="container cols close__grid">
+      <div class="close__text">
+        <h2 id="book-h">예약은 네이버에서 받습니다.</h2>
+        <p class="lead">모든 자리는 예약으로 채웁니다. 디자이너를 정했다면 위 목록에서 바로 고르세요.</p>
+        <div class="close__actions">
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버로 예약하기</a>
+          <a class="link" href="http://talk.naver.com/wm25hbs" target="_blank" rel="noopener">톡톡으로 묻기</a>
+          <a class="link num" href="tel:0507-1397-8979">0507-1397-8979</a>
+        </div>
+      </div>
+      <figure class="close__fig">
+        <div class="close__frame" data-slot="close" data-alt="매장에서 한 남자 머리, 테라스에서 찍은 세로 사진">
+          <img src="../assets/img/look-terrace-men.jpg" width="1086" height="1448" alt="테라스에서 옆을 보는 남자 손님의 짧은 머리, 검정 터틀넥" style="object-position: 50% 30%" loading="lazy">
+        </div>
+        <figcaption><span>남자 머리</span><span>합정점 테라스</span></figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <p class="foot__statement">에떼르넬은 프랑스어로 <span class="keep">‘영원한’이라는</span> 뜻입니다.</p>
+    <ul class="foot__links">
+      <li><a class="link" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버 예약</a></li>
+      <li><a class="link" href="https://www.instagram.com/eternelhair/" target="_blank" rel="noopener">인스타그램</a></li>
+      <li><a class="link" href="https://www.instagram.com/eternel_sb/" target="_blank" rel="noopener">승보 원장 인스타그램</a></li>
+      <li><a class="link" href="https://blog.naver.com/eternelhair" target="_blank" rel="noopener">블로그</a></li>
+      <li><a class="link" href="https://map.naver.com/p/entry/place/36912626" target="_blank" rel="noopener">네이버 지도</a></li>
+      <li><a class="link num" href="tel:02-323-8978">02-323-8978</a></li>
+    </ul>
+    <div class="foot__legal">
+      <p>에떼르넬 헤어살롱 합정점, 서울 마포구 양화진2길 16</p>
+      <p data-credits>사진: 에떼르넬 헤어살롱 합정점 네이버 플레이스·블로그</p>
+    </div>
+  </div>
+</footer>
+
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+<script>
+(() => {
+  const bar = document.querySelector('.bar');
+  if (!bar) return;
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  let last = window.scrollY, ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      bar.classList.toggle('is-tucked', !still.matches && y > last && y > 480);
+      last = y;
+      ticking = false;
+    });
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

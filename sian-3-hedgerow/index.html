@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에떼르넬 헤어살롱 합정점, 디자이너를 골라 네이버로 예약</title>
+<meta name="description" content="합정역 7번 출구 골목 안 단독 건물에서 디자이너 다섯 명이 1:1 상담으로 머리를 맞추는 에떼르넬 헤어살롱 합정점입니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+/* Hallmark · shape: Catalogue · genre: editorial · theme: Hedgerow (by request) · job: book · draw: 3d5ecb
+ * hero: Counter · nav: slab · footer: index columns · imagery: photographs, the salon's own 10 (5 designers, 4 looks, 1 storefront), natural treatment · signature: the five designers as a field-guide plate under the one chartreuse rule, each portrait with its own Naver booking · hedgerow: hedge, controls square at 2px (theme pill swapped by user rule 5)
+ * axes: dark/high-contrast-serif/chromatic-green · posture: drenched · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: H, five equal portraits could read flat; the head sits at display size over them and one chartreuse rule binds the row into a single plate */
+/* Hallmark · waive 44c · hero: Counter, the portraits run under the head · the five designer portraits are the booking picker and sit in one row beneath a two-line head, so a portrait centres below the text rather than beside it */
+/* Hallmark · reviews: hero in-thread, finish in-thread (no subagents by brief) · verdict ship · fixed in sweep: wordmark class names, sign text out of the caption, portrait zoom so five faces match, hero tightened so all five booking buttons clear 1280x800 */
+@import url("./tokens.css");
+@import url("./base.css");
+
+:root {
+  --font-display: "Prata", "Noto Serif KR", Georgia, serif;
+  --font-body: "Manrope", "Pretendard Variable", Pretendard, ui-sans-serif, system-ui, sans-serif;
+  --radius-control: 2px;
+  --nav-h: 76px;
+}
+
+body { word-break: keep-all; overflow-wrap: break-word; color: var(--color-ink-2); line-height: 1.6; }
+h1, h2, h3 { color: var(--color-ink); line-height: 1.08; }
+a { text-decoration-color: var(--color-accent); }
+a:hover { text-decoration-thickness: 2px; }
+.num, .figure { font-variant-numeric: lining-nums tabular-nums; }
+
+.skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); background: var(--color-ink); color: var(--color-paper); }
+.skip:focus-visible { top: var(--space-md); }
+
+/* controls: the theme's pill pair, squared */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1.5px solid var(--color-accent); border-radius: var(--radius-control); font-family: var(--font-body); font-size: var(--text-md); font-weight: 700; line-height: 1; white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn--primary { background: var(--color-accent); color: var(--color-accent-ink); }
+.btn--primary:hover { background: var(--color-accent-2); border-color: var(--color-accent-2); }
+.btn--line { background: transparent; color: var(--color-accent); }
+.btn--line:hover { background: var(--color-paper-3); color: var(--color-accent-2); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:active { transform: none; } }
+
+/* nav: slab */
+.slab { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: var(--color-paper-2); border-bottom: 1px solid var(--color-rule); }
+.slab__bar { display: flex; align-items: center; gap: var(--space-xl); min-height: var(--nav-h); }
+.slab__mark { display: flex; align-items: baseline; gap: var(--space-sm); color: var(--color-ink); text-decoration: none; }
+.slab__wordmark { font-family: var(--font-display); font-size: var(--text-2xl); letter-spacing: 0.08em; line-height: 1; font-synthesis: none; }
+.slab__place { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); white-space: nowrap; }
+.slab__links { display: flex; gap: var(--space-lg); margin-left: auto; }
+.slab__links a { padding-block: var(--space-xs); font-size: var(--text-sm); font-weight: 500; color: var(--color-ink-2); text-decoration: none; white-space: nowrap; }
+.slab__links a:hover { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); }
+.slab__mark:focus-visible, .slab__links a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+/* hero: Counter, the five designers are the booking */
+.hero { display: grid; align-content: center; min-height: calc(100dvh - var(--nav-h)); padding-block: var(--space-lg); }
+.hero__head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-lg); align-items: end; }
+.hero h1 { grid-column: 1 / span 7; max-width: none; }
+.hero__act { grid-column: 8 / -1; display: grid; justify-items: start; gap: var(--space-lg); }
+.hero__act .lead { color: var(--color-ink-2); text-wrap: balance; }
+.crew { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--gap-columns); margin: var(--space-xl) 0 0; padding: var(--space-lg) 0 0; list-style: none; border-top: 1.5px solid var(--color-accent); }
+.crew__card { display: flex; flex-direction: column; min-width: 0; }
+.crew__photo { margin: 0; aspect-ratio: 4 / 5; border-radius: var(--radius-card); }
+.crew__photo > img { transform: scale(var(--zoom, 1)); transform-origin: 50% 30%; }
+.crew__photo::after, .look__photo::after, .room__photo::after { content: ""; position: absolute; inset: 0; z-index: 2; border: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent); pointer-events: none; }
+.crew__name { margin-top: var(--space-md); font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1.1; color: var(--color-ink); font-synthesis: none; }
+.crew__role { margin-left: var(--space-xs); font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+.crew__note { margin: var(--space-xs) 0 var(--space-md); font-size: var(--text-md); line-height: 1.5; color: var(--color-ink-2); }
+.crew__book { margin-top: auto; align-self: stretch; }
+
+/* price: rows beside the head */
+.price { padding-block: var(--section-gap-s) var(--section-gap); }
+.split { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-2xl); }
+.price__head { grid-column: 1 / span 4; display: grid; align-content: start; justify-items: start; gap: var(--space-lg); }
+.price__note { max-width: 32ch; color: var(--color-ink-2); }
+.price__list { grid-column: 5 / -1; }
+.price__group { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); column-gap: var(--gap-columns); padding-block: var(--space-lg); border-top: 1px solid var(--color-muted); }
+.price__group:last-child { border-bottom: 1px solid var(--color-muted); }
+.price__kind { padding-top: var(--space-sm); font-size: var(--text-title); font-variant-numeric: tabular-nums; }
+.price__rows { margin: 0; padding: 0; list-style: none; }
+.price__row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: var(--space-lg); padding-block: var(--space-sm); border-bottom: 1px solid var(--color-rule); }
+.price__row:last-child { border-bottom: 0; }
+.price__row--pick { border-bottom: 1px solid var(--color-accent); }
+.price__row--pick:last-child { border-bottom: 1px solid var(--color-accent); }
+.price__name { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1.25; color: var(--color-ink); font-synthesis: none; font-variant-numeric: tabular-nums; }
+.price__pick { display: block; margin-top: var(--space-2xs); font-size: var(--text-sm); font-weight: 500; color: var(--color-accent); }
+.price__fig { font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1; color: var(--color-ink); text-align: right; white-space: nowrap; font-synthesis: none; font-variant-numeric: lining-nums tabular-nums; }
+.price__unit { margin-left: var(--space-2xs); font-family: var(--font-body); font-size: var(--text-md); color: var(--color-ink-2); }
+
+/* the room: full-bleed, no head */
+.room { padding-bottom: var(--section-gap-l); }
+.room__photo { margin: 0; width: 100%; aspect-ratio: 21 / 9; max-height: 760px; }
+.room__cap { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-ink-2); }
+
+/* hours and the address, a section of their own */
+.visit { padding-bottom: var(--section-gap-s); }
+.visit__hours { grid-column: 1 / span 6; display: grid; align-content: start; gap: var(--space-xl); }
+.visit__place { grid-column: 8 / -1; display: grid; align-content: start; justify-items: start; gap: var(--space-lg); }
+.visit__time { font-family: var(--font-display); font-size: var(--text-display-s); line-height: 1; color: var(--color-ink); font-synthesis: none; }
+.visit__days { margin-top: var(--space-sm); font-size: var(--text-md); color: var(--color-ink-2); }
+.week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-muted); }
+.week li { display: grid; gap: var(--space-2xs); padding: var(--space-sm) 0 var(--space-sm); border-bottom: 1.5px solid transparent; font-family: var(--font-display); font-size: var(--text-xl); line-height: 1.2; color: var(--color-ink); font-synthesis: none; }
+.week li[aria-current="date"] { border-bottom-color: var(--color-accent); }
+.week .is-off { color: var(--color-muted); }
+.week small { font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+.last { display: grid; gap: var(--space-md); }
+.last__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; }
+.last__list > div { padding-inline: var(--space-lg); border-left: 1px solid var(--color-rule); }
+.last__list > div:first-child { padding-left: 0; border-left: 0; }
+.last__list dt { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+.last__list dd { margin: var(--space-2xs) 0 0; font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1.1; color: var(--color-ink); font-synthesis: none; }
+.visit__addr { font-size: var(--text-2xl); max-width: 16ch; }
+.visit__lot { margin-top: calc(-1 * var(--space-sm)); font-size: var(--text-sm); color: var(--color-muted); }
+.route { display: grid; gap: var(--space-md); margin: 0; width: 100%; border-top: 1px solid var(--color-rule); padding-top: var(--space-lg); }
+.route > div { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); column-gap: var(--space-md); }
+.route dt { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); padding-top: var(--space-3xs); }
+.route dd { margin: 0; color: var(--color-ink-2); }
+
+/* reviews: figures as a bottle label, then the words */
+.voices { padding-block: var(--section-gap-s); background: var(--color-paper-2); }
+.figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; }
+.figs__item { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: var(--space-sm); padding-inline: var(--space-xl); border-left: 1px solid var(--color-rule); }
+.figs__item:first-child { padding-left: 0; border-left: 0; }
+.figs dt { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+.figs dd { margin: 0; font-family: var(--font-display); font-size: var(--text-display-s); line-height: 1; color: var(--color-ink); font-synthesis: none; }
+.figs__item--lead dd { color: var(--color-accent); }
+.figs__unit { margin-left: var(--space-2xs); font-family: var(--font-body); font-size: var(--text-lg); color: var(--color-ink-2); }
+.voices__body { margin-top: var(--space-3xl); padding-top: var(--space-2xl); border-top: 1px solid var(--color-muted); }
+.voices__head { grid-column: 1 / span 4; display: grid; align-content: start; gap: var(--space-md); }
+.voices__src { font-size: var(--text-sm); color: var(--color-muted); }
+.words { grid-column: 5 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); grid-auto-flow: column; column-gap: var(--gap-columns); margin: 0; padding: 0; list-style: none; }
+.words li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: var(--space-md); padding-block: var(--space-md); border-bottom: 1px solid var(--color-rule); }
+.words__say { font-size: var(--text-lg); line-height: 1.35; color: var(--color-ink); }
+.words__n { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; color: var(--color-ink); text-align: right; font-synthesis: none; }
+
+/* looks: the catalogue of one cut */
+.looks { padding-block: var(--section-gap) var(--section-gap); }
+.looks__head { display: grid; gap: var(--space-md); max-width: 46rem; }
+.looks__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap-columns); margin: var(--space-2xl) 0 0; padding: 0; list-style: none; }
+.look { margin: 0; }
+.look__photo { aspect-ratio: 3 / 4; border-radius: var(--radius-card); }
+.look figcaption { margin-top: var(--space-sm); font-family: var(--font-display); font-size: var(--text-xl); line-height: 1.25; color: var(--color-ink); font-synthesis: none; }
+
+/* close: the booking again, on the cream band */
+.band--cream { padding-block: var(--section-gap-s); background: var(--color-ink); color: var(--color-paper); --color-focus: var(--color-paper); }
+.band--cream h2 { color: var(--color-paper); }
+.close__head { grid-column: 1 / span 7; display: grid; align-content: start; gap: var(--space-lg); }
+.close__line { max-width: 40ch; font-size: var(--text-lead); line-height: 1.5; color: var(--color-paper); }
+.close__act { grid-column: 9 / -1; display: grid; align-content: end; gap: var(--space-md); }
+.band--cream .btn { width: 100%; border-color: var(--color-paper); color: var(--color-paper); }
+.band--cream .btn--primary { background: var(--color-paper); color: var(--color-ink); }
+.band--cream .btn--primary:hover { background: var(--color-paper-3); border-color: var(--color-paper-3); }
+.band--cream .btn--line:hover { background: var(--color-ink-2); color: var(--color-paper); }
+.close__talk { justify-self: start; padding-block: var(--space-xs); color: var(--color-paper); font-weight: 500; text-decoration-color: var(--color-accent-deep); }
+.close__talk:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+/* footer: index columns */
+.foot { padding-block: var(--space-3xl) var(--space-2xl); border-top: 1px solid var(--color-muted); }
+.foot__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-xl); }
+.foot__brand { grid-column: 1 / span 4; display: grid; align-content: start; gap: var(--space-md); }
+.foot__wordmark { font-family: var(--font-display); font-size: var(--text-3xl); letter-spacing: 0.08em; line-height: 1; color: var(--color-ink); font-synthesis: none; }
+.foot__col { display: grid; align-content: start; gap: var(--space-sm); }
+.foot__col--book { grid-column: 6 / span 2; }
+.foot__col--tel { grid-column: 8 / span 2; }
+.foot__col--sns { grid-column: 10 / span 3; }
+.foot__label { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+.foot__col ul { display: grid; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+.foot__col a { color: var(--color-ink); text-decoration-color: var(--color-accent); }
+.foot__base { margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-rule); font-size: var(--text-sm); color: var(--color-muted); }
+
+@media (max-width: 64rem) {
+  .hero h1 { grid-column: 1 / -1; }
+  .hero__act { grid-column: 1 / -1; }
+  .crew { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 0; }
+  .crew__card { display: grid; grid-template-columns: 7rem minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: var(--space-lg); padding-block: var(--space-lg); border-bottom: 1px solid var(--color-rule); }
+  .crew__photo { grid-row: 1 / span 3; }
+  .crew__name { margin-top: 0; }
+  .crew__note { margin-bottom: var(--space-md); }
+  .crew__book { align-self: start; justify-self: start; }
+  .price__head, .price__list, .visit__hours, .visit__place, .voices__head, .words, .close__head, .close__act { grid-column: 1 / -1; }
+  .foot__brand { grid-column: 1 / -1; }
+  .foot__col--book, .foot__col--tel, .foot__col--sns { grid-column: span 4; }
+}
+@media (max-width: 48rem) {
+  .slab__links, .slab__place { display: none; }
+  .slab__bar { justify-content: space-between; gap: var(--space-md); }
+  .hero { min-height: 0; padding-block: var(--space-xl) var(--space-2xl); }
+  .crew { margin-top: var(--space-xl); }
+  .crew__card { grid-template-columns: 6rem minmax(0, 1fr); column-gap: var(--space-md); }
+  .price__group { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-xs); }
+  .price__kind { padding-top: 0; }
+  .price__name { font-size: var(--text-lg); }
+  .room__photo { aspect-ratio: 4 / 3; }
+  .figs { grid-template-columns: minmax(0, 1fr); }
+  .figs__item { padding: var(--space-lg) 0; border-left: 0; border-top: 1px solid var(--color-rule); }
+  .figs__item:first-child { padding-top: 0; border-top: 0; }
+  .words { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
+  .looks__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
+  .look figcaption { font-size: var(--text-lg); }
+  .last__list > div { padding-inline: var(--space-md); }
+  .foot__col--book, .foot__col--tel { grid-column: span 6; }
+  .foot__col--sns { grid-column: 1 / -1; }
+}
+@media (max-width: 30rem) {
+  .week li { font-size: var(--text-lg); }
+  .last__list dd { font-size: var(--text-xl); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="slab">
+  <div class="container slab__bar">
+    <a class="slab__mark" href="#top"><span class="slab__wordmark">ÉTERNEL</span><span class="slab__place">헤어살롱 합정점</span></a>
+    <nav class="slab__links" aria-label="페이지 안 이동">
+      <a href="#price">가격</a>
+      <a href="#visit">오시는 길</a>
+      <a href="#looks">스타일</a>
+    </nav>
+    <a class="btn btn--line" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버 예약</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero__head">
+      <h1>합정 골목 안, 디자이너 다섯 명</h1>
+      <div class="hero__act">
+        <p class="lead">유행보다 오래 만족할 머리를, 1:1&nbsp;상담으로 한&nbsp;사람에게 맞춥니다.</p>
+        <a class="btn btn--primary" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3352070" target="_blank" rel="noopener">첫 방문 예약</a>
+      </div>
+    </div>
+    <ul class="crew" aria-label="디자이너와 예약">
+      <li class="crew__card">
+        <figure class="crew__photo" data-slot="designer-seungbo" data-alt="승보 원장 프로필 사진">
+          <img src="../assets/img/designer-seungbo.jpg" width="667" height="1000" alt="승보 원장 프로필 사진" style="object-position: 50% 30%; --zoom: 1.16" fetchpriority="high">
+        </figure>
+        <p class="crew__name">승보<span class="crew__role">원장</span></p>
+        <p class="crew__note">숏컷, 디자인커트<br>경력 17년 이상</p>
+        <a class="btn btn--line crew__book" href="https://m.booking.naver.com/booking/13/bizes/55543/items/2026919" target="_blank" rel="noopener" aria-label="승보 원장 예약하기">예약하기</a>
+      </li>
+      <li class="crew__card">
+        <figure class="crew__photo" data-slot="designer-iseul" data-alt="이슬 부원장 프로필 사진">
+          <img src="../assets/img/designer-iseul.jpg" width="667" height="1000" alt="이슬 부원장 프로필 사진" style="object-position: 50% 30%; --zoom: 1.28">
+        </figure>
+        <p class="crew__name">이슬<span class="crew__role">부원장</span></p>
+        <p class="crew__note">레이어드컷, 열펌</p>
+        <a class="btn btn--line crew__book" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3832033" target="_blank" rel="noopener" aria-label="이슬 부원장 예약하기">예약하기</a>
+      </li>
+      <li class="crew__card">
+        <figure class="crew__photo" data-slot="designer-jongmin" data-alt="종민 디자이너 프로필 사진">
+          <img src="../assets/img/designer-jongmin.jpg" width="1000" height="749" alt="종민 디자이너 프로필 사진" style="object-position: 50% 35%">
+        </figure>
+        <p class="crew__name">종민<span class="crew__role">디자이너</span></p>
+        <p class="crew__note">남자 머리, 리프컷</p>
+        <a class="btn btn--line crew__book" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3146048" target="_blank" rel="noopener" aria-label="종민 디자이너 예약하기">예약하기</a>
+      </li>
+      <li class="crew__card">
+        <figure class="crew__photo" data-slot="designer-boram" data-alt="보람 디자이너 프로필 사진">
+          <img src="../assets/img/designer-boram.jpg" width="854" height="640" alt="보람 디자이너 프로필 사진" style="object-position: 55% 35%">
+        </figure>
+        <p class="crew__name">보람<span class="crew__role">디자이너</span></p>
+        <p class="crew__note">레이어드컷, 고데기펌</p>
+        <a class="btn btn--line crew__book" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3770190" target="_blank" rel="noopener" aria-label="보람 디자이너 예약하기">예약하기</a>
+      </li>
+      <li class="crew__card">
+        <figure class="crew__photo" data-slot="designer-phil" data-alt="필 디자이너 프로필 사진">
+          <img src="../assets/img/designer-phil.jpg" width="854" height="640" alt="필 디자이너 프로필 사진" style="object-position: 45% 35%">
+        </figure>
+        <p class="crew__name">필<span class="crew__role">디자이너</span></p>
+        <p class="crew__note">토요일과 일요일 근무<br>경력 10년 이상</p>
+        <a class="btn btn--line crew__book" href="https://m.booking.naver.com/booking/13/bizes/55543/items/2008519" target="_blank" rel="noopener" aria-label="필 디자이너 예약하기">예약하기</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="price" id="price" aria-labelledby="price-h">
+  <div class="container split">
+    <div class="price__head">
+      <h2 id="price-h">일반 디자이너 기준 가격</h2>
+      <p class="price__note">원장과 부원장의 시술은 가격이 다를 수 있습니다.</p>
+      <a class="btn btn--line" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">메뉴 골라 예약</a>
+    </div>
+    <div class="price__list">
+      <div class="price__group">
+        <h3 class="price__kind">컷</h3>
+        <ul class="price__rows">
+          <li class="price__row"><span class="price__name">앞머리컷</span><span class="price__fig num">5,000<span class="price__unit">원</span></span></li>
+          <li class="price__row"><span class="price__name">컷트</span><span class="price__fig num">22,000<span class="price__unit">원</span></span></li>
+        </ul>
+      </div>
+      <div class="price__group">
+        <h3 class="price__kind">펌</h3>
+        <ul class="price__rows">
+          <li class="price__row"><span class="price__name">일반펌</span><span class="price__fig num">79,000<span class="price__unit">원</span></span></li>
+          <li class="price__row price__row--pick"><span class="price__name">셋팅펌, 디지털펌<span class="price__pick">매장 추천</span></span><span class="price__fig num">99,000<span class="price__unit">원</span></span></li>
+          <li class="price__row"><span class="price__name">매직셋팅펌</span><span class="price__fig num">129,000<span class="price__unit">원</span></span></li>
+        </ul>
+      </div>
+      <div class="price__group">
+        <h3 class="price__kind">컬러와 클리닉</h3>
+        <ul class="price__rows">
+          <li class="price__row price__row--pick"><span class="price__name">브랜드염색<span class="price__pick">매장 추천</span></span><span class="price__fig num">89,000<span class="price__unit">원</span></span></li>
+          <li class="price__row"><span class="price__name">트리시스 클리닉</span><span class="price__fig num">89,000<span class="price__unit">원</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="room" aria-label="매장 외관">
+  <figure class="room__photo" data-slot="room" data-alt="매장 외관, 간판과 입구가 함께 보이는 가로 사진">
+    <img src="../assets/img/space-storefront.jpg" width="1800" height="1350" alt="골목 안 단독 건물 외관, HAIR SALON ÉTERNEL 간판과 아치형 입구" style="object-position: 50% 42%" loading="lazy">
+  </figure>
+  <div class="container">
+    <p class="room__cap">골목 안 단독 건물, 간판 아래 아치형 입구.</p>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="container split">
+    <div class="visit__hours">
+      <div>
+        <h2 id="visit-h">화요일만 쉽니다</h2>
+      </div>
+      <div>
+        <p class="visit__time num">11:00 ~ 20:30</p>
+        <p class="visit__days">수요일부터 월요일까지, 매주 화요일 정기휴무</p>
+      </div>
+      <ol class="week" aria-label="요일별 영업">
+        <li data-day="1">월</li>
+        <li class="is-off" data-day="2">화<small>휴무</small></li>
+        <li data-day="3">수</li>
+        <li data-day="4">목</li>
+        <li data-day="5">금</li>
+        <li data-day="6">토</li>
+        <li data-day="0">일</li>
+      </ol>
+      <div class="last">
+        <h3>마지막 접수</h3>
+        <dl class="last__list">
+          <div><dt>펌</dt><dd class="num">18:30</dd></div>
+          <div><dt>염색</dt><dd class="num">19:00</dd></div>
+          <div><dt>커트</dt><dd class="num">19:30</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="visit__place">
+      <h3 class="visit__addr">서울 마포구 양화진2길 16</h3>
+      <p class="visit__lot">지번 합정동 380-20</p>
+      <dl class="route">
+        <div><dt>지하철</dt><dd>합정역 7번 출구에서 걸어서 약&nbsp;5분, 약&nbsp;220m입니다. 양화대교 방향으로 걷다가 엠파이어리버 아파텔 옆 골목 안쪽 약&nbsp;10m.</dd></div>
+        <div><dt>버스</dt><dd>921, 2200, 2200-1, 3100, 3100N, 마포16번을 타고 양화진성지공원입구 정류장에서 내립니다.</dd></div>
+        <div><dt>주차</dt><dd>매장 옆 무료 주차</dd></div>
+      </dl>
+      <a class="btn btn--line" href="https://map.naver.com/p/entry/place/36912626" target="_blank" rel="noopener">네이버 지도에서 보기</a>
+    </div>
+  </div>
+</section>
+
+<section class="voices" id="reviews" aria-labelledby="voices-h">
+  <div class="container">
+    <dl class="figs">
+      <div class="figs__item figs__item--lead"><dt>네이버 평점</dt><dd class="figure">4.93</dd></div>
+      <div class="figs__item"><dt>방문자 리뷰</dt><dd class="figure">3,426<span class="figs__unit">건</span></dd></div>
+      <div class="figs__item"><dt>블로그와 카페 리뷰</dt><dd class="figure">1,074<span class="figs__unit">건</span></dd></div>
+    </dl>
+    <div class="voices__body split">
+      <div class="voices__head">
+        <h2 id="voices-h">손님이 가장 많이 고른 말</h2>
+        <p class="voices__src">네이버 플레이스, 2026년 11월 15일 기준</p>
+      </div>
+      <ol class="words">
+        <li><span class="words__say">원하는 스타일로 잘해줘요</span><span class="words__n num">1,362</span></li>
+        <li><span class="words__say">친절해요</span><span class="words__n num">1,319</span></li>
+        <li><span class="words__say">시술이 꼼꼼해요</span><span class="words__n num">1,082</span></li>
+        <li><span class="words__say">스타일 추천을 잘해줘요</span><span class="words__n num">836</span></li>
+        <li><span class="words__say">관리법을 잘 알려줘요</span><span class="words__n num">592</span></li>
+        <li><span class="words__say">상담이 자세해요</span><span class="words__n num">450</span></li>
+        <li><span class="words__say">트렌디해요</span><span class="words__n num">431</span></li>
+        <li><span class="words__say">고급스러워요</span><span class="words__n num">195</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="looks" id="looks" aria-labelledby="looks-h">
+  <div class="container">
+    <div class="looks__head">
+      <h2 id="looks-h">레이어드컷, 리뷰에 456번</h2>
+      <p class="lead">얼굴형을 부드럽게 감싸는 결과 볼륨. 네이버 리뷰에 가장 많이 나온 시술입니다.</p>
+    </div>
+    <ul class="looks__grid">
+      <li>
+        <figure class="look">
+          <div class="look__photo" data-slot="look-short" data-alt="레이어드 숏컷 손님 사진">
+            <img src="../assets/img/look-terrace-shortcut-side.jpg" width="966" height="1207" alt="테라스에서 찍은 레이어드 숏컷 옆모습" style="object-position: 50% 30%" loading="lazy">
+          </div>
+          <figcaption>레이어드 숏컷</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="look">
+          <div class="look__photo" data-slot="look-medium" data-alt="중단발 레이어드 손님 사진">
+            <img src="../assets/img/look-night-entrance.jpg" width="827" height="1470" alt="밤, 매장 간판 아래에서 찍은 중단발 레이어드" style="object-position: 50% 35%" loading="lazy">
+          </div>
+          <figcaption>중단발 레이어드</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="look">
+          <div class="look__photo" data-slot="look-long" data-alt="긴 레이어드컷 손님 사진">
+            <img src="../assets/img/look-terrace-long-layered.jpg" width="1086" height="1448" alt="테라스 식물 앞에서 찍은 긴 레이어드컷" style="object-position: 50% 30%" loading="lazy">
+          </div>
+          <figcaption>긴 레이어드컷</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="look">
+          <div class="look__photo" data-slot="look-ccurl" data-alt="긴 레이어드 C컬펌 손님 사진">
+            <img src="../assets/img/look-interior-ccurl.jpg" width="816" height="1450" alt="실내 원목 벽 앞에서 찍은 긴 레이어드 C컬펌" style="object-position: 50% 30%" loading="lazy">
+          </div>
+          <figcaption>긴 레이어드 C컬펌</figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band--cream" id="book" aria-labelledby="close-h">
+  <div class="container split">
+    <div class="close__head">
+      <h2 id="close-h">100% 예약제, 결제는 현장에서</h2>
+      <p class="close__line">수요일부터 월요일까지 11:00 ~ 20:30, 화요일은 쉽니다.<br>서울&nbsp;마포구&nbsp;양화진2길&nbsp;16, 매장 옆 무료 주차.</p>
+    </div>
+    <div class="close__act">
+      <a class="btn btn--primary" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버 예약</a>
+      <a class="btn btn--line" href="tel:02-323-8978">전화 02-323-8978</a>
+      <a class="close__talk" href="http://talk.naver.com/wm25hbs" target="_blank" rel="noopener">네이버 톡톡으로 문의하기</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="container foot__grid">
+    <div class="foot__brand">
+      <p class="foot__wordmark">ÉTERNEL</p>
+      <p>에떼르넬 헤어살롱 합정점<br>서울 마포구 양화진2길 16</p>
+    </div>
+    <div class="foot__col foot__col--book">
+      <p class="foot__label">예약</p>
+      <ul>
+        <li><a href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버 예약</a></li>
+        <li><a href="https://m.booking.naver.com/booking/13/bizes/55543/items/3352070" target="_blank" rel="noopener">첫 방문 예약</a></li>
+        <li><a href="http://talk.naver.com/wm25hbs" target="_blank" rel="noopener">네이버 톡톡</a></li>
+      </ul>
+    </div>
+    <div class="foot__col foot__col--tel">
+      <p class="foot__label">전화</p>
+      <ul>
+        <li><a href="tel:02-323-8978">02-323-8978</a></li>
+        <li><a href="tel:0507-1397-8979">0507-1397-8979</a></li>
+      </ul>
+    </div>
+    <div class="foot__col foot__col--sns">
+      <p class="foot__label">채널</p>
+      <ul>
+        <li><a href="https://www.instagram.com/eternelhair/" target="_blank" rel="noopener">인스타그램</a></li>
+        <li><a href="https://www.instagram.com/eternel_sb/" target="_blank" rel="noopener">승보 원장 인스타그램</a></li>
+        <li><a href="https://blog.naver.com/eternelhair" target="_blank" rel="noopener">블로그</a></li>
+        <li><a href="https://map.naver.com/p/entry/place/36912626" target="_blank" rel="noopener">네이버 지도</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <p class="foot__base" data-credits>사진: 에떼르넬 헤어살롱 합정점 네이버 플레이스·블로그</p>
+  </div>
+</footer>
+
+<script>
+(function () { var d = new Date().getDay(); var li = document.querySelector('.week [data-day="' + d + '"]'); if (li) li.setAttribute('aria-current', 'date'); })();
+</script>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+</body>
+</html>

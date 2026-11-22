@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에떼르넬 헤어살롱 합정점, 유행보다 오래 가는 머리</title>
+<meta name="description" content="합정역 7번 출구 골목 안 단독 건물. 100% 예약제로 1:1 상담부터 시작하는 에떼르넬 헤어살롱 합정점의 룩북, 가격, 디자이너, 오시는 길입니다.">
+<script>document.documentElement.classList.add('js');</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.min.js"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* Hallmark · shape: Photographic (a festival reel: a 3D title card, then frames) · genre: atmospheric · theme: brand (DESIGN.md: Runway, locked, recoloured for Éternel)
+ * paper: oklch(12% 0.008 260) with a reading sheet oklch(97% 0.005 260) · accent: oklch(64% 0.19 28) · display: DM Sans with Pretendard · body: DM Sans with Pretendard · hero: Poster (a 3D infinity of densely bundled hair full-bleed, Three.js, the Éternel title over its crossing, head and actions low) · nav: transparent bar over the stage (DESIGN.md) · footer: statement (DESIGN.md mission close) · signature: the Éternel title over a dense bundle of hair wound into a 3D infinity, a red rim light along its edge (11/22, user chose 1 of lab/3d-full)
+ * axes: dark/grotesk-sans/chromatic-red · posture: restrained · job: book · imagery: photographs 58 (46 from the 11/18 set, 12 from the place and blog), the salon's own, one film grade · contrast: pass · fold: pass · v2.0.0 */
+/* 11/22 · 11/18 사진 반영: 소개·대표 시술 1칸·여자 머리 9장면(필름 띠)·남자 머리 12장면(밀착 인화, 이름은 매장 블로그 글 제목)·더 보기 19장 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S5 R3 V5 · weakest: R, the brief asks for far more motion than one reveal; every move sits on structure (title, photos, numbers, the reel), never on body text, and all of it stops under reduced motion */
+/* Hallmark · reviews: hero review and finish review in-thread (no subagents, by the brief) */
+/* Hallmark · changed from DESIGN.md: tracked uppercase labels set in sentence case untracked (Floor 67); white reading bands kept from its Level 3 light sections, by the brief */
+/* Hallmark · dismissed 11 · the salon brief asks for a zoom on the lookbook frames and designer cards; the zoom stays inside each clipped frame, every caption shows on touch, and it stops under reduced motion */
+/* Hallmark · dismissed 59 · the salon brief asks for nine to eleven sections so the page stops reading as simple; the 11/22 men's contact sheet (the user's own photo set) makes twelve, each screen still holds about eighty words */
+/* Hallmark · waive 49b · the men's style names are the salon blog's own post titles · on a 320px phone the two-column contact sheet wraps the longest style names between words, never inside one, and 375px keeps all but one on a line */
+/* Hallmark · waive 83 · the user supplied this photograph set (11/18) for the page · a salon lookbook is the product here: the user gathered the salon's own photographs, so pictures lead below the hero while every screen keeps its type */
+@import url("./tokens.css");
+@import url("./base.css");
+
+:root { --nav-h: 72px; --frame-w: clamp(15rem, 21vw, 21rem); }
+body { line-height: 1.5; letter-spacing: var(--tracking-body); word-break: keep-all; overflow-wrap: break-word; }
+h1, h2, h3 { line-height: 1.1; }
+h2 { font-size: var(--text-section); max-width: 22ch; }
+h3 { font-size: var(--text-title); line-height: 1.2; }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); }
+.note { font-size: var(--text-sm); font-weight: var(--label-weight); line-height: 1.43; color: var(--color-muted); }
+.num { font-family: var(--font-display); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+.skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); background: var(--color-ink); color: var(--color-paper); }
+.skip:focus-visible { top: var(--space-md); }
+
+/* links and controls: Runway's restrained 4px controls, weight 600 at 14px */
+a { color: inherit; text-decoration-color: var(--color-muted); transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out); }
+a:hover { text-decoration-color: var(--color-accent); }
+a:active { color: var(--color-ink-2); }
+a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-ink); border-radius: var(--radius-control); background: transparent; color: var(--color-ink); font: var(--control-weight) var(--text-sm)/1 var(--font-body); letter-spacing: 0; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { background: var(--color-ink); color: var(--color-paper); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn[aria-busy="true"] { cursor: progress; }
+.btn--primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+.btn--primary:hover { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-paper); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+
+/* the reading sheet: a white band swaps every colour it paints */
+.sheet { background: var(--color-sheet); color: var(--color-sheet-ink); }
+.sheet a { text-decoration-color: var(--color-sheet-muted); }
+.sheet a:active { color: var(--color-sheet-ink-2); }
+.sheet .note { color: var(--color-sheet-muted); }
+.sheet .btn:not(.btn--primary) { border-color: var(--color-sheet-ink); color: var(--color-sheet-ink); }
+.sheet .btn:hover { background: var(--color-sheet-ink); border-color: var(--color-sheet-ink); color: var(--color-sheet); }
+
+/* photographs: one film grade on every frame */
+.ph { position: relative; overflow: hidden; margin: 0; background: var(--color-paper-3); }
+.ph > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: var(--photo-grade); }
+figcaption { font-size: var(--text-sm); font-weight: var(--label-weight); line-height: 1.43; color: var(--color-muted); }
+.sheet figcaption { color: var(--color-sheet-muted); }
+
+/* nav: transparent over the stage */
+.nav { position: absolute; inset: 0 0 auto; z-index: var(--z-raised); }
+.nav__in { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); min-height: var(--nav-h); }
+.wordmark { font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-lg); line-height: 1.1; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: var(--color-ink); white-space: nowrap; }
+.nav__links { display: flex; align-items: center; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
+.nav__link { padding-block: var(--space-sm); color: var(--color-ink-2); text-decoration: none; white-space: nowrap; }
+.nav__link:hover { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); }
+
+/* hero: the 3D title card */
+.hero { position: relative; isolation: isolate; display: grid; align-content: end; min-height: 100svh; padding-block: var(--space-3xl) var(--space-xl); overflow: clip; }
+.stage { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: var(--color-paper); }
+.stage picture, .stage img, .stage__canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.stage img { object-fit: cover; }
+.stage::after { content: ""; position: absolute; inset: auto 0 0; height: 42%; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-paper) 88%, transparent)); }
+/* 3D: 첫 장면이 그려지면(.is-live) 캔버스를 드러낸다. 그 전·스크립트 꺼짐·WebGL 없음은 정지 그림 그대로 */
+.stage__canvas { opacity: 0; transition: opacity var(--dur-long) var(--ease-out); }
+.stage.is-live .stage__canvas { opacity: 1; }
+/* 3D가 켜질 수 있으면 정지 그림을 처음부터 숨겨 깜빡임을 없앤다. 스크립트 꺼짐·동작 줄이기·WebGL 실패(.no-3d)면 정지 그림이 보인다 */
+@media (prefers-reduced-motion: no-preference) { .js .stage:not(.no-3d) picture { opacity: 0; } }
+/* 멈춤 버튼은 조용하게: 작은 글자, 흐린 색, 선 색 테두리. 누르는 면적은 32px 이상 */
+.stage-toggle { position: absolute; z-index: 4; top: calc(var(--nav-h) + var(--space-xs)); right: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter))); min-height: 32px; padding: 0 var(--space-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-control); background: transparent; color: var(--color-muted); font: var(--label-weight) var(--text-sm)/1 var(--font-body); white-space: nowrap; cursor: pointer; transition: color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out); }
+.stage-toggle:hover { border-color: var(--color-muted); color: var(--color-ink); }
+.stage-toggle:active { color: var(--color-ink-2); }
+.stage-toggle:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.stage-toggle:disabled { opacity: 0.55; cursor: not-allowed; }
+.hero__mark { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; padding-bottom: var(--space-3xl); font-size: var(--text-mark); line-height: 1; letter-spacing: -0.045em; color: var(--color-ink); -webkit-text-stroke: 0.024em var(--color-paper); paint-order: stroke fill; pointer-events: none; white-space: nowrap; }
+.hero__in { align-items: end; row-gap: var(--space-lg); }
+.hero h1 { grid-column: 1 / span 7; max-width: none; }
+.hero__line { display: block; position: relative; z-index: 3; }
+.hero__aside { position: relative; z-index: 3; grid-column: 9 / -1; display: grid; gap: var(--space-lg); justify-items: start; }
+.hero__aside .lead { color: var(--color-ink-2); font-size: var(--text-lead); line-height: 1.4; }
+
+/* ③ the article on the reading sheet */
+.about { position: relative; z-index: 2; padding-block: var(--section-gap) var(--section-gap-s); }
+.about__grid { row-gap: var(--space-xl); align-items: start; }
+.about h2 { grid-column: 1 / span 8; font-size: var(--text-display-s); max-width: 15ch; }
+.about__text { grid-column: 1 / span 7; columns: 2; column-gap: var(--space-xl); column-rule: 1px solid var(--color-sheet-rule); }
+.about__text p { break-inside: avoid; margin-bottom: var(--space-md); color: var(--color-sheet-ink-2); }
+.about__text .about__stand { font-size: var(--text-lead); line-height: 1.45; color: var(--color-sheet-ink); }
+.about__fig { grid-column: 9 / -1; grid-row: 1 / span 2; margin: 0 0 calc(-1 * (var(--section-gap-s) + var(--space-3xl))); }
+.about__fig .ph { aspect-ratio: 3 / 4; }
+.about__fig .ph > img { transform: scale(1.12); }
+.about__fig figcaption { margin-top: var(--space-sm); }
+
+/* signature: four treatments, mixed sizes, numbers over the frames */
+.sig { padding-block: calc(var(--section-gap-s) + var(--space-3xl)) var(--section-gap); }
+.sig__head { align-items: end; row-gap: var(--space-md); margin-bottom: var(--space-2xl); }
+.sig__head h2 { grid-column: 1 / span 7; }
+.sig__head .note { grid-column: 1 / span 7; }
+.sig__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: clamp(26rem, 40vw, 40rem) clamp(24rem, 34vw, 34rem); gap: var(--gap-columns); }
+.tile { position: relative; overflow: hidden; display: grid; align-content: end; }
+.tile--a { grid-column: 1 / span 7; }
+.tile--b { grid-column: 8 / -1; }
+.tile--c { grid-column: 1 / span 5; }
+.tile--d { grid-column: 6 / -1; }
+.tile > .ph { position: absolute; inset: 0; }
+.tile > .ph::after { content: ""; position: absolute; inset: 40% 0 0; z-index: 1; background: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-paper) 86%, transparent)); }
+.tile__txt { position: relative; z-index: 2; display: grid; gap: var(--space-xs); padding: var(--space-xl); }
+.tile__count { display: flex; align-items: baseline; gap: var(--space-xs); margin-top: var(--space-xs); }
+.tile__count .num { font-size: var(--text-count); line-height: 1; min-width: 3ch; font-variant-numeric: tabular-nums; }
+.tile__unit { font-size: var(--text-sm); font-weight: var(--label-weight); color: var(--color-ink-2); }
+.tile__line { color: var(--color-ink-2); max-width: 32ch; }
+.tile--ash { background: var(--color-ash); color: var(--color-accent-ink); }
+.tile--ash .tile__unit, .tile--ash .tile__line { color: var(--color-accent-ink); }
+
+/* the words guests chose, on the sheet */
+.voices { padding-block: var(--section-gap) var(--section-gap); }
+.voices__grid { align-items: start; row-gap: var(--space-2xl); }
+.voices__score { grid-column: 1 / span 5; display: grid; gap: var(--space-md); align-content: start; }
+.voices__num { display: block; font-size: var(--text-numeral); line-height: 0.9; letter-spacing: -0.05em; min-width: 0; }
+.voices__label { font-size: var(--text-lead); line-height: 1.4; color: var(--color-sheet-ink-2); }
+.kw { grid-column: 7 / -1; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-sheet-ink); }
+.kw li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: var(--space-lg); row-gap: var(--space-xs); padding-block: var(--space-sm); border-bottom: 1px solid var(--color-sheet-rule); }
+.kw__word { font-size: var(--text-lg); line-height: 1.3; }
+.kw__n { font-size: var(--text-2xl); line-height: 1; }
+.kw__bar { grid-column: 1 / -1; display: block; height: 3px; background: var(--color-sheet-2); }
+.kw__bar i { display: block; height: 100%; width: calc(var(--v) * 100%); background: var(--color-sheet-ink); transform-origin: 0 50%; }
+
+/* ② the reel: a film strip that runs sideways */
+.reel { padding-block: var(--section-gap-s); background: var(--color-paper); }
+.reel__head { align-items: end; row-gap: var(--space-md); margin-bottom: var(--space-xl); }
+.reel__head h2 { grid-column: 1 / span 6; }
+.reel__head .note { grid-column: 8 / -1; justify-self: end; text-align: right; }
+.reel__window { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); padding-inline: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter))); scrollbar-color: var(--color-rule) var(--color-paper); }
+.reel__track { position: relative; display: flex; gap: var(--space-md); width: max-content; margin: 0; padding: var(--space-xl) var(--space-md); list-style: none; background: var(--color-paper-2); }
+.reel__track::before, .reel__track::after { content: ""; position: absolute; left: 0; right: 0; height: var(--space-sm); background: repeating-linear-gradient(90deg, var(--color-paper) 0 14px, transparent 14px 26px); }
+.reel__track::before { top: var(--space-sm); }
+.reel__track::after { bottom: var(--space-sm); }
+.frame { flex: none; width: var(--frame-w); scroll-snap-align: start; }
+.frame figure { margin: 0; }
+.frame .ph { aspect-ratio: 3 / 4; }
+.frame .ph > img { transition: transform var(--dur-slow) var(--ease-out); }
+.frame__b { z-index: 2; transform-origin: 100% 100%; transform: translate(calc(-1 * var(--space-sm)), calc(-1 * var(--space-sm))) scale(0.34); outline: 3px solid var(--color-paper-2); }
+.frame figcaption { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-sm); align-items: baseline; padding-top: var(--space-sm); color: var(--color-ink-2); }
+.frame__no { color: var(--color-accent); font-variant-numeric: tabular-nums; }
+@media (hover: hover) and (pointer: fine) {
+  .frame:hover .frame__a { transform: scale(1.06); }
+  .frame:hover .frame__b { transform: none; outline-color: transparent; }
+}
+.reel.is-pinned { display: grid; align-content: center; min-height: 100svh; padding-block: var(--space-xl); }
+.reel.is-pinned .reel__window { overflow: hidden; scroll-snap-type: none; }
+
+/* the men: a contact sheet of twelve named frames, the rest behind one button */
+.men { padding-block: var(--section-gap) var(--section-gap); background: var(--color-paper); }
+.men__head { align-items: end; row-gap: var(--space-md); margin-bottom: var(--space-2xl); }
+.men__head h2 { grid-column: 1 / span 6; }
+.men__head .note { grid-column: 8 / -1; justify-self: end; text-align: right; }
+.sheetgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-2xl); }
+.cell figure { margin: 0; }
+.cell .ph { aspect-ratio: 3 / 4; }
+.cell .ph > img { transition: transform var(--dur-slow) var(--ease-out); }
+.cell__b { z-index: 2; transform-origin: 100% 100%; transform: translate(calc(-1 * var(--space-xs)), calc(-1 * var(--space-xs))) scale(0.36); outline: 3px solid var(--color-paper); }
+.cell figcaption { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-sm); align-items: baseline; padding-top: var(--space-sm); color: var(--color-ink-2); }
+.cell figcaption a { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-rule); text-underline-offset: 0.22em; }
+.cell figcaption a:hover { text-decoration-color: var(--color-accent); }
+@media (hover: hover) and (pointer: fine) {
+  .cell:hover .cell__a { transform: scale(1.06); }
+  .cell:hover .cell__b { transform: none; outline-color: transparent; }
+}
+.more { margin-top: var(--space-3xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-rule); }
+.more > summary { list-style: none; width: max-content; }
+.more > summary::-webkit-details-marker { display: none; }
+.more__close, .more[open] .more__open { display: none; }
+.more[open] .more__close { display: inline; }
+/* 19장: 5열(5+5+5+4)·4열(4+4+4+4+3)이면 마지막 줄에 한 장만 남지 않는다 */
+.more__grid { list-style: none; margin: var(--space-xl) 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-sm); }
+.more__grid .ph { aspect-ratio: 3 / 4; }
+
+/* the consultation, four steps beside two layered photographs */
+.process { padding-block: var(--section-gap) var(--section-gap-l); }
+.process__grid { align-items: start; row-gap: var(--space-2xl); }
+.process__text { grid-column: 1 / span 6; }
+.process__text .lead { margin-top: var(--space-md); color: var(--color-sheet-ink-2); }
+.steps { margin: var(--space-xl) 0 0; padding: 0; list-style: none; counter-reset: step; border-top: 1px solid var(--color-sheet-ink); }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); column-gap: var(--space-lg); row-gap: var(--space-2xs); padding-block: var(--space-lg); border-bottom: 1px solid var(--color-sheet-rule); }
+.steps li::before { content: counter(step); grid-row: 1 / span 2; font-family: var(--font-display); font-size: var(--text-count); line-height: 0.85; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.steps p { color: var(--color-sheet-ink-2); }
+.process__pics { grid-column: 8 / -1; position: relative; padding-bottom: var(--space-3xl); }
+.pic { margin: 0; }
+.pic--big { width: 78%; margin-left: auto; }
+.pic--big .ph { aspect-ratio: 3 / 4; }
+.pic--big figcaption { margin-top: var(--space-sm); text-align: right; }
+.pic--small { position: absolute; left: 0; bottom: 0; z-index: 2; width: 44%; }
+.pic--small .ph { aspect-ratio: 3 / 4; outline: var(--space-xs) solid var(--color-sheet); }
+.pic--small figcaption { margin-top: var(--space-sm); }
+
+/* ④ the rooms: full-bleed shots with subtitles */
+.space { padding-block: var(--section-gap-s) 0; }
+.space__head { align-items: end; margin-bottom: var(--space-xl); }
+.space__head h2 { grid-column: 1 / span 7; }
+.shot { position: relative; margin: 0; }
+.shot .ph { aspect-ratio: 21 / 9; max-height: 92svh; }
+.shot-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.shot-pair .ph { aspect-ratio: 9 / 10; max-height: 100svh; }
+.shot figcaption { position: absolute; z-index: 2; left: 50%; bottom: var(--space-xl); transform: translateX(-50%); padding: var(--space-xs) var(--space-md); background: color-mix(in oklab, var(--color-paper) 86%, transparent); color: var(--color-ink); font-size: var(--text-md); font-weight: var(--display-weight); white-space: nowrap; }
+.amen { padding-block: var(--space-2xl) var(--section-gap); }
+.amen h3 { grid-column: 1 / span 3; }
+.amen__list { grid-column: 4 / -1; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--gap-columns); border-top: 1px solid var(--color-rule); }
+.amen__list li { padding-block: var(--space-md); border-bottom: 1px solid var(--color-rule); font-size: var(--text-lg); line-height: 1.3; }
+.amen__list small { display: block; margin-top: var(--space-2xs); font-size: var(--text-sm); color: var(--color-muted); }
+
+/* the price list, on the sheet */
+.price { padding-block: var(--section-gap-l) var(--section-gap); }
+.price__grid { align-items: start; row-gap: var(--space-xl); }
+.price__head { grid-column: 1 / span 4; display: grid; gap: var(--space-lg); justify-items: start; }
+.price__head .lead { color: var(--color-sheet-ink-2); }
+.price__body { grid-column: 6 / -1; display: grid; gap: var(--space-xl); }
+.pgroup { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: var(--gap-columns); border-top: 1px solid var(--color-sheet-ink); }
+.pgroup h3 { padding-top: var(--space-md); font-size: var(--text-lg); }
+.prices { margin: 0; }
+.prow { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-lg); min-height: 80px; border-bottom: 1px solid var(--color-sheet-rule); }
+.prow dt { font-size: var(--text-lg); line-height: 1.3; }
+.prow dt small { display: block; margin-top: var(--space-2xs); font-size: var(--text-sm); font-weight: var(--label-weight); color: var(--color-sheet-muted); }
+.prow dd { margin: 0; display: flex; align-items: baseline; justify-content: flex-end; gap: var(--space-2xs); }
+.prow .num { font-size: var(--text-price); line-height: 1; text-align: right; font-variant-numeric: tabular-nums; }
+.prow .unit { font-size: var(--text-lg); color: var(--color-sheet-ink-2); }
+
+/* the designers: a cast of five */
+.cast { padding-block: var(--section-gap) var(--section-gap-l); }
+.cast__head { align-items: end; row-gap: var(--space-md); margin-bottom: var(--space-2xl); }
+.cast__head h2 { grid-column: 1 / span 7; }
+.cast__first { grid-column: 9 / -1; color: var(--color-ink-2); }
+.cast__list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-xl); }
+.person { display: grid; grid-template-rows: auto auto 1fr auto; gap: var(--space-sm); }
+.person .ph { aspect-ratio: 3 / 4; }
+.person .ph > img { transition: transform var(--dur-slow) var(--ease-out); }
+.person h3 { margin-top: var(--space-xs); }
+.person__what { color: var(--color-ink-2); }
+.person .btn { justify-self: stretch; }
+@media (hover: hover) and (pointer: fine) {
+  .person:hover .ph > img { transform: scale(1.05); }
+  .person:hover .btn { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+}
+
+/* hours, the way in and the booking, on the sheet */
+.visit { padding-block: var(--section-gap) var(--section-gap); }
+.visit__grid { align-items: start; row-gap: var(--space-2xl); }
+.visit__main { grid-column: 1 / span 6; display: grid; gap: var(--space-lg); justify-items: start; }
+.visit__big { display: block; font-size: var(--text-display-s); line-height: 1; }
+.visit__days { font-size: var(--text-lead); color: var(--color-sheet-ink-2); }
+.visit__sheet { grid-column: 8 / -1; margin: 0; border-top: 1px solid var(--color-sheet-ink); }
+.vrow { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); column-gap: var(--space-md); align-items: baseline; padding-block: var(--space-sm); border-bottom: 1px solid var(--color-sheet-rule); }
+.vrow dt { font-size: var(--text-sm); font-weight: var(--label-weight); color: var(--color-sheet-muted); }
+.vrow dd { margin: 0; }
+.visit__links { display: flex; flex-wrap: wrap; gap: var(--space-lg); }
+
+/* footer: the closing statement */
+.foot { padding-block: var(--section-gap-s) var(--space-xl); }
+.foot__grid { row-gap: var(--space-2xl); align-items: end; }
+.foot__say { grid-column: 1 / span 8; font-size: var(--text-display-s); line-height: 1.1; letter-spacing: var(--tracking-display); max-width: 18ch; text-wrap: balance; }
+.foot__links { grid-column: 10 / -1; margin: 0; padding: 0; list-style: none; display: grid; gap: var(--space-xs); justify-items: start; }
+.foot__credit { grid-column: 1 / -1; padding-top: var(--space-lg); border-top: 1px solid var(--color-rule); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, a { transition: background-color var(--dur-short) linear, color var(--dur-short) linear; }
+  .btn:active { transform: none; }
+  .stage__canvas { display: none; }
+  .frame .ph > img, .person .ph > img, .cell .ph > img { transition: none; }
+  .frame:hover .frame__a, .person:hover .ph > img, .cell:hover .cell__a { transform: none; }
+  .frame:hover .frame__b { transform: translate(calc(-1 * var(--space-sm)), calc(-1 * var(--space-sm))) scale(0.34); }
+  .cell:hover .cell__b { transform: translate(calc(-1 * var(--space-xs)), calc(-1 * var(--space-xs))) scale(0.36); }
+}
+
+@media (max-width: 60rem) {
+  .hero h1, .hero__aside, .about h2, .about__text, .about__fig, .sig__head h2, .sig__head .note, .voices__score, .kw, .reel__head h2, .reel__head .note, .men__head h2, .men__head .note, .process__text, .process__pics, .space__head h2, .amen h3, .amen__list, .price__head, .price__body, .cast__head h2, .cast__first, .visit__main, .visit__sheet, .foot__say, .foot__links { grid-column: 1 / -1; }
+  .about__fig { grid-row: auto; margin: 0; max-width: 28rem; }
+  .reel__head .note, .men__head .note { justify-self: start; text-align: left; }
+  .sheetgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .more__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .sig__grid { grid-template-rows: none; grid-auto-rows: clamp(22rem, 70vw, 30rem); }
+  .tile--a, .tile--b, .tile--c, .tile--d { grid-column: 1 / -1; }
+  .amen__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cast__list { grid-template-columns: minmax(0, 1fr); }
+  .person { grid-template-columns: 7.5rem minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: var(--space-lg); row-gap: var(--space-xs); }
+  .person .ph { grid-row: 1 / span 3; grid-column: 1; }
+  .person > :not(.ph) { grid-column: 2; }
+  .person h3 { margin-top: 0; }
+  .person .btn { justify-self: start; align-self: start; }
+}
+
+@media (max-width: 40rem) {
+  .nav__hide { display: none; }
+  .hero__mark { padding-bottom: var(--space-4xl); }
+  .about__text { columns: 1; }
+  .shot .ph { aspect-ratio: 4 / 3; }
+  .shot-pair { grid-template-columns: minmax(0, 1fr); }
+  .shot figcaption { left: var(--space-md); right: var(--space-md); bottom: var(--space-md); transform: none; white-space: normal; text-align: center; font-size: var(--text-sm); }
+  .frame { --frame-w: 72vw; }
+  .sheetgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
+  .more__grid { gap: var(--space-xs); }
+  .pgroup { grid-template-columns: minmax(0, 1fr); }
+  .pgroup h3 { padding-bottom: var(--space-xs); }
+  .vrow { grid-template-columns: 5.5rem minmax(0, 1fr); }
+  .pic--big { width: 82%; }
+  .pic--small { width: 48%; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="nav">
+  <div class="container nav__in">
+    <a class="wordmark" href="#main" aria-label="에떼르넬 헤어살롱 합정점, 맨 위로">Éternel</a>
+    <ul class="nav__links">
+      <li class="nav__hide"><a class="nav__link" href="#lookbook">여자 머리</a></li>
+      <li class="nav__hide"><a class="nav__link" href="#men">남자 머리</a></li>
+      <li class="nav__hide"><a class="nav__link" href="#price">가격</a></li>
+      <li class="nav__hide"><a class="nav__link" href="#designers">디자이너</a></li>
+      <li class="nav__hide"><a class="nav__link" href="#visit">오시는 길</a></li>
+      <li><a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">예약</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="stage" id="stage" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 40rem)" srcset="poster-portrait.jpg" width="780" height="1688">
+        <img src="poster.jpg" alt="" width="1600" height="1000" fetchpriority="high">
+      </picture>
+      <canvas class="stage__canvas"></canvas>
+    </div>
+    <button class="stage-toggle" type="button" id="stage-toggle" hidden>움직임 멈춤</button>
+    <div class="container grid hero__in">
+      <h1 id="hero-title"><span class="hero__mark" lang="fr">Éternel</span><span class="hero__line">유행보다 오래 가는 머리</span></h1>
+      <div class="hero__aside">
+        <p class="lead">합정역 7번 출구 골목 안, 100% 예약제로 1:1&nbsp;상담부터 시작합니다.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버 예약</a>
+          <a class="btn" href="#lookbook">룩북 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about sheet" id="about" aria-labelledby="about-title">
+    <div class="container grid about__grid">
+      <h2 id="about-title">에떼르넬은 프랑스어로 ‘영원한’</h2>
+      <div class="about__text">
+        <p class="about__stand">골목 안 조용한 단독 건물에서, 한 사람에게 맞춘 머리를 만듭니다.</p>
+        <p>화려함보다 자연스러움을, 유행보다 오래 만족하실 스타일을 먼저 생각합니다.</p>
+        <p>시술 전에는 1:1로 상담하고 모발 상태를 확인해 손상을 줄입니다. 집에서 유지하는 관리법도 알려 드립니다.</p>
+      </div>
+      <figure class="about__fig">
+        <div class="ph" data-slot="about" data-alt="긴 레이어드 손님의 옆모습 사진(세로)">
+          <img src="../assets/img/w-long-layered-a.jpg" width="1200" height="1600" alt="식물 앞에서 옆을 보는 긴 레이어드컷 손님, 크림색 블라우스" loading="lazy" style="object-position: 58% 30%">
+        </div>
+        <figcaption>긴 레이어드, 옆선</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sig" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="grid sig__head">
+        <h2 id="sig-title">리뷰에 가장 많이 나온 시술</h2>
+        <p class="note">네이버 방문자 리뷰 언급 수, 2026.11.15 기준</p>
+      </div>
+      <ul class="sig__grid">
+        <li class="tile tile--a">
+          <div class="ph" data-slot="sig-layered" data-alt="긴 레이어드컷 스타일 사진(세로)" data-reveal="wipe">
+            <img src="../assets/img/w-long-layered-bangs.jpg" width="1086" height="1448" alt="테라스에서 찍은 긴 레이어드컷과 앞머리 정면, 줄무늬 니트" loading="lazy" style="object-position: 50% 26%">
+          </div>
+          <div class="tile__txt">
+            <h3>레이어드컷</h3>
+            <p class="tile__count"><span class="num">456</span><span class="tile__unit">번 언급</span></p>
+            <p class="tile__line">얼굴형을 부드럽게 감싸는 결과 볼륨</p>
+          </div>
+        </li>
+        <li class="tile tile--b tile--ash">
+          <div class="tile__txt">
+            <h3>애쉬 계열 염색</h3>
+            <p class="tile__count"><span class="num">434</span><span class="tile__unit">번 언급, ‘애쉬그레이’</span></p>
+            <p class="tile__line">튀지 않는 은은한 톤 변화</p>
+          </div>
+        </li>
+        <li class="tile tile--c">
+          <div class="ph" data-slot="sig-build" data-alt="빌드펌 뒷모습 사진(세로)" data-reveal="wipe">
+            <img src="../assets/img/lb-build-perm-back.jpg" width="966" height="1288" alt="실내에서 찍은 긴머리 레이어드컷과 빌드펌 뒷모습" loading="lazy" style="object-position: 50% 40%">
+          </div>
+          <div class="tile__txt">
+            <h3>빌드펌(CS컬펌)</h3>
+            <p class="tile__count"><span class="num">342</span><span class="tile__unit">번 언급</span></p>
+          </div>
+        </li>
+        <li class="tile tile--d">
+          <div class="ph" data-slot="sig-volume" data-alt="뿌리 볼륨매직 정면 사진(세로)" data-reveal="wipe">
+            <img src="../assets/img/lb-volume-magic-front.jpg" width="966" height="1288" alt="테라스에서 찍은 긴머리 뿌리 볼륨매직과 앞머리 정면" loading="lazy" style="object-position: 50% 24%">
+          </div>
+          <div class="tile__txt">
+            <h3>볼륨매직</h3>
+            <p class="tile__count"><span class="num">31</span><span class="tile__unit">번 언급</span></p>
+            <p class="tile__line">뿌리 볼륨매직과 앞머리</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="voices sheet" aria-labelledby="voices-title">
+    <div class="container grid voices__grid">
+      <div class="voices__score">
+        <h2 id="voices-title">손님들이 가장 많이 고른 말</h2>
+        <p><span class="voices__num num">4.93</span></p>
+        <p class="voices__label">방문자 리뷰 3,426건의 평점<br>블로그·카페 리뷰 1,074건</p>
+        <p class="note">네이버 플레이스, 2026.11.15 기준</p>
+      </div>
+      <ol class="kw">
+        <li><span class="kw__word">‘원하는 스타일로 잘해줘요’</span><span class="kw__n num">1,362</span><span class="kw__bar" aria-hidden="true"><i style="--v: 1"></i></span></li>
+        <li><span class="kw__word">‘친절해요’</span><span class="kw__n num">1,319</span><span class="kw__bar" aria-hidden="true"><i style="--v: 0.968"></i></span></li>
+        <li><span class="kw__word">‘시술이 꼼꼼해요’</span><span class="kw__n num">1,082</span><span class="kw__bar" aria-hidden="true"><i style="--v: 0.794"></i></span></li>
+        <li><span class="kw__word">‘스타일 추천을 잘해줘요’</span><span class="kw__n num">836</span><span class="kw__bar" aria-hidden="true"><i style="--v: 0.614"></i></span></li>
+        <li><span class="kw__word">‘관리법을 잘 알려줘요’</span><span class="kw__n num">592</span><span class="kw__bar" aria-hidden="true"><i style="--v: 0.435"></i></span></li>
+        <li><span class="kw__word">‘상담이 자세해요’</span><span class="kw__n num">450</span><span class="kw__bar" aria-hidden="true"><i style="--v: 0.33"></i></span></li>
+        <li><span class="kw__word">‘트렌디해요’</span><span class="kw__n num">431</span><span class="kw__bar" aria-hidden="true"><i style="--v: 0.316"></i></span></li>
+        <li><span class="kw__word">‘고급스러워요’</span><span class="kw__n num">195</span><span class="kw__bar" aria-hidden="true"><i style="--v: 0.143"></i></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="reel" id="lookbook" aria-labelledby="reel-title">
+    <div class="container grid reel__head">
+      <h2 id="reel-title">여자 머리, 아홉 장면</h2>
+      <p class="note">작은 창은 같은 머리의 옆모습입니다.</p>
+    </div>
+    <div class="reel__window" tabindex="0" role="region" aria-label="여자 머리 사진 아홉 장면, 옆으로 넘겨 보기">
+      <ol class="reel__track">
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-1" data-alt="어깨선 레이어드 정면과 옆모습(세로 두 장)">
+            <img class="frame__a" src="../assets/img/w-shoulder-layered-front.jpg" width="1086" height="1448" alt="어깨선 레이어드와 앞머리 정면, 회색 티셔츠" loading="lazy" style="object-position: 50% 32%">
+            <img class="frame__b" src="../assets/img/w-shoulder-layered-side.jpg" width="1086" height="1448" alt="같은 어깨선 레이어드의 옆모습" loading="lazy" style="object-position: 45% 30%">
+          </div>
+          <figcaption><span class="frame__no">01</span><span>어깨선 레이어드, 앞머리</span></figcaption>
+        </figure></li>
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-2" data-alt="단발 레이어드 정면과 옆모습(세로 두 장)">
+            <img class="frame__a" src="../assets/img/w-bob-layered-front.jpg" width="1086" height="1448" alt="단발 레이어드와 앞머리 정면, 검정 티셔츠와 회색 카디건" loading="lazy" style="object-position: 50% 33%">
+            <img class="frame__b" src="../assets/img/w-bob-layered-side.jpg" width="1086" height="1448" alt="같은 단발 레이어드의 옆모습" loading="lazy" style="object-position: 58% 30%">
+          </div>
+          <figcaption><span class="frame__no">02</span><span>단발 레이어드, 앞머리</span></figcaption>
+        </figure></li>
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-3" data-alt="긴 레이어드 웨이브 사진(세로)">
+            <img class="frame__a" src="../assets/img/w-long-wave-night.jpg" width="884" height="1542" alt="저녁, 간판 앞에서 찍은 긴 레이어드 웨이브" loading="lazy" style="object-position: 55% 30%">
+          </div>
+          <figcaption><span class="frame__no">03</span><span>긴 레이어드 웨이브</span></figcaption>
+        </figure></li>
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-4" data-alt="얼굴선 레이어드가 있는 긴머리 옆모습(세로)">
+            <img class="frame__a" src="../assets/img/w-long-layered-side.jpg" width="1021" height="1600" alt="테라스, 얼굴선 레이어드가 있는 긴머리 옆모습" loading="lazy" style="object-position: 60% 28%">
+          </div>
+          <figcaption><span class="frame__no">04</span><span>긴 레이어드, 얼굴선</span></figcaption>
+        </figure></li>
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-5" data-alt="짧은 웨이브 옆모습(세로)">
+            <img class="frame__a" src="../assets/img/w-short-wave.jpg" width="1206" height="1367" alt="입구 간판 앞, 짧은 웨이브 옆모습, 초록 터틀넥" loading="lazy" style="object-position: 55% 36%">
+          </div>
+          <figcaption><span class="frame__no">05</span><span>짧은 웨이브</span></figcaption>
+        </figure></li>
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-6" data-alt="턱선 단발 옆모습(세로)">
+            <img class="frame__a" src="../assets/img/w-bob-jaw.jpg" width="1078" height="1427" alt="실내 제품 진열장 앞, 턱선 단발 옆모습" loading="lazy" style="object-position: 55% 46%">
+          </div>
+          <figcaption><span class="frame__no">06</span><span>턱선 단발</span></figcaption>
+        </figure></li>
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-7" data-alt="긴 레이어드와 앞머리 정면(세로)">
+            <img class="frame__a" src="../assets/img/w-long-bangs-night.jpg" width="1080" height="1580" alt="저녁, 간판 앞에서 찍은 긴 레이어드와 앞머리 정면" loading="lazy" style="object-position: 45% 30%">
+          </div>
+          <figcaption><span class="frame__no">07</span><span>긴 레이어드, 앞머리</span></figcaption>
+        </figure></li>
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-8" data-alt="짧은 레이어드 옆모습(세로)">
+            <img class="frame__a" src="../assets/img/w-short-layered.jpg" width="1206" height="1369" alt="실내 원목 벽 앞, 짧은 레이어드 옆모습, 흰 티셔츠" loading="lazy" style="object-position: 45% 40%">
+          </div>
+          <figcaption><span class="frame__no">08</span><span>짧은 레이어드</span></figcaption>
+        </figure></li>
+        <li class="frame"><figure>
+          <div class="ph" data-slot="lb-9" data-alt="숏컷과 앞머리(세로)">
+            <img class="frame__a" src="../assets/img/w-short-bangs.jpg" width="1170" height="1539" alt="테라스, 숏컷과 앞머리, 검정 트랙 재킷" loading="lazy" style="object-position: 50% 40%">
+          </div>
+          <figcaption><span class="frame__no">09</span><span>숏컷, 앞머리</span></figcaption>
+        </figure></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="men" id="men" aria-labelledby="men-title">
+    <div class="container">
+      <div class="grid men__head">
+        <h2 id="men-title">남자 머리, 열두 장면</h2>
+        <p class="note">시술 이름은 매장 블로그 글 제목 그대로, 누르면 그 글이 열립니다.<br>작은 창은 같은 머리의 옆모습입니다.</p>
+      </div>
+      <ol class="sheetgrid">
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-1" data-alt="세미리프펌 정면과 옆모습(세로 두 장)">
+            <img class="cell__a" src="../assets/img/m-semileaf-front.jpg" width="900" height="1200" alt="세미리프펌 정면, 흰 헨리넥 티셔츠, 테라스" loading="lazy" style="object-position: 50% 28%">
+            <img class="cell__b" src="../assets/img/m-semileaf-side.jpg" width="900" height="1200" alt="같은 세미리프펌의 옆모습" loading="lazy" style="object-position: 55% 28%">
+          </div>
+          <figcaption><span class="frame__no">01</span><a href="https://m.blog.naver.com/eternelhair/224434358157" target="_blank" rel="noopener">세미리프펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-2" data-alt="아이비리그컷 정면과 옆모습(세로 두 장)">
+            <img class="cell__a" src="../assets/img/m-ivy-front.jpg" width="903" height="1200" alt="저녁, 입구 앞 아이비리그컷 정면, 초록 티셔츠" loading="lazy" style="object-position: 48% 30%">
+            <img class="cell__b" src="../assets/img/m-ivy-side.jpg" width="916" height="1200" alt="같은 아이비리그컷의 옆모습" loading="lazy" style="object-position: 48% 30%">
+          </div>
+          <figcaption><span class="frame__no">02</span><a href="https://m.blog.naver.com/eternelhair/224426966617" target="_blank" rel="noopener">아이비리그컷</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-3" data-alt="히피펌 옆모습(세로)">
+            <img class="cell__a" src="../assets/img/m-hippie-spin.jpg" width="692" height="1200" alt="창가, 히피펌 스핀스왈로펌 옆모습" loading="lazy" style="object-position: 35% 30%">
+          </div>
+          <figcaption><span class="frame__no">03</span><a href="https://m.blog.naver.com/eternelhair/224428131224" target="_blank" rel="noopener">히피펌 스핀스왈로펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-4" data-alt="댄디컷과 다운펌(세로)">
+            <img class="cell__a" src="../assets/img/m-dandy-down-a.jpg" width="905" height="1200" alt="테라스, 댄디컷과 다운펌, 안경과 남색 티셔츠" loading="lazy" style="object-position: 52% 32%">
+          </div>
+          <figcaption><span class="frame__no">04</span><a href="https://m.blog.naver.com/eternelhair/224415902690" target="_blank" rel="noopener">댄디컷 + 다운펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-5" data-alt="가르마 스타일과 다운펌(세로)">
+            <img class="cell__a" src="../assets/img/m-part-down-suit.jpg" width="908" height="1200" alt="저녁, 가르마 스타일과 다운펌, 정장" loading="lazy" style="object-position: 50% 34%">
+          </div>
+          <figcaption><span class="frame__no">05</span><a href="https://m.blog.naver.com/eternelhair/224418522858" target="_blank" rel="noopener">가르마 스타일 + 다운펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-6" data-alt="시스루댄디컷과 다운펌(세로)">
+            <img class="cell__a" src="../assets/img/m-seethrough-dandy.jpg" width="920" height="1200" alt="테라스, 시스루댄디컷과 다운펌, 회색 티셔츠" loading="lazy" style="object-position: 50% 32%">
+          </div>
+          <figcaption><span class="frame__no">06</span><a href="https://m.blog.naver.com/eternelhair/224428120675" target="_blank" rel="noopener">시스루댄디컷 + 다운펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-7" data-alt="쉐도우펌과 다운펌(세로)">
+            <img class="cell__a" src="../assets/img/m-shadow-down.jpg" width="907" height="1200" alt="테라스, 쉐도우펌과 다운펌, 검정 티셔츠" loading="lazy" style="object-position: 50% 32%">
+          </div>
+          <figcaption><span class="frame__no">07</span><a href="https://m.blog.naver.com/eternelhair/224417652733" target="_blank" rel="noopener">쉐도우펌 + 다운펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-8" data-alt="긴머리 히피펌(세로)">
+            <img class="cell__a" src="../assets/img/m-long-hippie.jpg" width="902" height="1200" alt="저녁, 입구 앞 긴머리 히피펌, 흰 티셔츠" loading="lazy" style="object-position: 50% 30%">
+          </div>
+          <figcaption><span class="frame__no">08</span><a href="https://m.blog.naver.com/eternelhair/224483339247" target="_blank" rel="noopener">긴머리 히피펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-9" data-alt="댄디컷과 두상 교정 다운펌(세로)">
+            <img class="cell__a" src="../assets/img/m-dandy-shape.jpg" width="913" height="1200" alt="테라스, 댄디컷과 두상 교정 다운펌, 회색 티셔츠" loading="lazy" style="object-position: 47% 34%">
+          </div>
+          <figcaption><span class="frame__no">09</span><a href="https://m.blog.naver.com/eternelhair/224421049634" target="_blank" rel="noopener">댄디컷 + 두상 교정 다운펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-10" data-alt="다운펌과 가르마 스타일(세로)">
+            <img class="cell__a" src="../assets/img/m-part-down-stripe.jpg" width="899" height="1200" alt="테라스, 다운펌과 가르마 스타일, 줄무늬 티셔츠" loading="lazy" style="object-position: 50% 32%">
+          </div>
+          <figcaption><span class="frame__no">10</span><a href="https://m.blog.naver.com/eternelhair/224442414006" target="_blank" rel="noopener">다운펌 + 가르마 스타일</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-11" data-alt="가르마 스타일과 다운펌, 저녁(세로)">
+            <img class="cell__a" src="../assets/img/m-part-down-night.jpg" width="918" height="1200" alt="저녁, 입구 앞 가르마 스타일과 다운펌, 검정 트랙 재킷" loading="lazy" style="object-position: 50% 34%">
+          </div>
+          <figcaption><span class="frame__no">11</span><a href="https://m.blog.naver.com/eternelhair/224449938756" target="_blank" rel="noopener">가르마 스타일 + 다운펌</a></figcaption>
+        </figure></li>
+        <li class="cell"><figure>
+          <div class="ph" data-slot="m-12" data-alt="댄디컷과 다운펌, 회색 티셔츠(세로)">
+            <img class="cell__a" src="../assets/img/m-dandy-down-b.jpg" width="908" height="1200" alt="테라스, 댄디컷과 다운펌, 회색 티셔츠" loading="lazy" style="object-position: 50% 32%">
+          </div>
+          <figcaption><span class="frame__no">12</span><a href="https://m.blog.naver.com/eternelhair/224416859870" target="_blank" rel="noopener">댄디컷 + 다운펌</a></figcaption>
+        </figure></li>
+      </ol>
+      <details class="more">
+        <summary class="btn"><span class="more__open">남자 머리 사진 19장 더 보기</span><span class="more__close">사진 접기</span></summary>
+        <ul class="more__grid">
+          <li><div class="ph"><img src="../assets/img/m-more-01.jpg" width="480" height="720" alt="테라스, 남자 커트(검정 티)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-02.jpg" width="540" height="720" alt="테라스, 남자 커트 옆모습(검정 터틀넥)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-03.jpg" width="540" height="720" alt="테라스, 남자 커트(검정 패딩 재킷)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-04.jpg" width="540" height="720" alt="테라스, 남자 커트(마름모 무늬 니트)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-05.jpg" width="540" height="720" alt="테라스, 남자 커트(검정 맨투맨)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-06.jpg" width="540" height="720" alt="테라스, 남자 커트(검정 집업 니트)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-07.jpg" width="540" height="720" alt="테라스, 남자 커트 옆모습(검정 티)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-08.jpg" width="540" height="720" alt="저녁, 입구 앞 남자 커트 옆모습(검정 티)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-09.jpg" width="540" height="720" alt="저녁, 입구 앞 남자 펌 옆모습(야구 저지)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-10.jpg" width="540" height="720" alt="저녁, 입구 앞 남자 커트(회색 후드)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-11.jpg" width="540" height="720" alt="저녁, 입구 앞 남자 커트(초록 맨투맨)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-12.jpg" width="540" height="720" alt="저녁, 입구 앞 남자 커트(흰 티, 회색 카디건)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-13.jpg" width="542" height="720" alt="테라스, 남자 커트(자주색 헨리넥 티)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-14.jpg" width="539" height="720" alt="테라스, 남자 커트(검정 티, 목걸이)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-15.jpg" width="543" height="720" alt="테라스, 남자 커트 옆모습(검정 티)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-16.jpg" width="540" height="720" alt="테라스, 남자 커트(그림 티)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-17.jpg" width="552" height="720" alt="저녁, 입구 앞 남자 커트 옆모습(흰 티)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-18.jpg" width="548" height="720" alt="저녁, 입구 앞 남자 커트 옆모습(검정 후드)" loading="lazy" style="object-position: 50% 30%"></div></li>
+          <li><div class="ph"><img src="../assets/img/m-more-19.jpg" width="549" height="720" alt="테라스, 남자 커트 옆모습(줄무늬 티)" loading="lazy" style="object-position: 50% 30%"></div></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <section class="process sheet" aria-labelledby="process-title">
+    <div class="container grid process__grid">
+      <div class="process__text">
+        <h2 id="process-title">1:1 상담부터 관리법까지</h2>
+        <p class="lead">의자에 앉으시면 이 순서로 진행합니다.</p>
+        <ol class="steps">
+          <li><h3>상담</h3><p>원하시는 스타일을 1:1로 자세히 듣습니다.</p></li>
+          <li><h3>모발 상태 확인</h3><p>시술 전에 모발 상태를 살펴 손상을 줄입니다.</p></li>
+          <li><h3>시술</h3><p>한 사람에게 맞춘 디자인으로 시술합니다.</p></li>
+          <li><h3>관리법 안내</h3><p>집에서 유지하는 관리법을 알려 드립니다.</p></li>
+        </ol>
+      </div>
+      <div class="process__pics">
+        <figure class="pic pic--big">
+          <div class="ph" data-slot="craft-foam" data-alt="샴푸대에서 거품 낸 머리(세로)" data-reveal="wipe">
+            <img src="../assets/img/craft-shampoo-foam.jpg" width="966" height="1288" alt="샴푸대에서 거품을 낸 머리, 시술 과정" loading="lazy" style="object-position: 50% 50%">
+          </div>
+          <figcaption>샴푸대, 거품 낸 머리</figcaption>
+        </figure>
+        <figure class="pic pic--small" data-drift>
+          <div class="ph" data-slot="craft-rods" data-alt="펌 롯드와 호일을 감은 머리(세로)">
+            <img src="../assets/img/craft-perm-rods.jpg" width="966" height="1288" alt="펌 롯드와 호일을 감은 머리, 시술 과정" loading="lazy" style="object-position: 50% 40%">
+          </div>
+          <figcaption>펌 롯드와 호일</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="space" id="space" aria-labelledby="space-title">
+    <div class="container grid space__head">
+      <h2 id="space-title">골목 안 단독 건물, 세 장면</h2>
+    </div>
+    <figure class="shot">
+      <div class="ph" data-slot="storefront" data-alt="골목 안 단독 건물 외관, 간판과 아치형 입구(가로)">
+        <img src="../assets/img/space-storefront.jpg" width="1800" height="1350" alt="골목 안 단독 건물 외관, HAIR SALON ÉTERNEL 간판과 아치형 입구" loading="lazy" style="object-position: 50% 42%">
+      </div>
+      <figcaption>양화진2길 16, 아치형 입구</figcaption>
+    </figure>
+    <div class="shot-pair">
+      <figure class="shot">
+        <div class="ph" data-slot="interior" data-alt="실내 시술 공간, 의자와 거울(세로)">
+          <img src="../assets/img/space-interior-chairs.jpg" width="966" height="1288" alt="실내 시술 공간의 의자와 거울, 원목 마감, 앞에 손님 뒷머리" loading="lazy" style="object-position: 50% 45%">
+        </div>
+        <figcaption>시술 공간, 의자와 거울</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph" data-slot="terrace" data-alt="테라스, 식물 앞 손님 뒷모습(세로)">
+          <img src="../assets/img/look-terrace-straight-back.jpg" width="966" height="1288" alt="테라스 식물 앞, 갈색 긴 생머리 손님의 뒷모습" loading="lazy" style="object-position: 50% 40%">
+        </div>
+        <figcaption>테라스, 시술 전후 바람 쐬는 곳</figcaption>
+      </figure>
+    </div>
+    <div class="container grid amen">
+      <h3>공간과 편의</h3>
+      <ul class="amen__list">
+        <li>테라스</li>
+        <li>헤어스파</li>
+        <li>두피클리닉</li>
+        <li>대기 공간</li>
+        <li>무선 인터넷</li>
+        <li>남녀 화장실 구분</li>
+        <li>유아의자</li>
+        <li>무료 주차<small>매장 옆</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="price sheet" id="price" aria-labelledby="price-title">
+    <div class="container grid price__grid">
+      <div class="price__head">
+        <h2 id="price-title">일반 디자이너 기준 가격</h2>
+        <p class="lead">원장, 부원장 시술은 가격이 다를 수 있습니다. 결제는 현장에서 합니다.</p>
+        <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버 예약</a>
+      </div>
+      <div class="price__body">
+        <div class="pgroup">
+          <h3>컷</h3>
+          <dl class="prices">
+            <div class="prow"><dt>앞머리컷</dt><dd><span class="num">5,000</span><span class="unit">원</span></dd></div>
+            <div class="prow"><dt>컷트</dt><dd><span class="num">22,000</span><span class="unit">원</span></dd></div>
+          </dl>
+        </div>
+        <div class="pgroup">
+          <h3>펌</h3>
+          <dl class="prices">
+            <div class="prow"><dt>일반펌</dt><dd><span class="num">79,000</span><span class="unit">원</span></dd></div>
+            <div class="prow"><dt>셋팅펌, 디지털펌<small>매장 추천</small></dt><dd><span class="num">99,000</span><span class="unit">원</span></dd></div>
+            <div class="prow"><dt>매직셋팅펌</dt><dd><span class="num">129,000</span><span class="unit">원</span></dd></div>
+          </dl>
+        </div>
+        <div class="pgroup">
+          <h3>염색과 클리닉</h3>
+          <dl class="prices">
+            <div class="prow"><dt>브랜드염색<small>매장 추천</small></dt><dd><span class="num">89,000</span><span class="unit">원</span></dd></div>
+            <div class="prow"><dt>트리시스 클리닉</dt><dd><span class="num">89,000</span><span class="unit">원</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cast" id="designers" aria-labelledby="cast-title">
+    <div class="container">
+      <div class="grid cast__head">
+        <h2 id="cast-title">디자이너를 골라 예약하세요</h2>
+        <p class="cast__first">처음이시면 디자이너를 정하지 않고 <a href="https://m.booking.naver.com/booking/13/bizes/55543/items/3352070" target="_blank" rel="noopener">첫방문 메뉴로 예약</a>하셔도 됩니다.</p>
+      </div>
+      <ul class="cast__list">
+        <li class="person">
+          <div class="ph" data-slot="designer-seungbo" data-alt="승보 원장 프로필 사진(세로)">
+            <img src="../assets/img/designer-seungbo.jpg" width="667" height="1000" alt="승보 원장 프로필 사진" loading="lazy" style="object-position: 50% 30%">
+          </div>
+          <h3>승보 원장</h3>
+          <p class="person__what">숏컷, 디자인커트<br>경력 17년 이상</p>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/2026919" target="_blank" rel="noopener" aria-label="승보 원장 예약하기">예약하기</a>
+        </li>
+        <li class="person">
+          <div class="ph" data-slot="designer-iseul" data-alt="이슬 부원장 프로필 사진(세로)">
+            <img src="../assets/img/designer-iseul.jpg" width="667" height="1000" alt="이슬 부원장 프로필 사진" loading="lazy" style="object-position: 50% 30%">
+          </div>
+          <h3>이슬 부원장</h3>
+          <p class="person__what">레이어드컷, 열펌</p>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3832033" target="_blank" rel="noopener" aria-label="이슬 부원장 예약하기">예약하기</a>
+        </li>
+        <li class="person">
+          <div class="ph" data-slot="designer-jongmin" data-alt="종민 디자이너 프로필 사진">
+            <img src="../assets/img/designer-jongmin.jpg" width="1000" height="749" alt="종민 디자이너 프로필 사진" loading="lazy" style="object-position: 50% 35%">
+          </div>
+          <h3>종민 디자이너</h3>
+          <p class="person__what">남자 머리, 리프컷</p>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3146048" target="_blank" rel="noopener" aria-label="종민 디자이너 예약하기">예약하기</a>
+        </li>
+        <li class="person">
+          <div class="ph" data-slot="designer-boram" data-alt="보람 디자이너 프로필 사진">
+            <img src="../assets/img/designer-boram.jpg" width="854" height="640" alt="보람 디자이너 프로필 사진" loading="lazy" style="object-position: 55% 35%">
+          </div>
+          <h3>보람 디자이너</h3>
+          <p class="person__what">레이어드컷, 고데기펌</p>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/3770190" target="_blank" rel="noopener" aria-label="보람 디자이너 예약하기">예약하기</a>
+        </li>
+        <li class="person">
+          <div class="ph" data-slot="designer-phil" data-alt="필 디자이너 프로필 사진">
+            <img src="../assets/img/designer-phil.jpg" width="854" height="640" alt="필 디자이너 프로필 사진" loading="lazy" style="object-position: 45% 35%">
+          </div>
+          <h3>필 디자이너</h3>
+          <p class="person__what">주말(토, 일) 근무<br>경력 10년 이상</p>
+          <a class="btn" href="https://m.booking.naver.com/booking/13/bizes/55543/items/2008519" target="_blank" rel="noopener" aria-label="필 디자이너 예약하기">예약하기</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="visit sheet" id="visit" aria-labelledby="visit-title">
+    <div class="container grid visit__grid">
+      <div class="visit__main">
+        <h2 id="visit-title">합정역 7번 출구에서 걸어서 약 5분</h2>
+        <p><span class="visit__big num">11:00~20:30</span></p>
+        <p class="visit__days">수요일부터 월요일까지, 매주 화요일 정기휴무</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="https://m.booking.naver.com/booking/13/bizes/55543" target="_blank" rel="noopener">네이버 예약</a>
+          <a class="btn" href="tel:02-323-8978">02-323-8978</a>
+        </div>
+        <p class="visit__links"><a href="https://map.naver.com/p/entry/place/36912626" target="_blank" rel="noopener">네이버 지도</a><a href="http://talk.naver.com/wm25hbs" target="_blank" rel="noopener">톡톡 문의</a></p>
+      </div>
+      <dl class="visit__sheet">
+        <div class="vrow"><dt>마지막 접수</dt><dd>펌 18:30, 염색 19:00, 커트 19:30</dd></div>
+        <div class="vrow"><dt>예약</dt><dd>100% 예약제</dd></div>
+        <div class="vrow"><dt>주소</dt><dd>서울 마포구 양화진2길 16</dd></div>
+        <div class="vrow"><dt>걸어서</dt><dd>약&nbsp;220m, 양화대교 방향으로 걷다 엠파이어리버 아파텔 옆 골목 안쪽 약&nbsp;10m</dd></div>
+        <div class="vrow"><dt>버스</dt><dd>921, 2200, 2200-1, 3100, 3100N, 마포16 양화진성지공원입구 하차</dd></div>
+        <div class="vrow"><dt>주차</dt><dd>매장 옆 무료 주차</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container grid foot__grid">
+    <p class="foot__say">유행보다 오래, 골목&nbsp;안에서 기다리겠습니다.</p>
+    <ul class="foot__links">
+      <li><a href="https://www.instagram.com/eternelhair/" target="_blank" rel="noopener">인스타그램</a></li>
+      <li><a href="https://blog.naver.com/eternelhair" target="_blank" rel="noopener">블로그</a></li>
+      <li><a href="https://www.instagram.com/eternel_sb/" target="_blank" rel="noopener">승보 원장 인스타그램</a></li>
+    </ul>
+    <p class="foot__credit note" data-credits>사진: 에떼르넬 헤어살롱 합정점</p>
+  </div>
+</footer>
+
+<script>
+// 3D가 4초 안에 켜지지 않으면(모듈·네트워크 실패, WebGL 없음, 아주 느린 기기) 정지 그림을 다시 보인다. 늦게 켜지면 그 위로 서서히 겹친다.
+(() => { const s = document.getElementById('stage'); if (s) setTimeout(() => { if (!s.classList.contains('is-live')) s.classList.add('no-3d'); }, 4000); })();
+</script>
+<!-- 3D:BEGIN · 머리 다발 ∞(11/22 사용자 선택 1번). 원본 lab/3d-full/src/stage.js + a-bundle.js — 고치면 node v2-2-cinema/tools/inline-bundle.mjs 로 다시 넣는다 -->
+<script type="module" onerror="document.getElementById('stage').classList.add('no-3d')">
+import * as THREE from 'three';
+// ── 공통 무대: 렌더러·크기·멈춤 조건(화면 밖·탭 숨김·멈춤 버튼)·동작 줄이기·실패 처리 ──
+// build(renderer, ctx) → { resize(w, h, tall), render(t, dt) }
+function runStage(build, opts = {}) {
+  const stage = document.getElementById('stage');
+  const canvas = stage && stage.querySelector('.stage__canvas');
+  const toggle = document.getElementById('stage-toggle');
+  if (!canvas) return null;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tallMq = matchMedia('(max-width: 40rem)');
+  const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
+  let renderer, scene;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: opts.antialias !== false, alpha: true, powerPreference: 'high-performance' });
+    renderer.setClearColor(0x000000, 0);
+    scene = build(renderer, { tall: tallMq.matches, pointer });
+  } catch (e) {
+    console.warn('3D를 켜지 못함 — 글과 버튼만 보인다', e);
+    stage.classList.add('no-3d');
+    window.__eternelReady = true;
+    return null;
+  }
+  // 기기 픽셀 배율 상한: PC 1.75, 폰은 시안마다(기본 1.5)
+  const dpr = () => Math.min(window.devicePixelRatio || 1, tallMq.matches ? (opts.phoneDpr || 1.5) : (opts.maxDpr || 1.75));
+  let t = reduce ? (opts.stillTime ?? 8) : (opts.startTime ?? 0);
+  let raf = 0, last = 0, visible = true, paused = false;
+  const live = () => { if (!stage.classList.contains('is-live')) { stage.classList.add('is-live'); window.__eternelReady = true; } };
+  const running = () => !reduce && !paused && visible && !document.hidden;
+  const frame = (now) => {
+    raf = 0;
+    const dt = last ? Math.min(0.05, (now - last) / 1000) : 1 / 60;
+    last = now; t += dt;
+    pointer.x += (pointer.tx - pointer.x) * 0.04; pointer.y += (pointer.ty - pointer.y) * 0.04;
+    scene.render(t, dt);
+    live();
+    if (running()) raf = requestAnimationFrame(frame);
+  };
+  const start = () => { if (!raf && running()) { last = 0; raf = requestAnimationFrame(frame); } };
+  const stop = () => { if (raf) cancelAnimationFrame(raf); raf = 0; };
+  const resize = () => {
+    const r = stage.getBoundingClientRect();
+    renderer.setPixelRatio(dpr());
+    renderer.setSize(Math.max(1, Math.round(r.width)), Math.max(1, Math.round(r.height)), false);
+    scene.resize(r.width, r.height, tallMq.matches);
+    if (!raf) scene.render(t, 0); // 멈춘 상태(동작 줄이기·멈춤 버튼)에서도 크기가 바뀌면 다시 그린다
+  };
+  resize();
+  new ResizeObserver(resize).observe(stage);
+  if (reduce) { scene.render(t, 0); live(); } else start();
+  if ('IntersectionObserver' in window) new IntersectionObserver((es) => { visible = es[es.length - 1].isIntersecting; if (visible) start(); else stop(); }).observe(stage);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
+  addEventListener('pointermove', (e) => { pointer.tx = (e.clientX / innerWidth) * 2 - 1; pointer.ty = (e.clientY / innerHeight) * 2 - 1; }, { passive: true });
+  if (toggle && !reduce) {
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      paused = !paused;
+      toggle.dataset.paused = String(paused);
+      toggle.textContent = paused ? '움직임 다시' : '움직임 멈춤';
+      if (paused) stop(); else start();
+    });
+  }
+  window.__stage = { renderer, get t() { return t; }, get running() { return !!raf; }, reduce };
+  return window.__stage;
+}
+
+// 고정 씨앗 난수(매번 같은 모양)
+function mulberry32(a) {
+  return function () { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+
+// ── 시안 1 · 머리 다발: 수만 가닥이 빽빽하게 모여 굵은 다발로 감긴 ∞ ──
+// 가닥마다 ∞ 길을 따라 미끄러지며 흐르고, 다발 둘레를 나선으로 감는다. 머리카락 광택(Kajiya-Kay) + 붉은 가장자리 빛.
+const A_VERT = /* glsl */`
+attribute vec4 aSeed;          // x 다발 안 반지름(0~1) · y 둘레 각 · z 묶음 · w 색
+uniform float uTime;
+uniform float uFlow;
+varying vec3 vT;
+varying vec3 vN;
+varying vec3 vPos;
+varying float vShade;
+varying float vR;
+varying float vTip;
+const float TAU = 6.28318530718;
+vec3 loopAt(float t) {
+  float th = TAU * t; float s = sin(th); float c = cos(th); float d = 1.0 + s * s;
+  return vec3(1.75 * c / d, 1.75 * s * c / d, 0.5 * s);
+}
+vec3 strandAt(float t, out vec3 nrm) {
+  vec3 p = loopAt(t);
+  vec3 tng = normalize(loopAt(t + 0.001) - loopAt(t - 0.001));
+  vec3 n = normalize(cross(tng, vec3(0.0, 0.0, 1.0)));
+  vec3 b = cross(tng, n);
+  float th = TAU * t;
+  float lobe = abs(cos(th));
+  float R = (0.15 + 0.16 * lobe) * (1.0 + 0.045 * sin(uTime * 0.5 + th * 2.0));
+  float twist = 2.0 * th + uTime * 0.16;                 // 다발 둘레를 나선으로 감는다
+  float ca = aSeed.z * TAU + twist;
+  vec2 clump = vec2(cos(ca), sin(ca)) * R * 0.62;
+  float a = aSeed.y * TAU + twist;
+  vec2 own = vec2(cos(a), sin(a)) * R * aSeed.x;
+  vec2 off = mix(own, clump, 0.3 * aSeed.x);
+  off += vec2(sin(th * 14.0 + aSeed.w * 21.0 + uTime * 0.8), cos(th * 11.0 + aSeed.w * 13.0 - uTime * 0.6)) * 0.005;
+  off.y *= 0.82;                                           // 단면을 살짝 납작하게(빗어 내린 다발)
+  vec3 side = n * off.x + b * off.y;
+  nrm = normalize(side + n * 1e-4);
+  return p + side;
+}
+void main() {
+  float u = position.x;                                    // 가닥 안 위치 0~1
+  float t = fract(position.y + uTime * uFlow + u * position.z);
+  vec3 nrm; vec3 nrm2;
+  vec3 p = strandAt(t, nrm);
+  vec3 p2 = strandAt(t + 0.0016, nrm2);
+  vec4 mv = modelViewMatrix * vec4(p, 1.0);
+  vT = normalize((modelViewMatrix * vec4(p2 - p, 0.0)).xyz);
+  vN = normalize((modelViewMatrix * vec4(nrm, 0.0)).xyz);
+  vPos = mv.xyz;
+  vShade = aSeed.w;
+  vR = aSeed.x;
+  vTip = min(u, 1.0 - u);
+  gl_Position = projectionMatrix * mv;
+}`;
+const A_FRAG = /* glsl */`
+uniform vec3 uBase; uniform vec3 uBase2; uniform vec3 uSpec; uniform vec3 uRim;
+uniform vec3 uKey; uniform vec3 uRimDir;
+varying vec3 vT; varying vec3 vN; varying vec3 vPos; varying float vShade; varying float vR; varying float vTip;
+float kk(vec3 T, vec3 H, float e) { float d = dot(T, H); return pow(sqrt(max(0.0, 1.0 - d * d)), e); }
+void main() {
+  vec3 T = normalize(vT);
+  vec3 N = normalize(vN);
+  vec3 V = normalize(-vPos);
+  vec3 L = normalize(uKey);
+  vec3 H = normalize(L + V);
+  float facing = dot(N, V);
+  // 다발 안쪽·뒤쪽 가닥은 어둡게(자기 그림자) → 덩어리감
+  float occ = mix(0.12, 1.0, smoothstep(-0.25, 0.75, facing)) * mix(0.45, 1.0, vR);
+  float lam = 0.35 + 0.65 * max(0.0, dot(N, L) * 0.5 + 0.5);
+  float diff = sqrt(max(0.0, 1.0 - pow(dot(T, L), 2.0)));
+  float s1 = kk(normalize(T - N * 0.10), H, 110.0);       // 첫 광택: 흰 띠
+  float s2 = kk(normalize(T + N * 0.16), H, 26.0);        // 둘째 광택: 머리색이 묻은 넓은 띠
+  vec3 base = mix(uBase, uBase2, vShade * vShade);
+  vec3 col = base * (0.25 + 0.75 * diff) * lam * occ;
+  col += uSpec * s1 * 0.55 * occ * lam;
+  col += base * 3.2 * s2 * 0.3 * occ;
+  // 붉은 영사기 빛: 오른쪽 위 가장자리에서 스치는 빛
+  float rim = pow(clamp(1.0 - abs(facing), 0.0, 1.0), 3.0) * smoothstep(0.0, 0.8, dot(N, normalize(uRimDir)));
+  col += uRim * rim * 0.85;
+  col *= mix(0.55, 1.0, smoothstep(0.0, 0.06, vTip));    // 가닥 끝은 조금 어둡게
+  gl_FragColor = vec4(col, 1.0);
+  #include <colorspace_fragment>
+}`;
+
+function buildBundle(renderer, ctx) {
+  const phone = ctx.tall;
+  const STRANDS = phone ? 5200 : 12000;
+  const PTS = phone ? 88 : 120;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 100);
+  const rnd = mulberry32(11);
+  const pos = new Float32Array(STRANDS * PTS * 3);
+  const seed = new Float32Array(STRANDS * PTS * 4);
+  const idx = new Uint32Array(STRANDS * (PTS - 1) * 2);
+  for (let s = 0; s < STRANDS; s++) {
+    const start = rnd(), len = 0.2 + 0.4 * rnd();
+    const r = Math.sqrt(rnd()), a = rnd(), cl = Math.floor(rnd() * 16) / 16, sh = rnd();
+    for (let i = 0; i < PTS; i++) {
+      const k = s * PTS + i;
+      pos[k * 3] = i / (PTS - 1); pos[k * 3 + 1] = start; pos[k * 3 + 2] = len;
+      seed[k * 4] = r; seed[k * 4 + 1] = a; seed[k * 4 + 2] = cl; seed[k * 4 + 3] = sh;
+    }
+    for (let i = 0; i < PTS - 1; i++) { const j = (s * (PTS - 1) + i) * 2; idx[j] = s * PTS + i; idx[j + 1] = s * PTS + i + 1; }
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute('aSeed', new THREE.BufferAttribute(seed, 4));
+  geo.setIndex(new THREE.BufferAttribute(idx, 1));
+  const uniforms = {
+    uTime: { value: 0 }, uFlow: { value: 0.012 },
+    uBase: { value: new THREE.Color('#221510') }, uBase2: { value: new THREE.Color('#5a3a26') },
+    uSpec: { value: new THREE.Color('#fff1df') }, uRim: { value: new THREE.Color('#e95145') },
+    uKey: { value: new THREE.Vector3(-0.45, 0.75, 0.55) }, uRimDir: { value: new THREE.Vector3(0.75, 0.55, 0.0) },
+  };
+  const lines = new THREE.LineSegments(geo, new THREE.ShaderMaterial({ uniforms, vertexShader: A_VERT, fragmentShader: A_FRAG }));
+  lines.frustumCulled = false;
+  const spin = new THREE.Group(); spin.add(lines);
+  const frameG = new THREE.Group(); frameG.add(spin); scene.add(frameG);
+  const EXT = { w: 4.25, h: 1.95 };
+  // 느린 기기 자동 조절: 45장면 평균이 24ms를 넘으면 가닥 수를 60% → 35%로 줄인다(가닥이 고르게 섞여 있어 다발 모양은 그대로)
+  const fullCount = STRANDS * (PTS - 1) * 2;
+  let level = 1, acc = 0, n = 0;
+  const adapt = (dt) => {
+    if (!dt) return;
+    acc += dt; n++;
+    if (n < 45) return;
+    if (acc / n > 0.024 && level > 0.35) {
+      level = level > 0.6 ? 0.6 : 0.35;
+      geo.setDrawRange(0, Math.floor((fullCount * level) / 2) * 2);
+      window.__bundleLevel = level;
+    }
+    acc = 0; n = 0;
+  };
+  return {
+    resize(w, h, tall) {
+      camera.aspect = w / h;
+      const tanH = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+      let dist;
+      if (tall) { frameG.rotation.z = Math.PI / 2; dist = Math.max(EXT.w / (0.6 * 2 * tanH), EXT.h / (0.9 * 2 * tanH * camera.aspect)); }
+      else { frameG.rotation.z = 0; dist = Math.max(EXT.w / (0.9 * 2 * tanH * camera.aspect), EXT.h / (0.66 * 2 * tanH)); }
+      camera.position.set(0, 0, dist);
+      frameG.position.y = (tall ? 0.12 : 0.1) * 2 * dist * tanH;
+      camera.updateProjectionMatrix();
+    },
+    render(t, dt) {
+      adapt(dt);
+      uniforms.uTime.value = t;
+      spin.rotation.y = 0.26 * Math.sin(t * 0.21) + ctx.pointer.x * 0.12;
+      spin.rotation.x = 0.1 * Math.sin(t * 0.17) + ctx.pointer.y * 0.08;
+      renderer.render(scene, camera);
+    },
+  };
+}
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) runStage(buildBundle, { stillTime: 9, phoneDpr: 1.5 });
+</script>
+<!-- 3D:END -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script>
+(() => {
+  // 스크롤 연출(점진적 향상): 숨기는 시작 상태는 모두 이 안에서, 동작 줄이기가 아닐 때만 건다.
+  const g = window.gsap, ST = window.ScrollTrigger;
+  if (!g || !ST) return;
+  g.registerPlugin(ST);
+  const mm = g.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)', () => {
+    // ① 타이틀 시퀀스: 제목이 왼쪽에서 열리고, 한 줄과 행동이 차례로
+    const tl = g.timeline({ defaults: { ease: 'expo.out' } });
+    tl.fromTo('.hero__mark', { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 2.2, clearProps: 'clipPath' }, 0.4)
+      .fromTo('.hero__line', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1.1, clearProps: 'opacity,transform' }, 1.3)
+      .fromTo('.hero__aside > *', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.9, stagger: 0.12, clearProps: 'opacity,transform' }, 1.7);
+    g.to('.hero__mark', { yPercent: -16, opacity: 0.3, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    // 사진이 아래에서 위로 드러남(한 번)
+    g.utils.toArray('[data-reveal="wipe"]').forEach((el) => {
+      g.fromTo(el, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.4, ease: 'expo.out', clearProps: 'clipPath', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+    });
+    // 숫자 올라가기(한 번)
+    const counts = g.utils.toArray('[data-count]');
+    const fmt = (raw, v) => { const d = (raw.split('.')[1] || '').length; return d ? v.toFixed(d) : Math.round(v).toLocaleString('en-US'); };
+    counts.forEach((el) => {
+      const raw = el.dataset.count, o = { v: 0 };
+      el.textContent = fmt(raw, 0);
+      g.to(o, { v: parseFloat(raw), duration: 1.6, ease: 'expo.out', onUpdate: () => { el.textContent = fmt(raw, o.v); }, scrollTrigger: { trigger: el, start: 'top 92%', once: true } });
+    });
+    // 남자 머리: 밀착 인화가 줄마다 아래에서 위로 드러남(한 번). 숨기는 시작 상태도 이 안에서만 건다
+    const cells = g.utils.toArray('.cell .ph');
+    if (cells.length) {
+      g.set(cells, { clipPath: 'inset(100% 0% 0% 0%)' });
+      ST.batch(cells, { start: 'top 92%', once: true, onEnter: (batch) => g.to(batch, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'expo.out', stagger: 0.09, clearProps: 'clipPath' }) });
+    }
+    // 손님이 고른 말: 막대가 수만큼 자람(한 번)
+    g.fromTo('.kw__bar i', { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: '.kw', start: 'top 80%', once: true } });
+    // 겹친 층의 시차: 기사 사진 안쪽, 과정의 작은 사진
+    g.fromTo('.about__fig .ph > img', { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true } });
+    g.fromTo('[data-drift]', { yPercent: 14 }, { yPercent: -10, ease: 'none', scrollTrigger: { trigger: '.process', start: 'top bottom', end: 'bottom top', scrub: true } });
+    // 공간: 레터박스가 열리듯 전폭으로(자막은 검은 띠 위에 남는다)
+    g.utils.toArray('.shot .ph').forEach((el) => {
+      g.fromTo(el, { clipPath: 'inset(14% 0% 14% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none', scrollTrigger: { trigger: el, start: 'top 95%', end: 'top 35%', scrub: true } });
+    });
+    return () => counts.forEach((el) => { el.textContent = fmt(el.dataset.count, parseFloat(el.dataset.count)); });
+  });
+  // 룩북 필름: 넓은 화면에서는 고정한 채 세로 스크롤로 가로로 흐른다. 좁은 화면·동작 줄이기·스크립트 꺼짐은 손으로 넘기는 띠
+  mm.add('(prefers-reduced-motion: no-preference) and (min-width: 60rem)', () => {
+    const reel = document.querySelector('.reel');
+    const win = reel && reel.querySelector('.reel__window');
+    const track = reel && reel.querySelector('.reel__track');
+    if (!track) return;
+    reel.classList.add('is-pinned');
+    const dist = () => { const pad = parseFloat(getComputedStyle(win).paddingLeft) || 0; return Math.max(0, track.getBoundingClientRect().width + pad * 2 - win.clientWidth); };
+    g.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: reel, start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 0.5, invalidateOnRefresh: true } });
+    return () => reel.classList.remove('is-pinned');
+  });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ST.refresh());
+  window.addEventListener('load', () => ST.refresh());
+})();
+</script>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+</body>
+</html>

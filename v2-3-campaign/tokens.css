@@ -1,0 +1,48 @@
+/* tokens.css · Éternel Hapjeong v2-3 campaign
+ * Source: ./DESIGN.md (Nike design analysis), carried over role by role and changed by BRIEF-v2 § 2:
+ *   ink #111111 / canvas #ffffff / soft-cloud #f5f5f5 / hairline #cacacb / mute #707072 / charcoal #39393b
+ *     -> the same lightness steps in OKLCH, tinted 0.005 toward the accent hue (no pure absolutes)
+ *   sale #d30005 (the only chroma in the chrome, on price rows) -> one Éternel accent, cobalt, on the booking
+ *     action and the recommended price rows only
+ *   Nike Futura ND -> Anton (the file's own substitute); Helvetica Now -> Pretendard (Hangul, and its Inter-cut Latin)
+ *   rounded.lg 30px / rounded.full pills -> 2px squares (user rule: corners 0 to 4px)
+ *   spacing 2/4/8/12/18/24/30/48 -> the scaffold's 8-based scale below (8px product gutters kept)
+ */
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(3.5rem, 15vw, 11rem);
+  --text-section: clamp(2.25rem, 3vw + 1rem, 3.75rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --text-campaign: clamp(3rem, 8vw, 7.5rem);
+  --text-figure: clamp(3.5rem, 7vw + 1rem, 7.5rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --gap-product: 8px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* DESIGN.md colors -> OKLCH, hue 264 at 0.005 to 0.008 chroma */
+  --color-paper: oklch(98.4% 0.005 264);    /* canvas #ffffff */
+  --color-paper-2: oklch(96.2% 0.005 264);  /* soft-cloud #f5f5f5, the studio grey */
+  --color-paper-3: oklch(92.6% 0.006 264);  /* hairline-soft #e5e5e5 */
+  --color-ink: oklch(20.5% 0.006 264);      /* ink #111111 */
+  --color-ink-2: oklch(34% 0.008 264);      /* charcoal #39393b */
+  --color-muted: oklch(50.5% 0.008 264);    /* mute #707072 */
+  --color-stone: oklch(73% 0.006 264);      /* stone #9e9ea0, secondary text on ink */
+  --color-rule: oklch(84% 0.006 264);       /* hairline #cacacb */
+  --color-rule-dark: oklch(36% 0.008 264);  /* ash #4b4b4d, a rule on ink */
+  /* sale red -> Éternel cobalt: the one chromatic signal */
+  --color-accent: oklch(47% 0.22 264);
+  --color-accent-2: oklch(40% 0.2 264);     /* pressed / hover, like sale-deep */
+  --color-accent-ink: oklch(98.4% 0.005 264);
+  --color-focus: oklch(50% 0.2 264);
+  --color-focus-dark: oklch(86% 0.08 264);
+  --color-scrim: oklch(20.5% 0.006 264 / 0.82);
+
+  --font-display: "Anton", "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sans-serif;
+  --font-body: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-outlier: var(--font-body);
+  --radius-card: 0px; --radius-pill: 2px; --radius-input: 2px; --rule-hair: 1px; --shadow-card: none;
+  --tracking-display: -0.025em;
+  --nav-h: 64px; --util-h: 36px;
+}
